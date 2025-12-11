@@ -149,7 +149,7 @@ ul {
 
 .nav-links a {
     font-weight: 500;
-    color: var(--color-text);
+    color: var(--color-border);
     transition: var(--transition-fast);
     position: relative;
 }
@@ -540,7 +540,7 @@ section {
 }
 
 .feature-emoji {
-    font-size: 4rem;
+    font-size: 7rem;
     z-index: 2;
 }
 
@@ -549,7 +549,7 @@ section {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.167), transparent 90%);
 }
 
 @media (max-width: 768px) {
