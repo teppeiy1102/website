@@ -250,6 +250,7 @@ ul {
     line-height: 1.1;
     margin-bottom: 1.5rem;
     color: white;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .title-line {
@@ -261,13 +262,16 @@ ul {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .hero-description {
     font-size: 1.125rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
     margin-bottom: 2.5rem;
     line-height: 1.8;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .hero-buttons {
@@ -365,12 +369,38 @@ ul {
     background: #fff;
     border-radius: 35px;
     overflow: hidden;
+    position: relative;
 }
 
 .phone-screen img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease-in-out;
+}
+
+/* 表示中の画像 */
+.phone-screen img.active {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 2;
+}
+
+/* 次に表示される画像（右から入る） */
+.phone-screen img.next {
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+/* 前に表示されていた画像（左に出る） */
+.phone-screen img.prev {
+    transform: translateX(-100%);
+    opacity: 1;
+    z-index: 0;
 }
 
 .hero-scroll {
@@ -1426,18 +1456,43 @@ section {
     font-size: clamp(1rem, 11vw, 7rem);
     font-feature-settings: "palt";
     font-weight: 900;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.0em;
+}
+
+/* 文字ごとの波打つアニメーション */
+.footer-large-title span {
+    display: inline-block;
     background: var(--gradient-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.0em;
+    animation: waveFloat 3s ease-in-out infinite;
+}
+
+@keyframes waveFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    25% {
+        transform: translateY(-10px) scale(1.1);
+    }
+
+    50% {
+        transform: translateY(0) scale(1);
+    }
+
+    75% {
+        transform: translateY(-5px) scale(1.05);
+    }
 }
 
 .footer-large-description {
     font-size: clamp(1.25rem, 2vw, 2.5rem);
     color: var(--color-text-light);
-    font-weight: 500;
 }
 
 /* レスポンシブ調整 */
@@ -1464,6 +1519,7 @@ section {
         opacity: 0;
         transition: all 0.3s ease;
         box-shadow: var(--shadow-lg);
+        z-index: 999;
     }
 
     .nav-links.active {

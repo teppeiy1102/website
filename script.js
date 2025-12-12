@@ -141,6 +141,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // モーダル初期化
     initModal();
+
+    // ヒーローセクションのスマホ画像カルーセル
+    initHeroPhoneCarousel();
+
+    // フッタータイトルのアニメーション
+    initFooterTitleAnimation();
 });
 
 // 初期化時にドラッグスクロールも有効化
@@ -418,6 +424,87 @@ function initDragScroll() {
 
         carousel.style.cursor = 'grab';
     }
+}
+
+// ========================================
+// ヒーローセクションのスマホ画像カルーセル
+// ========================================
+function initHeroPhoneCarousel() {
+    const phoneScreen = document.getElementById('hero-phone-screen');
+    if (!phoneScreen) return;
+
+    // ガイド画像のパス（imageフォルダ内の実際のファイル名）
+    const guideImages = [
+        'image/mari.png',
+        'image/fumiko.png',
+        'image/mika.png',
+        'image/akari.png',
+        'image/midori.png',
+        'image/ai.png',
+        'image/rakuko.png'
+    ];
+
+    let currentIndex = 0;
+
+    // 画像要素を作成
+    guideImages.forEach((imagePath, index) => {
+        const img = document.createElement('img');
+        img.src = imagePath;
+        img.alt = `ガイド ${index + 1}`;
+
+        if (index === 0) {
+            img.classList.add('active');
+        } else {
+            img.classList.add('next');
+        }
+
+        phoneScreen.appendChild(img);
+    });
+
+    const images = phoneScreen.querySelectorAll('img');
+
+    // 3秒ごとに画像を切り替え
+    setInterval(() => {
+        const currentImg = images[currentIndex];
+        const nextIndex = (currentIndex + 1) % images.length;
+        const nextImg = images[nextIndex];
+
+        // 現在の画像を左に回転させて消す
+        currentImg.classList.remove('active');
+        currentImg.classList.add('prev');
+
+        // 次の画像を右から回転させて表示
+        nextImg.classList.remove('next', 'prev');
+        nextImg.classList.add('active');
+
+        // アニメーション完了後、前の画像を次の状態にリセット
+        setTimeout(() => {
+            currentImg.classList.remove('prev');
+            currentImg.classList.add('next');
+        }, 600); // CSSのtransition時間と同じ
+
+        currentIndex = nextIndex;
+    }, 3000); // 3秒ごと
+}
+
+// ========================================
+// フッタータイトルのアニメーション
+// ========================================
+function initFooterTitleAnimation() {
+    const footerTitle = document.querySelector('.footer-large-title');
+    if (!footerTitle) return;
+
+    const text = footerTitle.textContent;
+    footerTitle.textContent = '';
+
+    // 各文字をspanで囲み、波のように遅延を設定
+    text.split('').forEach((char, index) => {
+        const span = document.createElement('span');
+        span.textContent = char;
+        // 各文字に遅延を設定して波のような動きを作る
+        span.style.animationDelay = `${index * 0.1}s`;
+        footerTitle.appendChild(span);
+    });
 }
 
 // ========================================
