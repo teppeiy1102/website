@@ -216,7 +216,7 @@ ul {
     display: flex;
     align-items: center;
     padding: 120px 0 80px;
-    background: url('image/screen/back.png') center/cover no-repeat;
+    background: url('image/screen/back.jpg') center/cover no-repeat;
     overflow: hidden;
 }
 

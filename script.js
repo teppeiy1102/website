@@ -435,13 +435,13 @@ function initHeroPhoneCarousel() {
 
     // ガイド画像のパス（imageフォルダ内の実際のファイル名）
     const guideImages = [
-        'image/mari.png',
-        'image/fumiko.png',
-        'image/mika.png',
-        'image/akari.png',
-        'image/midori.png',
-        'image/ai.png',
-        'image/rakuko.png'
+        'image/mari.jpg',
+        'image/fumiko.jpg',
+        'image/mika.jpg',
+        'image/akari.jpg',
+        'image/midori.jpg',
+        'image/ai.jpg',
+        'image/rakuko.jpg'
     ];
 
     let currentIndex = 0;
@@ -519,8 +519,8 @@ const personasData = [
         guideName: { ja: '高橋 真理', en: 'Mari Takahashi' },
         description: { ja: 'あらゆる分野に精通したオールマイティなガイド', en: 'All-mighty guide well-versed in all fields' },
         specialty: { ja: '歴史、グルメ、観光スポット、自然、文化など全ての分野を幅広くカバー', en: 'Broadly covers history, gourmet, spots, nature, and culture' },
-        imagePath: 'image/mari.png',
-        faceImagePath: 'image/mariface.png',
+        imagePath: 'image/mari.jpg',
+        faceImagePath: 'image/mariface.jpg',
         color: '#3B82F6',
         selfIntro: {
             ja: 'こんにちは！高橋真理です。私はこの街の歴史、グルメ、自然、そして最新のトレンドまで、あらゆる魅力を網羅するオールラウンダーガイドです。「何から見ればいいかわからない」「時間の枠内でできるだけ多くの体験をしたい」といったお悩みはありませんか？私がお客様の興味に合わせて、バランスの取れた最高のプランをご提案します。初めての方もリピーターの方も、絶対に満足できる旅をお約束します。どんな質問にもお答えできる自信がありますので、街のことは何でも聞いてくださいね。一緒に素晴らしい旅の思い出を作りましょう！',
@@ -534,8 +534,8 @@ const personasData = [
         guideName: { ja: '佐藤 文子', en: 'Fumiko Sato' },
         description: { ja: '歴史と文化遺産の専門家', en: 'Expert in history and cultural heritage' },
         specialty: { ja: '日本史、世界史、文化財、歴史的建造物の解説', en: 'Explanation of Japanese history, world history, cultural assets, and historical buildings' },
-        imagePath: 'image/fumiko.png',
-        faceImagePath: 'image/fumikoface.png',
+        imagePath: 'image/fumiko.jpg',
+        faceImagePath: 'image/fumikoface.jpg',
         color: '#8B5CF6',
         selfIntro: {
             ja: '佐藤文子と申します。古き良き歴史の息吹を感じたい貴方へ。私はこの土地に眠る物語や、文化遺産の深い背景をご案内することに情熱を注いでいます。教科書には載っていないような地元ならではの伝承や、建物一つ一つに込められた先人たちの想いを丁寧に紐解いていきます。ただ見るだけでは分からない、時を超えたロマンを感じていただけるはずです。静かな寺社仏閣の空気感や、時代ごとの街の変遷に興味はございませんか？知的好奇心を満たす、奥深い歴史探訪の旅へ、私がご案内いたします。',
@@ -549,8 +549,8 @@ const personasData = [
         guideName: { ja: '田中 美香', en: 'Mika Tanaka' },
         description: { ja: 'ご当地グルメと食文化の専門家', en: 'Expert in local gourmet and food culture' },
         specialty: { ja: 'ご当地料理、人気店、食文化、B級グルメの紹介', en: 'Introduction of local cuisine, popular shops, food culture, and B-class gourmet' },
-        imagePath: 'image/mika.png',
-        faceImagePath: 'image/mikaface.png',
+        imagePath: 'image/mika.jpg',
+        faceImagePath: 'image/mikaface.jpg',
         color: '#F59E0B',
         selfIntro: {
             ja: 'やっほー！田中美香だよ！美味しいもの食べる準備はできてる？私はこの街の絶品グルメに関しては誰にも負けない自信があるんだ！定番の郷土料理はもちろんだけど、地元の人しか知らない隠れ家レストランや、行列必至のスイーツ店、夜にしっぽり飲める居酒屋まで、私の足で稼いだ情報を全部教えちゃうよ。「安くて美味しいお店知りたい！」とか「ちょっとリッチなランチがいいな」とか、気分別にリクエストしてね。お腹も心も満たされる、最高にハッピーな食い倒れツアーに出かけよう！',
@@ -564,8 +564,8 @@ const personasData = [
         guideName: { ja: '山本 あかり', en: 'Akari Yamamoto' },
         description: { ja: '流行スポットとSNS映えの専門家', en: 'Expert in trendy spots and SNS appeal' },
         specialty: { ja: '話題のスポット、インスタ映え、若者文化、最新トレンド', en: 'Hot spots, Insta-worthy, youth culture, latest trends' },
-        imagePath: 'image/akari.png',
-        faceImagePath: 'image/akariface.png',
+        imagePath: 'image/akari.jpg',
+        faceImagePath: 'image/akariface.jpg',
         color: '#EC4899',
         selfIntro: {
             ja: 'ハロー！山本あかりです！今一番バズってるスポットに行きたくない？私は最新のトレンドや、SNS映えするフォトジェニックスポットをリサーチするのが大好きなの。「友達に自慢できる写真が撮りたい」「話題のあのスイーツを食べてみたい」そんな願いを叶えるなら私にお任せ！絶対に外さないおしゃれなカフェや、可愛い雑貨屋さん、エモい路地裏まで案内するよ。スマホの充電は満タンにしてきてね！一緒に最高の映え写真を撮って、たくさんの「いいね」をゲットしちゃおう！',
@@ -579,8 +579,8 @@ const personasData = [
         guideName: { ja: '木村 緑', en: 'Midori Kimura' },
         description: { ja: '自然と景観の専門家', en: 'Expert in nature and landscapes' },
         specialty: { ja: '自然景観、公園、庭園、四季の風景、動植物の解説', en: 'Explanation of natural landscapes, parks, gardens, seasonal scenery, plants and animals' },
-        imagePath: 'image/midori.png',
-        faceImagePath: 'image/midoriface.png',
+        imagePath: 'image/midori.jpg',
+        faceImagePath: 'image/midoriface.jpg',
         color: '#10B981',
         selfIntro: {
             ja: '木村緑です。自然の中で深呼吸してみませんか？私は四季折々の美しい景色や、そこに息づく動植物をご案内するのが得意です。この街には、都会の喧騒を忘れさせてくれるような緑豊かな公園や、清らかな川、美しい花々が咲き誇る庭園がたくさんあります。朝の爽やかな空気、夕暮れの優しい光、風の音や鳥のさえずり……五感を使って自然を感じる癒しの旅へお連れします。少し疲れた心をリフレッシュしたい時、自然のパワーを感じたい時は、私と一緒にのんびりと散策しましょう。',
@@ -594,8 +594,8 @@ const personasData = [
         guideName: { ja: '鈴木 愛', en: 'Ai Suzuki' },
         description: { ja: 'お土産とショッピングの専門家', en: 'Expert in souvenirs and shopping' },
         specialty: { ja: 'お土産、ショッピングモール、伝統工芸品、地域の名産品', en: 'Souvenirs, shopping malls, traditional crafts, regional specialties' },
-        imagePath: 'image/ai.png',
-        faceImagePath: 'image/aiface.png',
+        imagePath: 'image/ai.jpg',
+        faceImagePath: 'image/aiface.jpg',
         color: '#EF4444',
         selfIntro: {
             ja: 'こんにちは、鈴木愛です！お買い物ってワクワクしますよね？お土産選びや自分へのご褒美探しなら、私にお任せください！この土地ならではの伝統工芸品から、人気の特産品、おしゃれなセレクトショップまで、幅広いショッピングスポットをご案内します。「家族に喜ばれるお菓子は？」「記念に残る雑貨が欲しい」そんなご相談にも親身になってお答えしますよ。賢くお買い物するためのコツや、お得な情報もお教えできるかもしれません。素敵なアイテムとの出会いをサポートしますね！',
@@ -609,8 +609,8 @@ const personasData = [
         guideName: { ja: '伊藤 楽子', en: 'Rakuko Ito' },
         description: { ja: 'エンターテイメントとアクティビティの専門家', en: 'Expert in entertainment and activities' },
         specialty: { ja: 'テーマパーク、レジャー施設、イベント、体験アクティビティ', en: 'Theme parks, leisure facilities, events, experience activities' },
-        imagePath: 'image/rakuko.png',
-        faceImagePath: 'image/rakukoface.png',
+        imagePath: 'image/rakuko.jpg',
+        faceImagePath: 'image/rakukoface.jpg',
         color: '#06B6D4',
         selfIntro: {
             ja: '伊藤楽子ですっ！思いっきり楽しむ準備はOK！？私はテーマパークやイベント、体験アクティビティなど、ワクワクするエンターテイメントが大好き！「とにかく盛り上がりたい！」「珍しい体験をしてみたい！」そんなアクティブなあなたにぴったりのプランを提案するよ。家族みんなで楽しめるレジャー施設から、スリル満点のアトラクション、季節のお祭りまで、退屈なんてさせないよ！最高にエキサイティングな思い出を作って、笑顔いっぱいの旅にしようね！ついてきてっ！',
@@ -620,13 +620,13 @@ const personasData = [
 ];
 
 const screenshotsData = [
-    { src: 'image/screen/screen1.png', caption: { ja: 'ガイド画面', en: 'Guide Screen' } },
-    { src: 'image/screen/screen2.png', caption: { ja: '地図画面', en: 'Map Screen' } },
-    { src: 'image/screen/screen3.png', caption: { ja: 'チャット画面', en: 'Chat Screen' } },
-    { src: 'image/screen/screen4.png', caption: { ja: 'ペルソナ選択', en: 'Persona Selection' } },
-    { src: 'image/screen/screen5.png', caption: { ja: 'ガイド画面', en: 'Guide Screen' } },
-    { src: 'image/screen/screen6.png', caption: { ja: '履歴画面', en: 'History Screen' } },
-    { src: 'image/screen/screen7.png', caption: { ja: 'ガイド時間設定', en: 'Guide Time Setting' } }
+    { src: 'image/screen/screen1.jpg', caption: { ja: 'ガイド画面', en: 'Guide Screen' } },
+    { src: 'image/screen/screen2.jpg', caption: { ja: '地図画面', en: 'Map Screen' } },
+    { src: 'image/screen/screen3.jpg', caption: { ja: 'チャット画面', en: 'Chat Screen' } },
+    { src: 'image/screen/screen4.jpg', caption: { ja: 'ペルソナ選択', en: 'Persona Selection' } },
+    { src: 'image/screen/screen5.jpg', caption: { ja: 'ガイド画面', en: 'Guide Screen' } },
+    { src: 'image/screen/screen6.jpg', caption: { ja: '履歴画面', en: 'History Screen' } },
+    { src: 'image/screen/screen7.jpg', caption: { ja: 'ガイド時間設定', en: 'Guide Time Setting' } }
 ];
 
 let currentPersonaIndex = 0;

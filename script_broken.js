@@ -288,8 +288,8 @@ const personasData = [
         guideName: '高橋 真理',
         description: 'あらゆる分野に精通したオールマイティなガイド',
         specialty: '歴史、グルメ、観光スポット、自然、文化など全ての分野を幅広くカバー',
-        imagePath: 'image/mari.png',
-        faceImagePath: 'image/mariface.png',
+        imagePath: 'image/mari.jpg',
+        faceImagePath: 'image/mariface.jpg',
         color: '#3B82F6',
         selfIntro: 'こんにちは！高橋真理です。歴史からグルメまで、この街の魅力を余すところなくご案内しますよ。一緒に素敵な旅の思い出を作りましょう！'
     },
@@ -299,8 +299,8 @@ const personasData = [
         guideName: '佐藤 文子',
         description: '歴史と文化遺産の専門家',
         specialty: '日本史、世界史、文化財、歴史的建造物の解説',
-        imagePath: 'image/fumiko.png',
-        faceImagePath: 'image/fumikoface.png',
+        imagePath: 'image/fumiko.jpg',
+        faceImagePath: 'image/fumikoface.jpg',
         color: '#8B5CF6',
         selfIntro: '佐藤文子と申します。古き良き歴史の息吹を感じてみませんか？私がその奥深い物語の世界へといざないます。'
     },
@@ -310,8 +310,8 @@ const personasData = [
         guideName: '田中 美香',
         description: 'ご当地グルメと食文化の専門家',
         specialty: 'ご当地料理、人気店、食文化、B級グルメの紹介',
-        imagePath: 'image/mika.png',
-        faceImagePath: 'image/mikaface.png',
+        imagePath: 'image/mika.jpg',
+        faceImagePath: 'image/mikaface.jpg',
         color: '#F59E0B',
         selfIntro: 'やっほー！田中美香だよ！美味しいもの食べる準備はできてる？地元の絶品グルメ、私がぜーんぶ教えちゃうから期待しててね！'
     },
@@ -321,8 +321,8 @@ const personasData = [
         guideName: '山本 あかり',
         description: '流行スポットとSNS映えの専門家',
         specialty: '話題のスポット、インスタ映え、若者文化、最新トレンド',
-        imagePath: 'image/akari.png',
-        faceImagePath: 'image/akariface.png',
+        imagePath: 'image/akari.jpg',
+        faceImagePath: 'image/akariface.jpg',
         color: '#EC4899',
         selfIntro: 'ハロー！山本あかりです！今一番バズってるスポットに行きたくない？映える写真撮って、みんなに自慢しちゃお！'
     },
@@ -332,8 +332,8 @@ const personasData = [
         guideName: '木村 緑',
         description: '自然と景観の専門家',
         specialty: '自然景観、公園、庭園、四季の風景、動植物の解説',
-        imagePath: 'image/midori.png',
-        faceImagePath: 'image/midoriface.png',
+        imagePath: 'image/midori.jpg',
+        faceImagePath: 'image/midoriface.jpg',
         color: '#10B981',
         selfIntro: '木村緑です。自然の中で深呼吸してみませんか？四季折々の美しい景色とともに、心安らぐひとときをご案内します。'
     },
@@ -343,8 +343,8 @@ const personasData = [
         guideName: '鈴木 愛',
         description: 'お土産とショッピングの専門家',
         specialty: 'お土産、ショッピングモール、伝統工芸品、地域の名産品',
-        imagePath: 'image/ai.png',
-        faceImagePath: 'image/aiface.png',
+        imagePath: 'image/ai.jpg',
+        faceImagePath: 'image/aiface.jpg',
         color: '#EF4444',
         selfIntro: 'こんにちは、鈴木愛です！お土産選びなら私にお任せ！きっと喜ばれる素敵なアイテムが見つかりますよ。ショッピング楽しみましょう！'
     },
@@ -354,21 +354,21 @@ const personasData = [
         guideName: '伊藤 楽子',
         description: 'エンターテイメントとアクティビティの専門家',
         specialty: 'テーマパーク、レジャー施設、イベント、体験アクティビティ',
-        imagePath: 'image/rakuko.png',
-        faceImagePath: 'image/rakukoface.png',
+        imagePath: 'image/rakuko.jpg',
+        faceImagePath: 'image/rakukoface.jpg',
         color: '#06B6D4',
         selfIntro: '伊藤楽子ですっ！思いっきり楽しむ準備はOK！？ワクワクするような体験と最高のエンターテイメントをお届けします！'
     }
 ];
 
 const screenshotsData = [
-    { src: 'image/screen/screen1.png', caption: 'ガイド画面' },
-    { src: 'image/screen/screen2.png', caption: '地図画面' },
-    { src: 'image/screen/screen3.png', caption: 'チャット画面' },
-    { src: 'image/screen/screen4.png', caption: 'ペルソナ選択' },
-    { src: 'image/screen/screen5.png', caption: 'ガイド画面' },
-    { src: 'image/screen/screen6.png', caption: '履歴画面' },
-    { src: 'image/screen/screen7.png', caption: 'ガイド時間設定' }
+    { src: 'image/screen/screen1.jpg', caption: 'ガイド画面' },
+    { src: 'image/screen/screen2.jpg', caption: '地図画面' },
+    { src: 'image/screen/screen3.jpg', caption: 'チャット画面' },
+    { src: 'image/screen/screen4.jpg', caption: 'ペルソナ選択' },
+    { src: 'image/screen/screen5.jpg', caption: 'ガイド画面' },
+    { src: 'image/screen/screen6.jpg', caption: '履歴画面' },
+    { src: 'image/screen/screen7.jpg', caption: 'ガイド時間設定' }
 ];
 
 let currentPersonaIndex = 0;
