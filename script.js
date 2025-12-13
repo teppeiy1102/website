@@ -5,6 +5,8 @@
 // 翻訳データ
 const translations = {
     ja: {
+        "app.title": "どこでもバスガイド",
+        "page.title": "どこでもバスガイド - AIがあなたの旅をもっと楽しく",
         "nav.features": "機能",
         "nav.guides": "ガイド紹介",
         "nav.screenshots": "スクリーンショット",
@@ -58,6 +60,8 @@ const translations = {
         "modal.intro": "💬 自己紹介"
     },
     en: {
+        "app.title": "DocoDemo Guide",
+        "page.title": "DocoDemo Guide - AI makes your trip more fun",
         "nav.features": "Features",
         "nav.guides": "Guides",
         "nav.screenshots": "Screenshots",
@@ -178,6 +182,9 @@ function updateLanguage() {
             el.innerHTML = translations[currentLanguage][key];
         }
     });
+
+    // フッタータイトルのアニメーションを再初期化（テキスト変更後）
+    initFooterTitleAnimation();
 
     // ペルソナとスクリーンショットを再描画
     // skipShowPersonaをtrueにして、updateLanguage内でshowPersonaを呼ばない
