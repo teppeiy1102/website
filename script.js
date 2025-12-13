@@ -168,6 +168,9 @@ function initLanguageSwitcher() {
 }
 
 function updateLanguage() {
+    // 既存のアニメーションをクリア
+    clearTextAnimationTimeouts();
+
     // ページ内のテキストを更新
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
@@ -177,7 +180,20 @@ function updateLanguage() {
     });
 
     // ペルソナとスクリーンショットを再描画
-    initPersonas();
+    // skipShowPersonaをtrueにして、updateLanguage内でshowPersonaを呼ばない
+    initPersonas(true);
+    
+    // 言語切り替え後、アニメーションを再表示
+    setTimeout(() => {
+        showPersona(currentPersonaIndex);
+    }, 100);
+    
+    // スクリーンショットセクションの強制更新フラグを設定
+    const screenshotContainer = document.getElementById('screenshots-container');
+    if (screenshotContainer) {
+        screenshotContainer.dataset.needsRefresh = 'true';
+        screenshotContainer.dataset.animated = 'false';
+    }
     initScreenshots();
 }
 
@@ -265,11 +281,16 @@ function initScrollAnimations() {
     }, observerOptions);
 
     animatedElements.forEach((el, index) => {
-        el.classList.add('animated-init');
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-        observer.observe(el);
+        // インラインスタイルが既に設定されている場合はスキップ
+        if (el.style.opacity === '0') {
+            observer.observe(el);
+        } else {
+            el.classList.add('animated-init');
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            observer.observe(el);
+        }
     });
 
     // animate-inクラスのスタイル（重複追加防止）
@@ -497,10 +518,28 @@ function initFooterTitleAnimation() {
     const text = footerTitle.textContent;
     footerTitle.textContent = '';
 
-    // 各文字をspanで囲み、波のように遅延を設定
+    // グラデーション設定（CSSの--gradient-textと同じ）
+    const gradientColor1 = '#667eea';
+    const gradientColor2 = '#764ba2';
+    const gradientColor3 = '#f093fb';
+
+    // 各文字をspanで囲み、全体グラデーションの一部を表示
     text.split('').forEach((char, index) => {
         const span = document.createElement('span');
         span.textContent = char;
+        
+        // 文字の総数に基づいてグラデーション範囲を計算
+        const totalChars = text.length;
+        const percentage = (index / totalChars) * 100;
+        
+        // 各文字に対して全体グラデーションの対応部分を背景として設定
+        span.style.background = `linear-gradient(90deg, ${gradientColor1} 0%, ${gradientColor2} 50%, ${gradientColor3} 100%)`;
+        span.style.backgroundPosition = `${-percentage}% 0`;
+        span.style.backgroundSize = `${totalChars * 100}% 100%`;
+        span.style.backgroundClip = 'text';
+        span.style.webkitBackgroundClip = 'text';
+        span.style.webkitTextFillColor = 'transparent';
+        
         // 各文字に遅延を設定して波のような動きを作る
         span.style.animationDelay = `${index * 0.1}s`;
         footerTitle.appendChild(span);
@@ -631,7 +670,7 @@ const screenshotsData = [
 
 let currentPersonaIndex = 0;
 
-function initPersonas() {
+function initPersonas(skipShowPersona = false) {
     const container = document.getElementById('personas-container');
     if (!container) return;
 
@@ -721,11 +760,11 @@ function initPersonas() {
     // アニメーション再適用
     initScrollAnimations();
 
-    // 初期表示の状態を適用
-    showPersona(currentPersonaIndex); // Use current index to maintain state
-
-    // リサイズ時にレイアウトを再計算
-    // Again, window resize listener should only be added once.
+    // skipShowPersonaフラグがfalseの場合のみshowPersonaを実行
+    if (skipShowPersona !== true) {
+        // 初期表示の状態を適用
+        showPersona(currentPersonaIndex); // Use current index to maintain state
+    }
 }
 
 // Function to handle key navigation, added once
@@ -739,9 +778,19 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// グローバル変数でリサイズ処理をデバウンス
+let resizeTimeoutId = null;
+
 // Resize listener added once
+// リサイズ時にペルソナ表示を再計算する必要がなくなったため、この処理は削除
+// レスポンシブなレイアウトはCSSで対応
 window.addEventListener('resize', () => {
-    showPersona(currentPersonaIndex);
+    // リサイズ時の処理が必要になった場合の骨組みのみ保持
+    if (resizeTimeoutId !== null) {
+        clearTimeout(resizeTimeoutId);
+    }
+    
+    // 現在は特に処理なし
 });
 
 
@@ -756,6 +805,9 @@ function showPersona(index) {
     // インデックスの正規化（念のため）
     const total = cards.length;
     const safeIndex = (index + total) % total;
+
+    // 既存のテキストアニメーションをクリア
+    clearTextAnimationTimeouts();
 
     // クラスの更新（アクティブのみ）
     cards.forEach((card, i) => {
@@ -802,18 +854,37 @@ function clearCardText(card) {
     if (catchEl) {
         catchEl.textContent = '';
         catchEl.style.opacity = '0';
+        catchEl.dataset.animating = 'false';
     }
     if (nameEl) {
         nameEl.innerHTML = '';
         nameEl.style.opacity = '0';
+        nameEl.dataset.animating = 'false';
     }
     if (realnameEl) realnameEl.textContent = '';
+}
+
+// グローバル変数でタイムアウトIDを管理
+let textAnimationTimeouts = [];
+
+function clearTextAnimationTimeouts() {
+    textAnimationTimeouts.forEach(timeoutId => clearTimeout(timeoutId));
+    textAnimationTimeouts = [];
 }
 
 function showCardText(card) {
     const catchEl = card.querySelector('.persona-overlay-catch');
     const nameEl = card.querySelector('.persona-overlay-name');
     const realnameEl = card.querySelector('.persona-overlay-realname');
+
+    // 既にアニメーション中の場合はスキップ
+    if (catchEl && catchEl.dataset.animating === 'true') {
+        return;
+    }
+
+    // アニメーション中フラグを設定
+    if (catchEl) catchEl.dataset.animating = 'true';
+    if (nameEl) nameEl.dataset.animating = 'true';
 
     // まずクリア
     if (catchEl) catchEl.textContent = '';
@@ -827,13 +898,14 @@ function showCardText(card) {
     }
 
     // 2. メインネーム（遅延させてカーソル付き）
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
         if (nameEl && nameEl.dataset.text) {
             // 表示状態にしてからタイプライター開始
             nameEl.style.opacity = '1';
             typeWriterWithCursor(nameEl, nameEl.dataset.text, 60);
         }
     }, 800);
+    textAnimationTimeouts.push(timeoutId);
 
     // 3. 本名（不要なら削除、またはさらに遅延）
     /*
@@ -847,6 +919,11 @@ function showCardText(card) {
 
 // タイプライター効果（カラフルカーソル付き）
 function typeWriterWithCursor(element, text, speed = 50) {
+    // 要素が削除されている場合はスキップ
+    if (!document.contains(element)) {
+        return;
+    }
+
     let i = 0;
     element.innerHTML = '';
 
@@ -856,18 +933,33 @@ function typeWriterWithCursor(element, text, speed = 50) {
     element.appendChild(cursor);
 
     function type() {
+        // 要素が削除されている場合は中止
+        if (!document.contains(element)) {
+            return;
+        }
+
         if (i < text.length) {
             // カーソルの前にテキストを挿入
             const textNode = document.createTextNode(text.charAt(i));
             element.insertBefore(textNode, cursor);
             i++;
-            setTimeout(type, speed);
+            const timeoutId = setTimeout(type, speed);
+            textAnimationTimeouts.push(timeoutId);
         } else {
             // タイピング完了後、カーソルを3秒後に削除
-            setTimeout(() => {
+            const timeoutId = setTimeout(() => {
+                if (!document.contains(element)) {
+                    return;
+                }
                 cursor.style.opacity = '0';
-                setTimeout(() => cursor.remove(), 300);
+                const timeoutId2 = setTimeout(() => {
+                    if (cursor.parentElement) {
+                        cursor.remove();
+                    }
+                }, 300);
+                textAnimationTimeouts.push(timeoutId2);
             }, 2000);
+            textAnimationTimeouts.push(timeoutId);
         }
     }
 
@@ -876,14 +968,25 @@ function typeWriterWithCursor(element, text, speed = 50) {
 
 // シンプルなタイプライター効果（カーソルなし）
 function typeWriterSimple(element, text, speed = 50) {
+    // 要素が削除されている場合はスキップ
+    if (!document.contains(element)) {
+        return;
+    }
+
     let i = 0;
     element.textContent = '';
 
     function type() {
+        // 要素が削除されている場合は中止
+        if (!document.contains(element)) {
+            return;
+        }
+
         if (i < text.length) {
             element.textContent += text.charAt(i);
             i++;
-            setTimeout(type, speed);
+            const timeoutId = setTimeout(type, speed);
+            textAnimationTimeouts.push(timeoutId);
         }
     }
 
@@ -980,6 +1083,11 @@ function initScreenshots() {
     const container = document.getElementById('screenshots-container');
     if (!container) return;
 
+    // 既にコンテンツがある場合は再初期化を避ける
+    if (container.children.length > 0 && !container.dataset.needsRefresh) {
+        return;
+    }
+
     container.innerHTML = '';
 
     screenshotsData.forEach(screen => {
@@ -996,6 +1104,9 @@ function initScreenshots() {
         container.appendChild(item);
     });
 
-    // アニメーション再適用
-    initScrollAnimations();
+    // アニメーション再適用（初回のみ）
+    if (!container.dataset.animated) {
+        container.dataset.animated = 'true';
+        initScrollAnimations();
+    }
 }

@@ -572,7 +572,7 @@ section {
 }
 
 .feature-emoji {
-    font-size: 7rem;
+    font-size: 5rem;
     z-index: 2;
 }
 
@@ -1463,10 +1463,6 @@ section {
 /* 文字ごとの波打つアニメーション */
 .footer-large-title span {
     display: inline-block;
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     animation: waveFloat 3s ease-in-out infinite;
 }
 
@@ -1511,12 +1507,13 @@ section {
         top: 70px;
         left: 0;
         width: 100%;
-        background: white;
+        background: #ffffff;
         flex-direction: column;
         padding: 2rem;
         gap: 1.5rem;
         transform: translateY(-100%);
         opacity: 0;
+        visibility: hidden;
         transition: all 0.3s ease;
         box-shadow: var(--shadow-lg);
         z-index: 999;
@@ -1525,6 +1522,15 @@ section {
     .nav-links.active {
         transform: translateY(0);
         opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-links.active a {
+        color: var(--color-text);
+    }
+
+    .nav-links.active a:hover {
+        color: var(--color-primary);
     }
 
     .mobile-menu-btn {
