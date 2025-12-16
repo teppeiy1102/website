@@ -1165,10 +1165,10 @@ function initHeroBgCarousel() {
     // 背景画像のパス（back.jpgとback1からback4）
     const backgroundImages = [
         'image/screen/back.jpg',
-        'image/screen/back1.png',
-        'image/screen/back2.png',
-        'image/screen/back3.png',
-        'image/screen/back4.png'
+        'image/screen/back1.jpg',
+        'image/screen/back2.jpg',
+        'image/screen/back3.jpg',
+        'image/screen/back4.jpg'
     ];
 
     let currentBgIndex = 0;
