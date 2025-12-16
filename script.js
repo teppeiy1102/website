@@ -22,7 +22,7 @@ const translations = {
         "feature.1.title": "位置情報ベースのガイド",
         "feature.1.desc": "GPSで現在地を自動取得。ボタン一つで、今いる場所の観光情報、歴史、文化をAIが詳しく解説します。",
         "feature.2.title": "地図機能",
-        "feature.2.desc": "OpenStreetMapで訪問履歴を記録。地図上のマーカーをタップして、過去のガイドをいつでも振り返れます。",
+        "feature.2.desc": "OpenStreetMapで訪問履歴を記録。地図上のマーカーをタップして、新しい場所を選択しガイドを取得したり、過去のガイドをいつでも振り返れます。",
         "feature.3.title": "音声読み上げ",
         "feature.3.desc": "ガイドテキストを自然な音声で読み上げ。移動中も耳で楽しめる、ハンズフリーな観光体験を。",
         "feature.4.title": "会話機能",
@@ -42,8 +42,8 @@ const translations = {
         "howuse.description": "すぐに始められる、シンプルな使い方",
         "step.1.title": "ガイドを選ぶ",
         "step.1.desc": "7人の個性豊かなAIガイドから、お好みのキャラクターを選択します。",
-        "step.2.title": "ボタンをタップ",
-        "step.2.desc": "「ガイドを取得」ボタンを押すだけ。位置情報から自動でガイドが生成されます。",
+        "step.2.title": "位置情報を設定",
+        "step.2.desc": "現在地でボタンを押すか、地図上でスポットを選んでガイドを取得。自動で詳しい情報を生成します。",
         "step.3.title": "旅を楽しむ",
         "step.3.desc": "音声で聞いたり、会話したり。気になることはどんどん質問しましょう！",
         "download.title": "今すぐ旅を始めよう",
@@ -66,7 +66,7 @@ const translations = {
         "nav.guides": "Guides",
         "nav.screenshots": "Screenshots",
         "nav.download": "Download",
-        "hero.title.line1": "Wherever you are,",
+        "hero.title.line1": "Wherever you are",
         "hero.title.line2": "AI guides your trip",
         "hero.description": "Using location information, 7 unique AI guides will guide you through the sightseeing information, history, and culture of your current location.",
         "hero.button.download": "Download for Free",
@@ -77,7 +77,7 @@ const translations = {
         "feature.1.title": "Location-based Guide",
         "feature.1.desc": "Automatically acquire current location with GPS. With one button, AI explains in detail the sightseeing information, history, and culture of where you are.",
         "feature.2.title": "Map Function",
-        "feature.2.desc": "Record visit history with OpenStreetMap. Tap markers on the map to look back on past guides anytime.",
+        "feature.2.desc": "Record visit history with OpenStreetMap. Tap markers on the map to select new locations and get guides, or look back on past guides anytime.",
         "feature.3.title": "Voice Reading",
         "feature.3.desc": "Read guide text with natural voice. Enjoy hands-free sightseeing experience even while moving.",
         "feature.4.title": "Conversation Function",
@@ -97,8 +97,8 @@ const translations = {
         "howuse.description": "Start right away with simple usage",
         "step.1.title": "Choose a Guide",
         "step.1.desc": "Select your favorite character from 7 unique AI guides.",
-        "step.2.title": "Tap the Button",
-        "step.2.desc": "Just press the \"Get Guide\" button. A guide is automatically generated from location information.",
+        "step.2.title": "Set Location",
+        "step.2.desc": "Press the button at your current location or select a spot on the map to get a guide. Detailed information is automatically generated.",
         "step.3.title": "Enjoy the Trip",
         "step.3.desc": "Listen by voice, have a conversation. Ask any questions you have!",
         "download.title": "Start Your Trip Now",
@@ -148,6 +148,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ヒーローセクションのスマホ画像カルーセル
     initHeroPhoneCarousel();
+
+    // ヒーロー背景のカルーセル
+    initHeroBgCarousel();
 
     // フッタータイトルのアニメーション
     initFooterTitleAnimation();
@@ -1151,3 +1154,40 @@ function initScreenshots() {
         initScrollAnimations();
     }
 }
+
+// ========================================
+// ヒーロー背景のカルーセル
+// ========================================
+function initHeroBgCarousel() {
+    const heroBg = document.querySelector('.hero-bg');
+    if (!heroBg) return;
+
+    // 背景画像のパス（back.jpgとback1からback4）
+    const backgroundImages = [
+        'image/screen/back.jpg',
+        'image/screen/back1.png',
+        'image/screen/back2.png',
+        'image/screen/back3.png',
+        'image/screen/back4.png'
+    ];
+
+    let currentBgIndex = 0;
+    const totalImages = backgroundImages.length;
+
+    // 初期背景を設定
+    heroBg.style.backgroundImage = `url('${backgroundImages[currentBgIndex]}')`;
+
+    // 5秒ごとに背景画像を切り替え
+    setInterval(() => {
+        // フェードアウト開始
+        heroBg.classList.add('fade-out');
+
+        // トランジション中に次の画像に変更
+        setTimeout(() => {
+            currentBgIndex = (currentBgIndex + 1) % totalImages;
+            heroBg.style.backgroundImage = `url('${backgroundImages[currentBgIndex]}')`;
+            heroBg.classList.remove('fade-out');
+        }, 500); // フェード効果の中間地点で画像切り替え
+    }, 5000); // 5秒ごと
+}
+

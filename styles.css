@@ -222,7 +222,6 @@ ul {
     display: flex;
     align-items: center;
     padding: 120px 0 80px;
-    background: url('image/screen/back.jpg') center/cover no-repeat;
     overflow: hidden;
 }
 
@@ -230,6 +229,15 @@ ul {
     position: absolute;
     inset: 0;
     z-index: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-bg.fade-out {
+    opacity: 0;
 }
 
 .hero-gradient {
