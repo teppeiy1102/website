@@ -475,47 +475,22 @@ function initHeroPhoneCarousel() {
         'image/rakuko.jpg'
     ];
 
-    let currentIndex = 0;
+    // 内部コンテナを作成
+    const innerContainer = document.createElement('div');
+    innerContainer.classList.add('phone-screen-inner');
 
-    // 画像要素を作成
-    guideImages.forEach((imagePath, index) => {
-        const img = document.createElement('img');
-        img.src = imagePath;
-        img.alt = `ガイド ${index + 1}`;
+    // 画像を2セット作成して無限スクロールを実現
+    for (let i = 0; i < 2; i++) {
+        guideImages.forEach((imagePath, index) => {
+            const img = document.createElement('img');
+            img.src = imagePath;
+            img.alt = `ガイド ${index + 1}`;
+            img.classList.add('carousel-slide');
+            innerContainer.appendChild(img);
+        });
+    }
 
-        if (index === 0) {
-            img.classList.add('active');
-        } else {
-            img.classList.add('next');
-        }
-
-        phoneScreen.appendChild(img);
-    });
-
-    const images = phoneScreen.querySelectorAll('img');
-
-    // 3秒ごとに画像を切り替え
-    setInterval(() => {
-        const currentImg = images[currentIndex];
-        const nextIndex = (currentIndex + 1) % images.length;
-        const nextImg = images[nextIndex];
-
-        // 現在の画像を左に回転させて消す
-        currentImg.classList.remove('active');
-        currentImg.classList.add('prev');
-
-        // 次の画像を右から回転させて表示
-        nextImg.classList.remove('next', 'prev');
-        nextImg.classList.add('active');
-
-        // アニメーション完了後、前の画像を次の状態にリセット
-        setTimeout(() => {
-            currentImg.classList.remove('prev');
-            currentImg.classList.add('next');
-        }, 600); // CSSのtransition時間と同じ
-
-        currentIndex = nextIndex;
-    }, 3000); // 3秒ごと
+    phoneScreen.appendChild(innerContainer);
 }
 
 // ========================================

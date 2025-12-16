@@ -386,35 +386,49 @@ ul {
     position: relative;
 }
 
+/* 横スクロールコンテナ */
+.phone-screen-inner {
+    display: flex;
+    width: fit-content;
+    height: 100%;
+    animation: horizontal-scroll 40s linear infinite;
+}
+
 .phone-screen img {
-    width: 100%;
+    width: 276px;
     height: 100%;
     object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease-in-out;
+    flex-shrink: 0;
 }
 
-/* 表示中の画像 */
-.phone-screen img.active {
-    transform: translateX(0);
+.phone-screen img.carousel-slide {
     opacity: 1;
-    z-index: 2;
-}
-
-/* 次に表示される画像（右から入る） */
-.phone-screen img.next {
-    transform: translateX(100%);
-    opacity: 0;
     z-index: 1;
 }
 
-/* 前に表示されていた画像（左に出る） */
-.phone-screen img.prev {
-    transform: translateX(-100%);
-    opacity: 1;
-    z-index: 0;
+/* グラデーションマスクでつなぎ目をぼかす */
+.phone-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(to right, #fff, transparent);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.phone-screen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(to left, #fff, transparent);
+    z-index: 10;
+    pointer-events: none;
 }
 
 .hero-scroll {
@@ -448,6 +462,16 @@ ul {
 
     50% {
         transform: scaleY(0.5);
+    }
+}
+
+/* 横スクロール無限アニメーション */
+@keyframes horizontal-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
     }
 }
 
