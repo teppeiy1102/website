@@ -5,6 +5,8 @@
 // 翻訳データ
 const translations = {
     ja: {
+        "app.title": "どこでもバスガイド",
+        "page.title": "どこでもバスガイド - AIがあなたの旅をもっと楽しく",
         "nav.features": "機能",
         "nav.guides": "ガイド紹介",
         "nav.screenshots": "スクリーンショット",
@@ -58,6 +60,8 @@ const translations = {
         "modal.intro": "💬 自己紹介"
     },
     en: {
+        "app.title": "DocoDemo Guide",
+        "page.title": "DocoDemo Guide - AI makes your trip more fun",
         "nav.features": "Features",
         "nav.guides": "Guides",
         "nav.screenshots": "Screenshots",
@@ -179,15 +183,18 @@ function updateLanguage() {
         }
     });
 
+    // フッタータイトルのアニメーションを再初期化（テキスト変更後）
+    initFooterTitleAnimation();
+
     // ペルソナとスクリーンショットを再描画
     // skipShowPersonaをtrueにして、updateLanguage内でshowPersonaを呼ばない
     initPersonas(true);
-    
+
     // 言語切り替え後、アニメーションを再表示
     setTimeout(() => {
         showPersona(currentPersonaIndex);
     }, 100);
-    
+
     // スクリーンショットセクションの強制更新フラグを設定
     const screenshotContainer = document.getElementById('screenshots-container');
     if (screenshotContainer) {
@@ -511,39 +518,73 @@ function initHeroPhoneCarousel() {
 // ========================================
 // フッタータイトルのアニメーション
 // ========================================
+// ========================================
+// フッタータイトルのアニメーション
+// ========================================
 function initFooterTitleAnimation() {
     const footerTitle = document.querySelector('.footer-large-title');
     if (!footerTitle) return;
 
-    const text = footerTitle.textContent;
+    // テキストを取得（スパンが含まれていてもtextContentならテキストのみ取得できる）
+    const text = footerTitle.textContent.trim();
+    if (!text) return;
+
     footerTitle.textContent = '';
 
-    // グラデーション設定（CSSの--gradient-textと同じ）
-    const gradientColor1 = '#667eea';
-    const gradientColor2 = '#764ba2';
-    const gradientColor3 = '#f093fb';
+    const spans = [];
 
-    // 各文字をspanで囲み、全体グラデーションの一部を表示
+    // 各文字をspanで囲む
     text.split('').forEach((char, index) => {
         const span = document.createElement('span');
         span.textContent = char;
-        
-        // 文字の総数に基づいてグラデーション範囲を計算
-        const totalChars = text.length;
-        const percentage = (index / totalChars) * 100;
-        
-        // 各文字に対して全体グラデーションの対応部分を背景として設定
-        span.style.background = `linear-gradient(90deg, ${gradientColor1} 0%, ${gradientColor2} 50%, ${gradientColor3} 100%)`;
-        span.style.backgroundPosition = `${-percentage}% 0`;
-        span.style.backgroundSize = `${totalChars * 100}% 100%`;
-        span.style.backgroundClip = 'text';
-        span.style.webkitBackgroundClip = 'text';
-        span.style.webkitTextFillColor = 'transparent';
-        
-        // 各文字に遅延を設定して波のような動きを作る
+
+        // アニメーション遅延
         span.style.animationDelay = `${index * 0.1}s`;
+
+        // グラデーションスタイル
+        // CSS変数を使用して一貫性を保つ
+        span.style.background = 'var(--gradient-text)';
+        span.style.webkitBackgroundClip = 'text';
+        span.style.backgroundClip = 'text';
+        span.style.color = 'transparent';
+        // 一部のブラウザでの表示対策
+        span.style.webkitTextFillColor = 'transparent';
+        span.style.display = 'inline-block';
+
         footerTitle.appendChild(span);
+        spans.push(span);
     });
+
+    // 位置合わせ関数（ピクセル単位で正確に計算）
+    const updateGradientPositions = () => {
+        const parentRect = footerTitle.getBoundingClientRect();
+
+        spans.forEach(span => {
+            const spanRect = span.getBoundingClientRect();
+            // 親要素からの相対位置を計算
+            const relativeLeft = spanRect.left - parentRect.left;
+
+            // 背景サイズを親要素の幅に合わせ、位置をオフセットさせることで
+            // 連続したグラデーションに見せる
+            span.style.backgroundSize = `${parentRect.width}px 100%`;
+            span.style.backgroundPosition = `-${relativeLeft}px 0`;
+        });
+    };
+
+    // 初期化時とリサイズ時に位置を更新
+    // レイアウト確定待ち
+    requestAnimationFrame(() => {
+        updateGradientPositions();
+        // フォント読み込み等でずれる可能性があるため、少し遅延しても実行
+        setTimeout(updateGradientPositions, 100);
+    });
+
+    window.addEventListener('resize', updateGradientPositions);
+
+    // フォント読み込み完了時にも実行
+    if (document.fonts) {
+        document.fonts.ready.then(updateGradientPositions);
+    }
 }
 
 // ========================================
@@ -789,7 +830,7 @@ window.addEventListener('resize', () => {
     if (resizeTimeoutId !== null) {
         clearTimeout(resizeTimeoutId);
     }
-    
+
     // 現在は特に処理なし
 });
 

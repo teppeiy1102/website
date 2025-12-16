@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>どこでもバスガイド - AIがあなたの旅をもっと楽しく</title>
+    <title data-i18n="page.title">どこでもバスガイド - AIがあなたの旅をもっと楽しく</title>
     <meta name="description" content="位置情報とAIを活用した観光ガイドアプリ。7種類の個性豊かなAIガイドがあなたの旅をサポートします。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +21,7 @@
             border-radius: 20px;
             cursor: pointer;
             font-size: 0.9rem;
-            margin-left: 15px;
+            margin-left: 0;
             transition: all 0.3s ease;
         }
 
@@ -44,21 +44,26 @@
         <div class="nav-container">
             <a href="#" class="logo">
                 <img src="image/iconimage.jpg" alt="どこでもバスガイド" class="logo-image">
-                <span class="logo-text">どこでもバスガイド</span>
+                <span class="logo-text" data-i18n="app.title">どこでもバスガイド</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="#features" data-i18n="nav.features">機能</a></li>
-                <li><a href="#personas" data-i18n="nav.guides">ガイド紹介</a></li>
-                <li><a href="#screenshots" data-i18n="nav.screenshots">スクリーンショット</a></li>
-                <li><a href="#download" class="btn-nav" data-i18n="nav.download">ダウンロード</a></li>
-                <li><button id="lang-switch" class="lang-switch">English</button></li>
-            </ul>
-            <button class="mobile-menu-btn" aria-label="メニュー">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#features" data-i18n="nav.features">機能</a></li>
+                    <li><a href="#personas" data-i18n="nav.guides">ガイド紹介</a></li>
+                    <li><a href="#screenshots" data-i18n="nav.screenshots">スクリーンショット</a></li>
+                    <li><a href="#download" class="btn-nav" data-i18n="nav.download">ダウンロード</a></li>
+                </ul>
+
+
+                <button class="mobile-menu-btn" aria-label="メニュー">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button id="lang-switch" class="lang-switch">English</button>
+            </div>
         </div>
+
     </nav>
 
     <!-- ヒーローセクション -->
@@ -325,10 +330,10 @@
                 </div>
             </div>
             <div class="footer-large-brand">
-                <h2 class="footer-large-title">どこでもバスガイド</h2>
+                <h2 class="footer-large-title" data-i18n="app.title">どこでもバスガイド</h2>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 どこでもバスガイド. All rights reserved.</p>
+                <p>&copy; 2025 <span data-i18n="app.title">どこでもバスガイド</span>. All rights reserved.</p>
                 <p class="credits">
                     <span data-i18n="footer.mapdata">地図データ</span>: <a href="https://www.openstreetmap.org/"
                         target="_blank" rel="noopener">OpenStreetMap</a>
