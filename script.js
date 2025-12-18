@@ -577,7 +577,7 @@ const personasData = [
         guideName: { ja: '高橋 真理', en: 'Mari Takahashi' },
         description: { ja: 'あらゆる分野に精通したオールマイティなガイド', en: 'All-mighty guide well-versed in all fields' },
         specialty: { ja: '歴史、グルメ、観光スポット、自然、文化など全ての分野を幅広くカバー', en: 'Broadly covers history, gourmet, spots, nature, and culture' },
-        imagePath: 'image/mari.jpg',
+        imagePath: 'image/mariin.jpg',
         faceImagePath: 'image/mariface.jpg',
         color: '#3B82F6',
         selfIntro: {
@@ -592,7 +592,7 @@ const personasData = [
         guideName: { ja: '佐藤 文子', en: 'Fumiko Sato' },
         description: { ja: '歴史と文化遺産の専門家', en: 'Expert in history and cultural heritage' },
         specialty: { ja: '日本史、世界史、文化財、歴史的建造物の解説', en: 'Explanation of Japanese history, world history, cultural assets, and historical buildings' },
-        imagePath: 'image/fumiko.jpg',
+        imagePath: 'image/fumikoin.jpg',
         faceImagePath: 'image/fumikoface.jpg',
         color: '#8B5CF6',
         selfIntro: {
@@ -607,7 +607,7 @@ const personasData = [
         guideName: { ja: '田中 美香', en: 'Mika Tanaka' },
         description: { ja: 'ご当地グルメと食文化の専門家', en: 'Expert in local gourmet and food culture' },
         specialty: { ja: 'ご当地料理、人気店、食文化、B級グルメの紹介', en: 'Introduction of local cuisine, popular shops, food culture, and B-class gourmet' },
-        imagePath: 'image/mika.jpg',
+        imagePath: 'image/mikain.jpg',
         faceImagePath: 'image/mikaface.jpg',
         color: '#F59E0B',
         selfIntro: {
@@ -622,7 +622,7 @@ const personasData = [
         guideName: { ja: '山本 あかり', en: 'Akari Yamamoto' },
         description: { ja: '流行スポットとSNS映えの専門家', en: 'Expert in trendy spots and SNS appeal' },
         specialty: { ja: '話題のスポット、インスタ映え、若者文化、最新トレンド', en: 'Hot spots, Insta-worthy, youth culture, latest trends' },
-        imagePath: 'image/akari.jpg',
+        imagePath: 'image/akariin.jpg',
         faceImagePath: 'image/akariface.jpg',
         color: '#EC4899',
         selfIntro: {
@@ -637,7 +637,7 @@ const personasData = [
         guideName: { ja: '木村 緑', en: 'Midori Kimura' },
         description: { ja: '自然と景観の専門家', en: 'Expert in nature and landscapes' },
         specialty: { ja: '自然景観、公園、庭園、四季の風景、動植物の解説', en: 'Explanation of natural landscapes, parks, gardens, seasonal scenery, plants and animals' },
-        imagePath: 'image/midori.jpg',
+        imagePath: 'image/midoriin.jpg',
         faceImagePath: 'image/midoriface.jpg',
         color: '#10B981',
         selfIntro: {
@@ -652,7 +652,7 @@ const personasData = [
         guideName: { ja: '鈴木 愛', en: 'Ai Suzuki' },
         description: { ja: 'お土産とショッピングの専門家', en: 'Expert in souvenirs and shopping' },
         specialty: { ja: 'お土産、ショッピングモール、伝統工芸品、地域の名産品', en: 'Souvenirs, shopping malls, traditional crafts, regional specialties' },
-        imagePath: 'image/ai.jpg',
+        imagePath: 'image/aiin.jpg',
         faceImagePath: 'image/aiface.jpg',
         color: '#EF4444',
         selfIntro: {
@@ -667,7 +667,7 @@ const personasData = [
         guideName: { ja: '伊藤 楽子', en: 'Rakuko Ito' },
         description: { ja: 'エンターテイメントとアクティビティの専門家', en: 'Expert in entertainment and activities' },
         specialty: { ja: 'テーマパーク、レジャー施設、イベント、体験アクティビティ', en: 'Theme parks, leisure facilities, events, experience activities' },
-        imagePath: 'image/rakuko.jpg',
+        imagePath: 'image/rakukoin.jpg',
         faceImagePath: 'image/rakukoface.jpg',
         color: '#06B6D4',
         selfIntro: {
