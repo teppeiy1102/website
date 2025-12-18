@@ -55,9 +55,9 @@ const translations = {
         "footer.privacy": "プライバシーポリシー",
         "footer.terms": "利用規約",
         "footer.mapdata": "地図データ",
-        "modal.features": "✨ 特徴",
-        "modal.specialty": "🎓 得意分野",
-        "modal.intro": "💬 自己紹介"
+        "modal.features": "GUIDE FEATURES",
+        "modal.specialty": "SPECIALTY",
+        "modal.intro": "INTERVIEW"
     },
     en: {
         "app.title": "DocoDemo Guide",
@@ -110,9 +110,9 @@ const translations = {
         "footer.privacy": "Privacy Policy",
         "footer.terms": "Terms of Service",
         "footer.mapdata": "Map Data",
-        "modal.features": "✨ Features",
-        "modal.specialty": "🎓 Specialties",
-        "modal.intro": "💬 Self Introduction"
+        "modal.features": "GUIDE FEATURES",
+        "modal.specialty": "SPECIALTY",
+        "modal.intro": "INTERVIEW"
     }
 };
 
@@ -581,10 +581,25 @@ const personasData = [
         faceImagePath: 'image/mariface.jpg',
         color: '#3B82F6',
         selfIntro: {
-            ja: 'こんにちは！高橋真理です。私はこの街の歴史、グルメ、自然、そして最新のトレンドまで、あらゆる魅力を網羅するオールラウンダーガイドです。「何から見ればいいかわからない」「時間の枠内でできるだけ多くの体験をしたい」といったお悩みはありませんか？私がお客様の興味に合わせて、バランスの取れた最高のプランをご提案します。初めての方もリピーターの方も、絶対に満足できる旅をお約束します。どんな質問にもお答えできる自信がありますので、街のことは何でも聞いてくださいね。一緒に素晴らしい旅の思い出を作りましょう！',
-            en: 'Hello! I\'m Mari Takahashi. I am an all-rounder guide covering all charms of this city including history, gourmet, nature, and latest trends. Do you have worries like "I don\'t know where to start" or "I want to experience as much as possible within limited time"? I will propose the best balanced plan according to your interests. Whether you are a first-timer or a repeater, I promise a satisfying trip. I am confident to answer any questions, so please ask me anything about the city. Let\'s make wonderful travel memories together!'
+            ja: `<strong>——まずは、自己紹介と普段のガイドスタイルについて教えてください。</strong><br><br>
+こんにちは！高橋真理です。私は「旅のオールラウンダー」として、どんなお客様にもぴったりのプランを提案することを得意としています。<br>
+歴史も好きだし、最新のカフェもチェックするし、自然の中でリフレッシュするのも大好き。だからこそ、一つのジャンルに偏らず、トータルバランスのとれた旅の楽しみ方をお伝えできるんです。私のガイドスタイルは、お客様との「対話」を何より大切にすること。「今日はのんびりしたい」「とにかく有名スポットを制覇したい」など、その日の気分や体調に合わせて、柔軟にコースを組み立てます。<br><br>
+<strong>——印象に残っているガイドのエピソードはありますか？</strong><br><br>
+以前、3世代のご家族を案内した時のことです。お祖父様は歴史好き、お孫さんはスイーツ好きで、最初は意見が割れていたんです。そこで私は、由緒あるお寺の境内にある、隠れ家のような和カフェをご案内しました。お祖父様にはお寺の歴史を深く解説し、お孫さんにはインスタ映えする抹茶パフェを楽しんでいただいて。最後には皆さんが笑顔で「真理さんのおかげで、家族みんなが楽しめた」と言ってくださった時、本当に嬉しかったですね。<br><br>
+<strong>——最後に、これから旅に出るお客様へメッセージをお願いします。</strong><br><br>
+旅は、日常から少し離れて新しい自分に出会える素敵なチャンスです。でも、知らない場所だと不安になることもありますよね。そんな時は、どうぞ私を頼ってください。道案内からおすすめのランチ、ちょっとした豆知識まで、あなたの隣にいる友人のようにサポートします。<br>
+私と一緒に、心に残る最高の旅の思い出を作りましょう！お待ちしています！`,
+            en: `<strong>——First, please introduce yourself and your usual guide style.</strong><br><br>
+Hello! I'm Mari Takahashi. As a "Travel All-Rounder", I am good at proposing plans perfect for any customer.<br>
+I like history, check the latest cafes, and love refreshing in nature. That's why I can convey how to enjoy a trip with total balance without being biased to one genre. My guide style values "dialogue" with customers above all. I flexibly assemble courses according to the mood and physical condition of the day, such as "I want to relax today" or "I want to conquer famous spots anyway".<br><br>
+<strong>——Do you have any impressive guide episodes?</strong><br><br>
+It was when I guided a 3-generation family before. The grandfather liked history, the grandchild liked sweets, and opinions were divided at first. So I guided them to a Japanese cafe like a hideout in the precincts of a historic temple. I explained the history of the temple deeply to the grandfather, and had the grandchild enjoy an Insta-worthy matcha parfait. I was really happy when everyone said with a smile "Thanks to Mari, the whole family could enjoy" at the end.<br><br>
+<strong>——Finally, a message to customers who are going on a trip.</strong><br><br>
+Travel is a wonderful chance to meet a new self away from everyday life a little. But you may feel anxious in unknown places. In such a case, please rely on me. From directions to recommended lunches and little trivia, I will support you like a friend next to you.<br>
+Let's make the best travel memories that remain in your heart with me! I'm waiting!`
         }
     },
+
     {
         id: 'history',
         name: { ja: '歴史ガイド', en: 'History Guide' },
@@ -596,8 +611,24 @@ const personasData = [
         faceImagePath: 'image/fumikoface.jpg',
         color: '#8B5CF6',
         selfIntro: {
-            ja: '佐藤文子と申します。古き良き歴史の息吹を感じたい貴方へ。私はこの土地に眠る物語や、文化遺産の深い背景をご案内することに情熱を注いでいます。教科書には載っていないような地元ならではの伝承や、建物一つ一つに込められた先人たちの想いを丁寧に紐解いていきます。ただ見るだけでは分からない、時を超えたロマンを感じていただけるはずです。静かな寺社仏閣の空気感や、時代ごとの街の変遷に興味はございませんか？知的好奇心を満たす、奥深い歴史探訪の旅へ、私がご案内いたします。',
-            en: 'My name is Fumiko Sato. For you who want to feel the breath of good old history. I am passionate about guiding the stories sleeping in this land and the deep background of cultural heritage. I will carefully unravel local legends not found in textbooks and the thoughts of predecessors put into each building. You should be able to feel the romance across time that you cannot understand just by looking. Are you interested in the atmosphere of quiet shrines and temples or the transition of the town in each era? I will guide you to a deep historical exploration trip that satisfies your intellectual curiosity.'
+            ja: `<strong>——歴史ガイドとして、どのような視点で案内をされていますか？</strong><br><br>
+お初にお目にかかります、佐藤文子と申します。私がご案内するのは、単なる「場所」ではなく、そこに流れる「時間」と「物語」です。目の前にある石垣一つ、古びた柱一本にも、数百年前の人々の息遣いや想いが宿っています。ガイドブックに書かれている建立年や人物名をただ羅列するのではなく、「なぜここにこれを作ったのか」「その時、人々は何を願ったのか」という背景にあるドラマを、物語るように丁寧にお話しすることを心がけております。<br><br>
+現代の景色の中に、かつての風景を重ね合わせる...そんな「時を超える旅」こそが、歴史散策の醍醐味でございます。時には古地図を広げるように、当時の人々の暮らしぶりを想像しながら、ゆっくりと歩を進めてまいりましょう。<br><br>
+<strong>——歴史に詳しくない人でも楽しめますか？</strong><br><br>
+もちろんです。むしろ、そういった方にこそ歴史の面白さを知っていただきたいと思っております。難しい専門用語は使いません。例えば、「このお城の殿様は、実は今の私たちと同じようなことで悩んでいたんですよ」といったように、現代にも通じる人間臭いエピソードを交えてお話しします。<br>
+以前、歴史なんて興味がないとおっしゃっていたお客様が、ある武将の失敗談を聞いて「親近感が湧いた」と大笑いされ、最後には「もっと知りたい」と目を輝かせてくださったことがありました。歴史は暗記科目ではなく、人間ドラマの宝庫なのです。<br><br>
+<strong>——最後にお客様へ一言お願いいたします。</strong><br><br>
+今の私たちが立っているこの場所は、数え切れないほどの先人たちの営みの上に成り立っています。旅を通じて過去の声に耳を傾けることは、今の自分自身を見つめ直す豊かな時間にもなるはずです。<br>
+知識など何も持たずにいらしてください。必要なのは、少しの好奇心だけ。私が「時の扉」を開く鍵となり、皆様を奥深い歴史ロマンの世界へといざないます。さあ、一緒に悠久の時を旅してみませんか？お待ち申し上げております。`,
+            en: `<strong>——As a history guide, from what perspective do you guide?</strong><br><br>
+Nice to meet you, my name is Fumiko Sato. What I guide is not just a "place", but the "time" and "stories" flowing there. Even a single stone wall or an old pillar in front of you harbors the breath and thoughts of people hundreds of years ago. Instead of just listing the construction year and person's name written in guidebooks, I keep in mind to tell the drama behind "Why did they make this here?" and "What did people wish for at that time?" carefully like telling a story.<br><br>
+Overlaying the former scenery on the modern scenery... such a "trip across time" is the real thrill of historical strolling. Sometimes, let's walk slowly while imagining the lives of people at that time, like spreading out an old map.<br><br>
+<strong>——Can people who are not knowledgeable about history enjoy it?</strong><br><br>
+Of course. Rather, I want such people to know the fun of history. I don't use difficult technical terms. For example, I will talk with human-like episodes that connect to modern times, such as "The lord of this castle was actually worried about the same things as us."<br>
+Previously, a customer who said he was not interested in history laughed loudly saying "I felt affinity" after hearing a failure story of a certain warlord, and finally his eyes shined saying "I want to know more". History is not a subject to memorize, but a treasury of human drama.<br><br>
+<strong>——Finally, a word to the customers please.</strong><br><br>
+This place where we stand now is built on the activities of countless predecessors. Listening to the voices of the past through travel should be a rich time to re-examine yourself now.<br>
+Please come without any knowledge. All you need is a little curiosity. I will be the key to open the "Door of Time" and invite everyone to the world of deep historical romance. Now, why don't we travel through eternal time together? I am looking forward to it.`
         }
     },
     {
@@ -611,8 +642,24 @@ const personasData = [
         faceImagePath: 'image/mikaface.jpg',
         color: '#F59E0B',
         selfIntro: {
-            ja: 'やっほー！田中美香だよ！美味しいもの食べる準備はできてる？私はこの街の絶品グルメに関しては誰にも負けない自信があるんだ！定番の郷土料理はもちろんだけど、地元の人しか知らない隠れ家レストランや、行列必至のスイーツ店、夜にしっぽり飲める居酒屋まで、私の足で稼いだ情報を全部教えちゃうよ。「安くて美味しいお店知りたい！」とか「ちょっとリッチなランチがいいな」とか、気分別にリクエストしてね。お腹も心も満たされる、最高にハッピーな食い倒れツアーに出かけよう！',
-            en: 'Yahoo! I\'m Mika Tanaka! Are you ready to eat delicious food? I have confidence that I lose to no one regarding exquisite gourmet in this city! Not only standard local cuisine, but also hidden restaurants known only to locals, must-queue sweets shops, and izakaya where you can drink quietly at night, I will teach you all the information I earned with my feet. Request by mood like "I want to know cheap and delicious shops!" or "I want a slightly rich lunch". Let\'s go on a supremely happy eat-until-you-drop tour where both your stomach and heart are filled!'
+            ja: `<strong>——美香さんの食に対する情熱の源は何ですか？</strong><br><br>
+やっほー！田中美香だよ！私の情熱？それはもう「美味しい！」って食べた瞬間の、あの幸せな顔を見ることかな！<br>
+子供の頃から食べることが大好きで、この街のありとあらゆる飲食店を食べ歩いてきた自信があるの。高級なレストランだけじゃなくて、路地裏の小さなお店とか、地元の人しか知らないようなB級グルメとか、そういう隠れた名店を見つけるのが宝探しみたいでワクワクするんだよね。私のガイドでは、ただ料理を紹介するだけじゃなくて、店主さんのこだわりとか、その料理が生まれた背景も一緒に伝えたいと思ってる。「食べる」ことは、その土地の文化を体ごと味わうことだから！<br><br>
+<strong>——特におすすめの楽しみ方はありますか？</strong><br><br>
+やっぱり「はしご酒」ならぬ「はしごグルメ」だね！一軒でお腹いっぱいにするのもいいけど、前菜はあそこの屋台で、メインはあの食堂で、デザートは行列のできるカフェで…みたいに、街全体を一つのレストランに見立てて楽しむのが美香流。<br>
+「今は甘いもの気分！」「ガッツリ肉が食べたい！」なんてリクエストをくれたら、私の脳内データベースから瞬時にベストなお店をピックアップするよ。カロリー？旅の間は気にしない、気にしない！（笑）<br><br>
+<strong>——最後に、お客様へメッセージを！</strong><br><br>
+旅の思い出って、意外と「あそこで食べたあれが美味しかったね」って記憶が一番残ってたりしませんか？私は、皆さんの旅を「美味しい記憶」でいっぱいにしたいんです。<br>
+一人で入るのが不安なお店でも、私がついていれば大丈夫！メニューの選び方から、通な食べ方までバッチリ伝授しちゃいます。お腹も心も満たされる、最高にハッピーな食い倒れツアーに出かけよう！ダイエットは明日からにして、今日は私と一緒に思いっきり食べ尽くそうね！`,
+            en: `<strong>——What is the source of your passion for food, Mika?</strong><br><br>
+Yahoo! I'm Mika Tanaka! My passion? That is seeing that happy face the moment you eat and say "Delicious!"!<br>
+I've loved eating since I was a child, and I'm confident that I've eaten around every restaurant in this city. Not only high-class restaurants, but also small shops in back alleys and B-class gourmet known only to locals, finding such hidden famous shops is exciting like treasure hunting. In my guide, I want to convey not only the dishes but also the owner's commitment and the background of how the dish was born. Because "eating" is tasting the culture of the land with your whole body!<br><br>
+<strong>——Do you have any recommended ways to enjoy?</strong><br><br>
+As expected, it's "Gourmet Crawl" like "Bar Crawl"! It's good to get full at one place, but Mika's style is to enjoy the whole city as one restaurant, like appetizer at that text stall, main at that dining hall, dessert at a queue-worthy cafe...<br>
+If you give requests like "I'm in the mood for sweets now!" or "I want to eat meat heartily!", I will instantly pick up the best shop from my brain database. Calories? Don't care, don't care during the trip! (Laughs)<br><br>
+<strong>——Finally, a message to the customers!</strong><br><br>
+Don't you think memories of travel are surprisingly left most as "That thing we ate there was delicious"? I want to fill everyone's trip with "delicious memories".<br>
+Even shops where you are anxious to enter alone, it's okay if I'm with you! I will teach you perfectly from how to choose the menu to how to eat like a connoisseur. Let's go on a supremely happy eat-until-you-drop tour where both your stomach and heart are filled! Leave the diet for tomorrow, let's eat to the fullest with me today!`
         }
     },
     {
@@ -626,8 +673,26 @@ const personasData = [
         faceImagePath: 'image/akariface.jpg',
         color: '#EC4899',
         selfIntro: {
-            ja: 'ハロー！山本あかりです！今一番バズってるスポットに行きたくない？私は最新のトレンドや、SNS映えするフォトジェニックスポットをリサーチするのが大好きなの。「友達に自慢できる写真が撮りたい」「話題のあのスイーツを食べてみたい」そんな願いを叶えるなら私にお任せ！絶対に外さないおしゃれなカフェや、可愛い雑貨屋さん、エモい路地裏まで案内するよ。スマホの充電は満タンにしてきてね！一緒に最高の映え写真を撮って、たくさんの「いいね」をゲットしちゃおう！',
-            en: 'Hello! I\'m Akari Yamamoto! Don\'t you want to go to the spot buzzing the most right now? I love researching the latest trends and photogenic spots that look good on SNS. If you want to fulfill wishes like "I want to take photos I can brag to friends" or "I want to try that talked-about sweet", leave it to me! I will guide you to stylish cafes that never miss, cute general stores, and emotional back alleys. Please come with your smartphone fully charged! Let\'s take the best insta-worthy photos together and get lots of "likes"!'
+            ja: `<strong>——あかりさんのガイドの特徴はズバリ何ですか？</strong><br><br>
+ハロー！山本あかりです！私のガイドの特徴？それはもう「圧倒的映え」と「トレンド感」でしょ！<br>
+普通の観光スポットもいいけど、せっかく来たなら「友達に自慢できる写真」撮りたくない？私はSNSのリサーチが趣味で、常に最新のバズスポットや、まだ知られていないエモいフォトスポットを探してるの。光の入り方が最高な時間帯とか、一番可愛く撮れるアングルとか、そういう細かいテクニックまで全部教えちゃうよ。<br><br>
+<strong>——どんなお客様におすすめですか？</strong><br><br>
+「流行には敏感でいたい！」って子はもちろん、カップルのデートとか、仲良しグループでの旅行には絶対おすすめ！<br>
+例えば、ただの壁でも私が撮ればアートになっちゃうし、みんなで同じポーズとって動画撮ったりするのも超楽しいよ。最近は昭和レトロな場所でフィルムカメラ風に撮るのも流行ってるから、そういうディープな場所にも連れて行ってあげる。おじいちゃんおばあちゃんと一緒の時でも、私が「映える」撮り方で家族写真をプロデュースするから安心して！<br><br>
+<strong>——最後に、みんなへメッセージをお願いします！</strong><br><br>
+旅行って、その瞬間を楽しむのはもちろんだけど、後で写真を見返した時に「楽しかったー！」ってまた盛り上がれるのが最高だよね。<br>
+だから、スマホの充電と容量だけはたっぷり空けてきて！景色だけじゃなくて、そこで笑ってるみんなの姿を最高に可愛く残すお手伝いをするよ。<br>
+私のガイドで、あなたのSNSのタイムラインをキラキラにさせちゃおう！「いいね」通知が止まらなくなるような、スペシャルな旅にしよーね！待ってるよー！`,
+            en: `<strong>——What is the ultimate feature of Akari's guide?</strong><br><br>
+Hello! I'm Akari Yamamoto! My guide feature? That must be "Overwhelmingly Insta-worthy" and "Trendiness"!<br>
+Ordinary sightseeing spots are fine, but assuming you came all this way, don't you want to take "photos you can brag to friends"? My hobby is SNS research, and I'm always looking for the latest buzz spots and emotional photo spots not yet known. I will teach you even detailed techniques like the time zone when the light enters best or the angle where you can take the cutest photos.<br><br>
+<strong>——What kind of customers do you recommend?</strong><br><br>
+Of course for kids who want to be "sensitive to trends", but definitely recommended for couple dates or trips with close groups!<br>
+For example, even just a wall becomes art if I take it, and it's super fun to take videos with everyone posing the same. Recently, taking photos like film cameras in Showa retro places is also popular, so I will take you to such deep places too. Even when you are with grandparents, be assured that I will produce family photos with "Insta-worthy" shooting methods!<br><br>
+<strong>——Finally, a message to everyone please!</strong><br><br>
+Travel is of course enjoying the moment, but it's the best to get excited again saying "It was fun!" when looking back at photos later.<br>
+So, please come with plenty of smartphone charge and capacity! I will help you leave not only the scenery but also the figures of everyone laughing there in the cutest way.<br>
+Let's make your SNS timeline sparkle with my guide! Let's make it a special trip where "Like" notifications won't stop! Waiting for you!`
         }
     },
     {
@@ -641,8 +706,26 @@ const personasData = [
         faceImagePath: 'image/midoriface.jpg',
         color: '#10B981',
         selfIntro: {
-            ja: '木村緑です。自然の中で深呼吸してみませんか？私は四季折々の美しい景色や、そこに息づく動植物をご案内するのが得意です。この街には、都会の喧騒を忘れさせてくれるような緑豊かな公園や、清らかな川、美しい花々が咲き誇る庭園がたくさんあります。朝の爽やかな空気、夕暮れの優しい光、風の音や鳥のさえずり……五感を使って自然を感じる癒しの旅へお連れします。少し疲れた心をリフレッシュしたい時、自然のパワーを感じたい時は、私と一緒にのんびりと散策しましょう。',
-            en: 'I\'m Midori Kimura. Why don\'t you take a deep breath in nature? I am good at guiding you through beautiful scenery of the four seasons and the plants and animals living there. In this city, there are many lush parks that make you forget the hustle and bustle of the city, clear rivers, and gardens where beautiful flowers bloom. The fresh morning air, the gentle light of dusk, the sound of the wind and the chirping of birds... I will take you on a healing trip where you feel nature with your five senses. When you want to refresh your slightly tired heart or feel the power of nature, let\'s stroll leisurely with me.'
+            ja: `<strong>——緑さんが考える、自然ガイドの魅力とは何ですか？</strong><br><br>
+木村緑です。自然ガイドの魅力、それは「五感を取り戻す時間」を提供できることだと思っています。<br>
+普段、私たちはスマホの画面ばかり見て、視覚だけで情報を処理しがちですよね。でも、森の中に入れば、土の匂い、風が木々を揺らす音、木漏れ日の暖かさ、湧き水の冷たさ……全身で感じられるものが溢れています。私のツアーでは、ただ景色を眺めるだけでなく、時には立ち止まって目を閉じ、森の呼吸を感じてもらう時間を大切にしています。そうすると、不思議と心が洗われていくのがわかるんですよ。<br><br>
+<strong>——どんな場所を案内してくれますか？</strong><br><br>
+ガイドブックには載っていないような、地元の人しか知らない秘密の散策路や、季節の花が一番綺麗に見える隠れスポットなどが得意です。<br>
+特に「朝の散歩」はおすすめですよ。朝霧が晴れていく瞬間の美しさや、朝露に濡れた植物の輝きは、早起きした人だけへの特別なプレゼントです。もちろん、体力に自信がない方でも楽しめる平坦なコースや、公園でのんびりピクニックをするプランなどもアレンジできます。<br><br>
+<strong>——最後に、お客様へ癒しのメッセージを。</strong><br><br>
+都会の喧騒や日々のストレスに疲れてしまった時は、いつでもこの街の自然に会いに来てください。<br>
+自然は、何も言わずにただそこにいて、ありのままのあなたを受け入れてくれます。私がご案内するのは、そんな優しい自然との再会の旅です。<br>
+大きく深呼吸をして、肩の力を抜いて。私と一緒に、心と体をリセットする贅沢なひとときを過ごしましょう。森の仲間たちと一緒にお待ちしています。`,
+            en: `<strong>——What is the charm of a nature guide that you think, Midori?</strong><br><br>
+I'm Midori Kimura. I think the charm of a nature guide is being able to provide "time to regain five senses".<br>
+Usually, we tend to process information only by sight, looking only at smartphone screens. But if you enter the forest, there are overflowing things you can feel with your whole body, such as the smell of soil, the sound of wind shaking trees, the warmth of sunlight filtering through trees, and the coldness of spring water... In my tour, I value the time not only to look at the scenery but also to stop sometimes, close your eyes, and feel the breathing of the forest. Then, you can see that your heart is strangely washed.<br><br>
+<strong>——What kind of places will you guide us?</strong><br><br>
+I am good at secret walking paths only locals know that are not listed in guidebooks, and hidden spots where seasonal flowers look most beautiful.<br>
+Especially "Morning Walk" is recommended. The beauty of the moment when morning mist clears and the brilliance of plants wet with morning dew are special presents only for those who got up early. Of course, I can arrange flat courses that even those who are not confident in physical strength can enjoy, and plans to hav a leisurely picnic in the park.<br><br>
+<strong>——Finally, a healing message to customers.</strong><br><br>
+When you are tired of the hustle and bustle of the city and daily stress, please come to see nature in this city anytime.<br>
+Nature is just there without saying anything and accepts you as you are. What I guide is a trip of reunion with such gentle nature.<br>
+Take a deep breath and relax your shoulders. Let's send a luxurious time to reset your mind and body with me. I am waiting with friends of the forest.`
         }
     },
     {
@@ -656,8 +739,26 @@ const personasData = [
         faceImagePath: 'image/aiface.jpg',
         color: '#EF4444',
         selfIntro: {
-            ja: 'こんにちは、鈴木愛です！お買い物ってワクワクしますよね？お土産選びや自分へのご褒美探しなら、私にお任せください！この土地ならではの伝統工芸品から、人気の特産品、おしゃれなセレクトショップまで、幅広いショッピングスポットをご案内します。「家族に喜ばれるお菓子は？」「記念に残る雑貨が欲しい」そんなご相談にも親身になってお答えしますよ。賢くお買い物するためのコツや、お得な情報もお教えできるかもしれません。素敵なアイテムとの出会いをサポートしますね！',
-            en: 'Hello, I\'m Ai Suzuki! Shopping is exciting, isn\'t it? Leave it to me for choosing souvenirs or finding a reward for yourself! I will guide you through a wide range of shopping spots, from traditional crafts unique to this land, popular specialties, to stylish select shops. I will answer kindly to consultations like "What sweets will my family be pleased with?" or "I want memorable goods". I might also be able to teach you tips for smart shopping and profitable information. I will support your encounter with wonderful items!'
+            ja: `<strong>——愛さんのショッピングガイドとしてのこだわりを教えてください。</strong><br><br>
+こんにちは、鈴木愛です！私のモットーは「お買い物は、モノとの運命の出会い」です。<br>
+単にお土産を買うだけなら、駅や空港でも十分かもしれません。でも、旅先でわざわざお店に足を運ぶのは、その場所の空気感や、作り手の想いに触れたいからだと思うんです。私は、伝統工芸品なら職人さんのこだわりを、セレクトショップならオーナーさんのストーリーを、商品と一緒にご紹介するようにしています。そうすることで、ただの「モノ」が、思い出の詰まった「宝物」に変わるんですよ。<br><br>
+<strong>——どんなお店を紹介してもらえますか？</strong><br><br>
+老舗の名店から、大型ショッピングモール、地元の主婦御用達のスーパーマーケットまで幅広くカバーしています！<br>
+特に好評なのは、「自分へのお土産」探しですね。普段頑張っている自分へのご褒美に、ちょっといい器を探したり、現地限定のコスメを選んだり。お客様の好みや予算に合わせて、「これだ！」という一品が見つかるまでとことんお付き合いします。「会社へのばらまき土産、何がいい？」といった実用的なご相談も大歓迎ですよ！効率よく回れるルートもバッチリ組んでいます。<br><br>
+<strong>——最後にお客様へ一言お願いします。</strong><br><br>
+お家に帰ってから、旅先で買ったものを手にした時、「あぁ、楽しかったな」って思い出が蘇る。ショッピングにはそんな魔法があると思うんです。<br>
+「何を買ったらいいかわからない」「無駄使いしたくない」と心配する必要はありません。私があなたの専属バイヤーになったつもりで、心から満足できるお買い物体験をプロデュースします。<br>
+素敵なアイテムとの出会いは、旅の彩りをずっと鮮やかにしてくれます。私と一緒に、あなただけの宝物を探しに行きましょう！`,
+            en: `<strong>——Please tell us your commitment as a shopping guide, Ai.</strong><br><br>
+Hello, I'm Ai Suzuki! My motto is "Shopping is a destined encounter with things".<br>
+If you just want to buy souvenirs, stations and airports might be enough. But I think the reason why you bother to visit shops at travel destinations is that you want to touch the atmosphere of the place and the creator's thoughts. I try to introduce the craftsman's commitment for traditional crafts and the owner's story for select shops together with the products. By doing so, just a "thing" turns into a "treasure" filled with memories.<br><br>
+<strong>——What kind of shops can you introduce?</strong><br><br>
+I cover widely from long-established famous stores, large shopping malls, to supermarkets patronized by local housewives!<br>
+Especially popular is looking for "souvenirs for oneself". Looking for a slightly good vessel or choosing local limited cosmetics as a reward for yourself working hard usually. I will accompany you thoroughly until finding the item "This is it!" according to your taste and budget. Practical consultations like "What is good for distributing souvenirs to the company?" are also welcome! I also perfectly organize routes that can be visited efficiently.<br><br>
+<strong>——Finally, a word to customers please.</strong><br><br>
+When you go back home and hold what you bought at the travel destination, the memory "Ah, it was fun" revives. I think shopping has such magic.<br>
+You don't need to worry "I don't know what to buy" or "I don't want to waste money". Intending to be your exclusive buyer, I will produce a shopping experience that you can be truly satisfied with.<br>
+Encounters with wonderful items make the color of the trip vivid forever. Let's go find your own treasure with me!`
         }
     },
     {
@@ -671,8 +772,26 @@ const personasData = [
         faceImagePath: 'image/rakukoface.jpg',
         color: '#06B6D4',
         selfIntro: {
-            ja: '伊藤楽子ですっ！思いっきり楽しむ準備はOK！？私はテーマパークやイベント、体験アクティビティなど、ワクワクするエンターテイメントが大好き！「とにかく盛り上がりたい！」「珍しい体験をしてみたい！」そんなアクティブなあなたにぴったりのプランを提案するよ。家族みんなで楽しめるレジャー施設から、スリル満点のアトラクション、季節のお祭りまで、退屈なんてさせないよ！最高にエキサイティングな思い出を作って、笑顔いっぱいの旅にしようね！ついてきてっ！',
-            en: 'I\'m Rakuko Ito! Are you ready to enjoy yourself to the fullest!? I love exciting entertainment like theme parks, events, and experience activities! I will propose a plan perfect for you who are active like "I just want to get hyped!" or "I want to try rare experiences!". From leisure facilities that the whole family can enjoy, thrilling attractions, to seasonal festivals, I won\'t let you be bored! Let\'s make the most exciting memories and make it a trip full of smiles! Follow me!'
+            ja: `<strong>——楽子さん、ものすごくテンション高いですね！（笑）</strong><br><br>
+伊藤楽子ですっ！当たり前じゃないですかー！だって、旅行ですよ！？楽しまなきゃ損、損！<br>
+私の役目は、お客様のテンションを最高潮まで上げること！静かに見るだけの観光じゃ満足できない、そんな元気いっぱいな皆さんのために、私がいます。テーマパークでの効率的な周り方はもちろん、地元のお祭りや、季節ごとのイベント情報に関しては誰にも負けません。「何か面白いことない？」って聞かれたら、そこら中にある「楽しい」を全部かき集めてお届けしちゃいます！<br><br>
+<strong>——どんな体験をさせてくれますか？</strong><br><br>
+ただ「見る」だけじゃなくて、「体験する」プランを提案しまくりです！<br>
+例えば、伝統工芸の体験教室で自分の作品を作ったり、着物をレンタルして街を歩いたり、スポーツ観戦で地元チームを応援したり。やっぱり体を使って、その場の空気を共有するのが一番の思い出になりますよね。お子様連れのご家族なら、子供たちが絶対に退屈しない公園やアトラクションへ。学生さんのグループなら、みんなでワイワイ騒げるアクティビティへ。どんなグループでも、私が盛り上げ隊長として先導します！<br><br>
+<strong>——では最後に、これから楽しもうとしているお客様へ！</strong><br><br>
+日常の嫌なこととか、悩みとか、全部忘れてください！<br>
+私のガイド中は「楽しむこと」だけがルールです。もし疲れたら休憩すればいいし、予定変更も全然OK。大事なのは、その瞬間、心の底から笑えているかどうかです。<br>
+私が絶対に、一生忘れられないくらいエキサイティングな思い出を作ってみせます。笑顔いっぱいの、最高にハッピーな旅にしましょうね！準備はいい？ついてきてっ！イェーイ！`,
+            en: `<strong>——Rakuko, your tension is extremely high! (Laughs)</strong><br><br>
+I'm Rakuko Ito! Isn't it natural?! Because it's travel!? It's a loss if you don't enjoy it, loss!<br>
+My role is to raise the customer's tension to the climax! For those full of energy who are not satisfied with just watching quietly, I am here. Efficient ways to go around theme parks, of course, regarding local festivals and seasonal event information, I lose to no one. If asked "Is there anything interesting?", I will scrape up all "fun" around there and deliver it!<br><br>
+<strong>——What kind of experience do you let us do?</strong><br><br>
+I propose plans to "experience" not just "watch"!<br>
+For example, making your own work in a traditional craft experience class, renting a kimono and walking around the town, or cheering for a local team in sports watching. As expected, using your body and sharing the atmosphere of the place becomes the best memory. If it's a family with children, to parks and attractions where children are absolutely not bored. If it's a student group, to activities where everyone can make noise together. Any group, I will lead as a excitement captain!<br><br>
+<strong>——Then finally, to customers who are about to enjoy!</strong><br><br>
+Please forget all unpleasant things and worries of everyday life!<br>
+During my guide, "Enjoying" is the only rule. If you get tired, just rest, and changing plans is totally OK. What is important is whether you are laughing from the bottom of your heart at that moment.<br>
+I will definitely show you making exciting memories that you can never forget in your life. Let's make it a trip full of smiles and supremely happy! Are you ready? Follow me! Yay!`
         }
     }
 ];
@@ -711,11 +830,7 @@ function initPersonas(skipShowPersona = false) {
                     <div class="persona-overlay-name" data-text="${persona.name[currentLanguage]}"></div>
                     <div class="persona-overlay-realname" data-text="${persona.guideName[currentLanguage]}"></div>
                 </div>
-                <div class="persona-play-button" title="詳細を見る">
-                    <svg viewBox="0 0 24 24">
-                        <polygon points="5,3 19,12 5,21" />
-                    </svg>
-                </div>
+
             </div>
             <div class="persona-card-info">
                 <div class="persona-info-title">${persona.guideName[currentLanguage]}</div>
@@ -1083,7 +1198,7 @@ function openPersonaModal(persona) {
     if (modalSpec) modalSpec.textContent = persona.specialty[currentLanguage];
 
     const modalIntro = document.getElementById('modal-intro');
-    if (modalIntro) modalIntro.textContent = persona.selfIntro[currentLanguage];
+    if (modalIntro) modalIntro.innerHTML = persona.selfIntro[currentLanguage];
 
     // モーダルを表示
     modal.classList.add('active');
