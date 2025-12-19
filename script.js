@@ -27,8 +27,8 @@ const translations = {
         "feature.3.desc": "ガイドテキストを自然な音声で読み上げ。移動中も耳で楽しめる、ハンズフリーな観光体験を。",
         "feature.4.title": "会話機能",
         "feature.4.desc": "選んだガイドと自由に会話。観光地について質問したり、おすすめスポットを聞いたりできます。",
-        "feature.5.title": "Google検索連携",
-        "feature.5.desc": "AIが重要なキーワードを自動抽出。気になるワードをタップするだけで、詳しい情報にアクセス。",
+        "feature.5.title": "Google検索,X連携",
+        "feature.5.desc": "AIが重要なキーワードを自動抽出。気になるワードをタップするだけで、詳しい情報にアクセス。さらにXとも連携し地域の最新情報にアクセスできます。",
         "feature.6.title": "多言語対応",
         "feature.6.desc": "日本語、英語、中国語、フランス語に対応。海外からの旅行者も安心してご利用いただけます。",
         "personas.tag": "AI Guides",
@@ -82,8 +82,8 @@ const translations = {
         "feature.3.desc": "Read guide text with natural voice. Enjoy hands-free sightseeing experience even while moving.",
         "feature.4.title": "Conversation Function",
         "feature.4.desc": "Talk freely with the selected guide. Ask questions about sightseeing spots or ask for recommendations.",
-        "feature.5.title": "Google Search Integration",
-        "feature.5.desc": "AI automatically extracts important keywords. Just tap the word you are interested in to access detailed information.",
+        "feature.5.title": "Google Search, X Integration",
+        "feature.5.desc": "AI automatically extracts important keywords. Just tap the word you are interested in to access detailed information. You can also access the latest information in the area through X integration.",
         "feature.6.title": "Multilingual Support",
         "feature.6.desc": "Supports Japanese, English, Chinese, and French. Travelers from overseas can use it with peace of mind.",
         "personas.tag": "AI Guides",
@@ -797,13 +797,14 @@ I will definitely show you making exciting memories that you can never forget in
 ];
 
 const screenshotsData = [
-    { src: 'image/screen/screen1.jpg', caption: { ja: 'ガイド画面', en: 'Guide Screen' } },
+    { src: 'image/screen/screen1.jpg', caption: { ja: 'ホーム画面', en: 'Home Screen' } },
     { src: 'image/screen/screen2.jpg', caption: { ja: '地図画面', en: 'Map Screen' } },
     { src: 'image/screen/screen3.jpg', caption: { ja: 'チャット画面', en: 'Chat Screen' } },
+    { src: 'image/screen/screen8.jpg', caption: { ja: 'X連携', en: 'X Link' } },
     { src: 'image/screen/screen4.jpg', caption: { ja: 'ペルソナ選択', en: 'Persona Selection' } },
     { src: 'image/screen/screen5.jpg', caption: { ja: 'ガイド画面', en: 'Guide Screen' } },
     { src: 'image/screen/screen6.jpg', caption: { ja: '履歴画面', en: 'History Screen' } },
-    { src: 'image/screen/screen7.jpg', caption: { ja: 'ガイド時間設定', en: 'Guide Time Setting' } }
+    { src: 'image/screen/screen7.jpg', caption: { ja: 'ガイド時間設定', en: 'Guide Time Setting' } },
 ];
 
 let currentPersonaIndex = 0;
