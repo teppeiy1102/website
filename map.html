@@ -184,7 +184,7 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', async function() {
             // 地図の初期化
             const map = L.map('map', {
                 zoomControl: false
@@ -202,61 +202,17 @@
                 position: 'bottomright'
             }).addTo(map);
 
-            // ガイドデータ
-            const guidePoints = [
-                {
-                    id: 1,
-                    latlng: [35.681236, 139.767125],
-                    name: '東京駅',
-                    address: '東京都千代田区丸の内１丁目',
-                    persona: {
-                        name: '高橋 真理',
-                        image: 'image/mariface.png'
-                    },
-                    spotImage: 'image/screen/back.jpg',
-                    text: '東京駅へようこそ！1914年に完成した赤レンガの駅舎は、日本の近代化を象徴する歴史的建造物です。丸の内側のドーム天井を見上げると、精巧な鷲の彫刻や干支のレリーフを楽しむことができますよ。',
-                    audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' // サンプル音声
-                },
-                {
-                    id: 2,
-                    latlng: [48.8584, 2.2945],
-                    name: 'エッフェル塔',
-                    address: 'Champ de Mars, 5 Av. Anatole France, 75007 Paris, France',
-                    persona: {
-                        name: '佐藤 文子',
-                        image: 'image/fumikoface.png'
-                    },
-                    spotImage: 'image/screen/back1.jpg',
-                    text: 'パリの象徴、エッフェル塔です。1889年のパリ万博のために建設されました。当時は「鉄の怪物」と批判されましたが、今では世界で最も愛される建造物の一つですね。夜のシャンパンフラッシュは必見です。',
-                    audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
-                },
-                {
-                    id: 3,
-                    latlng: [40.7580, -73.9855],
-                    name: 'タイムズスクエア',
-                    address: 'Manhattan, NY 10036, United States',
-                    persona: {
-                        name: '山本 あかり',
-                        image: 'image/akariface.png'
-                    },
-                    spotImage: 'image/screen/back2.jpg',
-                    text: '世界の交差点、タイムズスクエアだよ！この眩しいネオン看板とエネルギー、最高に映えるよね！大晦日のカウントダウンは世界中が注目するビッグイベント。最新のトレンドを肌で感じられる場所だよ！',
-                    audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3'
-                },
-                {
-                    id: 4,
-                    latlng: [34.0522, -118.2437],
-                    name: 'ロサンゼルス',
-                    address: 'Los Angeles, CA, United States',
-                    persona: {
-                        name: '田中 美香',
-                        image: 'image/mikaface.png'
-                    },
-                    spotImage: 'image/screen/back3.jpg',
-                    text: 'LAに来たらやっぱり本場のハンバーガーは外せないよね！サンタモニカのビーチで夕日を見ながら食べるのも最高。映画の都ハリウッドの活気も楽しんでね！',
-                    audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3'
-                }
-            ];
+            // JSONファイルからガイドデータを読み込み
+            let guidePoints = [];
+            try {
+                const response = await fetch('guide-data.json');
+                const data = await response.json();
+                guidePoints = data.guides;
+            } catch (error) {
+                console.error('ガイドデータの読み込みに失敗しました:', error);
+                alert('ガイドデータの読み込みに失敗しました。ページを再読み込みしてください。');
+                return;
+            }
 
             // アイコンの設定
             const customIcon = L.divIcon({
