@@ -57,7 +57,9 @@ const translations = {
         "footer.mapdata": "地図データ",
         "modal.features": "GUIDE FEATURES",
         "modal.specialty": "SPECIALTY",
-        "modal.intro": "INTERVIEW"
+        "modal.intro": "INTERVIEW",
+        "nav.worldguide": "世界のガイド",
+        "hero.button.worldguide": "世界のエリアを見る"
     },
     en: {
         "app.title": "DocoDemo Guide",
@@ -112,7 +114,9 @@ const translations = {
         "footer.mapdata": "Map Data",
         "modal.features": "GUIDE FEATURES",
         "modal.specialty": "SPECIALTY",
-        "modal.intro": "INTERVIEW"
+        "modal.intro": "INTERVIEW",
+        "nav.worldguide": "World Guide",
+        "hero.button.worldguide": "Explore World Areas"
     }
 };
 
@@ -1281,4 +1285,3 @@ function initHeroBgCarousel() {
         }, 500); // フェード効果の中間地点で画像切り替え
     }, 5000); // 5秒ごと
 }
-
