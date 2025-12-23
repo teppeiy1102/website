@@ -14,6 +14,16 @@
             --color-text: #1f2937;
             --color-bg: #f8f9fa;
         }
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
         body, html {
             margin: 0;
             padding: 0;
@@ -57,7 +67,7 @@
         }
         .leaflet-popup-content {
             margin: 0;
-            width: 300px !important;
+            width: 320px !important;
         }
         .guide-popup {
             display: flex;
@@ -65,52 +75,109 @@
         }
         .guide-header {
             position: relative;
-            height: 150px;
+            height: 280px;
         }
         .guide-spot-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+        .guide-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, 
+                rgba(0,0,0,0) 0%, 
+                rgba(0,0,0,0.2) 50%, 
+                rgba(0,0,0,0.8) 100%);
+            pointer-events: none;
+        }
         .guide-persona-badge {
             position: absolute;
-            bottom: -20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border: 2px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             overflow: hidden;
             background: white;
+            z-index: 2;
         }
         .guide-persona-badge img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+        .guide-persona-info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            color: white;
+            z-index: 2;
+        }
+        .guide-persona-name-wrapper {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+        .guide-persona-guide-name {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: white;
+            background: var(--color-primary);
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .guide-persona-real-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        .guide-persona-description {
+            font-size: 0.8rem;
+            line-height: 1.4;
+            opacity: 0.9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            margin: 0;
+        }
         .guide-body {
-            padding: 25px 20px 20px;
+            padding: 20px;
+            background: white;
         }
         .guide-address {
             font-size: 0.75rem;
             color: #6b7280;
-            margin-bottom: 4px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 4px;
+            word-break: break-all;
         }
         .guide-title {
             font-size: 1.25rem;
             font-weight: 800;
-            margin-bottom: 12px;
+            margin: 0 0 12px 0;
             color: #111827;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.3;
         }
         .guide-text {
             font-size: 0.9rem;
             line-height: 1.6;
-            color: #374151;
-            margin-bottom: 20px;
+            color: #4b5563;
+            margin: 0 0 20px 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         .guide-controls {
             display: flex;
@@ -139,6 +206,248 @@
             width: 24px;
             height: 24px;
             fill: currentColor;
+        }
+        
+        /* スライドショーオーバーレイ */
+        #slideshow-overlay {
+            position: fixed;
+            inset: 0;
+            background: black;
+            z-index: 3000;
+            display: none;
+            overflow: hidden;
+            color: white;
+        }
+        .slideshow-bg-container {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+        .slideshow-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .slideshow-image.active {
+            opacity: 1;
+        }
+        .slideshow-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 57vh;
+            background: linear-gradient(to top, 
+                rgba(0, 0, 0, 0.732) 50%, 
+                rgba(0, 0, 0, 0.429) 90%, 
+                rgba(0, 0, 0, 0) 100%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .slideshow-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0;
+            padding: 20px 40px 10px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+            animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation-delay: 0.2s;
+            flex-shrink: 0;
+        }
+        .slideshow-text-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0 40px 180px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.3) transparent;
+        }
+        .slideshow-text-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .slideshow-text-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .slideshow-text-container::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3);
+            border-radius: 4px;
+        }
+        .slideshow-text-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.5);
+        }
+        .slideshow-text {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            max-width: 1000px;
+            margin: 0;
+            color: rgba(255,255,255,1);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            font-weight: 400;
+            animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation-delay: 0.4s;
+        }
+        .slideshow-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: rgba(255,255,255,0.2);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 3;
+            transition: all 0.3s ease;
+        }
+        .slideshow-close:hover {
+            background: rgba(255,255,255,0.4);
+            transform: rotate(90deg);
+        }
+        .slideshow-controls {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 3001;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            padding: 10px 30px 30px;
+            background: linear-gradient(to top, 
+                rgba(0, 0, 0, 0.9) 0%, 
+                rgba(0, 0, 0, 0.7) 50%, 
+                rgba(0, 0, 0, 0) 100%);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+        }
+        #slideshow-overlay.active .slideshow-controls {
+            display: flex;
+        }
+        .playback-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            max-width: 800px;
+        }
+        .control-button {
+            background: rgba(255,255,255,0.2);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        .control-button:hover {
+            background: rgba(255,255,255,0.4);
+            transform: scale(1.1);
+        }
+        .control-button svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+        .seek-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .seek-bar-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.6);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .time-display {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            min-width: 50px;
+            text-align: center;
+            font-variant-numeric: tabular-nums;
+        }
+        .seek-bar {
+            flex: 1;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.2);
+            outline: none;
+            cursor: pointer;
+        }
+        .seek-bar::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            transition: all 0.15s ease;
+        }
+        .seek-bar::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+        .seek-bar::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            transition: all 0.15s ease;
+        }
+        .seek-bar::-moz-range-thumb:hover {
+            transform: scale(1.2);
+        }
+        .seek-bar::-webkit-slider-runnable-track {
+            background: linear-gradient(to right, 
+                var(--color-primary) 0%, 
+                var(--color-primary) var(--seek-progress, 0%), 
+                rgba(255,255,255,0.2) var(--seek-progress, 0%), 
+                rgba(255,255,255,0.2) 100%);
+            height: 6px;
+            border-radius: 3px;
+        }
+        .seek-bar::-moz-range-track {
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.2);
+        }
+        .seek-bar::-moz-range-progress {
+            background: var(--color-primary);
+            height: 6px;
+            border-radius: 3px;
         }
         
         /* ローディング表示 */
@@ -182,9 +491,43 @@
 
     <div id="map"></div>
 
+    <div id="slideshow-overlay">
+        <div class="slideshow-bg-container" id="slideshow-bg"></div>
+        <button class="slideshow-close" id="close-slideshow" title="閉じる">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+        <div class="slideshow-content">
+            <h2 class="slideshow-title" id="slideshow-title"></h2>
+            <div class="slideshow-text-container">
+                <p class="slideshow-text" id="slideshow-text"></p>
+            </div>
+        </div>
+        <div class="slideshow-controls">
+            <div class="playback-controls">
+                <button class="control-button" id="toggle-play" title="再生/一時停止">
+                    <svg id="play-icon" viewBox="0 0 24 24" style="display: none;"><path d="M8 5v14l11-7z"/></svg>
+                    <svg id="pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                </button>
+                <div class="seek-container">
+                    <div class="seek-bar-wrapper">
+                        <span class="time-display" id="current-time">0:00</span>
+                        <input type="range" class="seek-bar" id="seek-bar" min="0" max="1" value="0" step="0.001">
+                        <span class="time-display" id="duration-time">0:00</span>
+                    </div>
+                </div>
+                <button class="control-button" id="toggle-fullscreen" title="フルスクリーン">
+                    <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="guide-data.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', async function() {
+        document.addEventListener('DOMContentLoaded', function() {
             // 地図の初期化
             const map = L.map('map', {
                 zoomControl: false
@@ -202,20 +545,8 @@
                 position: 'bottomright'
             }).addTo(map);
 
-            // JSONファイルからガイドデータを読み込み
-            let guidePoints = [];
-            try {
-                const response = await fetch('guide-data.json');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json();
-                guidePoints = data.guides;
-            } catch (error) {
-                console.error('ガイドデータの読み込みに失敗しました:', error);
-                alert('ガイドデータの読み込みに失敗しました。ネットワーク状況を確認するか、しばらく経ってから再度お試しください。\nエラー詳細: ' + error.message);
-                return;
-            }
+            // guide-data.js からデータを取得
+            const guidePoints = guideData.guides;
 
             // アイコンの設定
             const customIcon = L.divIcon({
@@ -237,8 +568,16 @@
                     <div class="guide-popup">
                         <div class="guide-header">
                             <img src="${point.spotImage}" class="guide-spot-image" alt="${point.name}">
+                            <div class="guide-overlay"></div>
                             <div class="guide-persona-badge">
                                 <img src="${point.persona.image}" alt="${point.persona.name}">
+                            </div>
+                            <div class="guide-persona-info">
+                                <div class="guide-persona-name-wrapper">
+                                    <span class="guide-persona-real-name">${point.persona.name}</span>
+                                    <span class="guide-persona-guide-name">${point.persona.guideName}</span>
+                                </div>
+                                <p class="guide-persona-description">${point.persona.description}</p>
                             </div>
                         </div>
                         <div class="guide-body">
@@ -262,8 +601,8 @@
                 `;
 
                 marker.bindPopup(popupContent, {
-                    maxWidth: 300,
-                    minWidth: 300
+                    maxWidth: 320,
+                    minWidth: 320
                 });
             });
 
@@ -271,31 +610,307 @@
             const group = new L.featureGroup(markers);
             map.fitBounds(group.getBounds(), { padding: [50, 50] });
 
-            // 音声再生の管理
+            // スライドショーの管理
+            const slideshowOverlay = document.getElementById('slideshow-overlay');
+            const slideshowBg = document.getElementById('slideshow-bg');
+            const slideshowTitle = document.getElementById('slideshow-title');
+            const slideshowText = document.getElementById('slideshow-text');
+            const closeSlideshow = document.getElementById('close-slideshow');
+            const togglePlayBtn = document.getElementById('toggle-play');
+            const playIcon = document.getElementById('play-icon');
+            const pauseIcon = document.getElementById('pause-icon');
+            const seekBar = document.getElementById('seek-bar');
+            const currentTime = document.getElementById('current-time');
+            const durationTime = document.getElementById('duration-time');
+            const toggleFullscreenBtn = document.getElementById('toggle-fullscreen');
+            
+            let slideshowTimer = null;
+            let currentImages = [];
+            let currentImageIndex = 0;
             let currentAudio = null;
+            let isSeekingAudio = false;
+
+            function formatTime(seconds) {
+                if (isNaN(seconds)) return '0:00';
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs.toString().padStart(2, '0')}`;
+            }
+
+            function updateSeekBar() {
+                if (!currentAudio || isSeekingAudio) return;
+                
+                const currentValue = currentAudio.currentTime;
+                const maxValue = currentAudio.duration;
+                
+                // durationが確定している場合
+                if (!isNaN(maxValue) && maxValue > 0 && maxValue !== Infinity) {
+                    seekBar.max = maxValue;
+                    const progress = (currentValue / maxValue) * 100;
+                    seekBar.style.setProperty('--seek-progress', `${progress}%`);
+                    durationTime.textContent = formatTime(maxValue);
+                    seekBar.value = currentValue;
+                } 
+                // durationがInfinity（ストリーミング等）の場合
+                else if (maxValue === Infinity) {
+                    // 再生位置に合わせて暫定的にmaxを拡張
+                    const interimMax = Math.max(currentValue * 1.2, 100);
+                    seekBar.max = interimMax;
+                    seekBar.value = currentValue;
+                    const progress = (currentValue / interimMax) * 100;
+                    seekBar.style.setProperty('--seek-progress', `${progress}%`);
+                }
+                
+                currentTime.textContent = formatTime(currentValue);
+            }
+
+            function openSlideshow(id) {
+                const guide = guideData.guides.find(g => g.id === parseInt(id));
+                if (!guide) return;
+
+                currentImages = guide.images || [guide.spotImage];
+                currentImageIndex = 0;
+                
+                // タイトルとテキストの設定
+                slideshowTitle.textContent = guide.name;
+                slideshowText.textContent = guide.text;
+                
+                // 画像の初期化
+                slideshowBg.innerHTML = '';
+                currentImages.forEach((src, index) => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.className = 'slideshow-image' + (index === 0 ? ' active' : '');
+                    slideshowBg.appendChild(img);
+                });
+
+                // オーバーレイの表示
+                slideshowOverlay.style.display = 'block';
+                slideshowOverlay.classList.add('active');
+                
+                // 音声再生の準備
+                if (currentAudio) {
+                    currentAudio.pause();
+                    currentAudio.removeEventListener('timeupdate', updateSeekBar);
+                    currentAudio.removeEventListener('loadedmetadata', updateDuration);
+                    currentAudio.removeEventListener('ended', onAudioEnded);
+                }
+                
+                currentAudio = new Audio();
+                
+                // 音声イベントリスナーを先に登録
+                currentAudio.addEventListener('timeupdate', updateSeekBar);
+                currentAudio.addEventListener('loadedmetadata', updateDuration);
+                currentAudio.addEventListener('ended', onAudioEnded);
+                
+                // srcを設定して再生
+                currentAudio.src = guide.audio;
+                currentAudio.load();
+                
+                currentAudio.play().catch(e => console.log("Auto-play prevented or failed:", e));
+                updatePlayButtonUI(true);
+
+                // メタデータが既にロードされている場合の対応
+                if (currentAudio.readyState >= 1) {
+                    updateDuration();
+                }
+
+                // スライドショー開始
+                startSlideshow();
+            }
+
+            function updateDuration() {
+                if (currentAudio && !isNaN(currentAudio.duration) && currentAudio.duration > 0 && currentAudio.duration !== Infinity) {
+                    const duration = currentAudio.duration;
+                    durationTime.textContent = formatTime(duration);
+                    seekBar.max = duration;
+                    seekBar.value = currentAudio.currentTime;
+                    const progress = (currentAudio.currentTime / duration) * 100;
+                    seekBar.style.setProperty('--seek-progress', `${progress}%`);
+                }
+            }
+
+            function onAudioEnded() {
+                updatePlayButtonUI(false);
+                if (slideshowTimer) clearInterval(slideshowTimer);
+            }
+
+            function updatePlayButtonUI(isPlaying) {
+                if (isPlaying) {
+                    playIcon.style.display = 'none';
+                    pauseIcon.style.display = 'block';
+                } else {
+                    playIcon.style.display = 'block';
+                    pauseIcon.style.display = 'none';
+                }
+            }
+
+            function togglePlay() {
+                if (!currentAudio) return;
+                
+                if (currentAudio.paused) {
+                    currentAudio.play();
+                    startSlideshow();
+                    updatePlayButtonUI(true);
+                } else {
+                    currentAudio.pause();
+                    if (slideshowTimer) clearInterval(slideshowTimer);
+                    updatePlayButtonUI(false);
+                }
+            }
+
+            function startSlideshow() {
+                if (slideshowTimer) clearInterval(slideshowTimer);
+                if (currentImages.length <= 1) return;
+
+                slideshowTimer = setInterval(() => {
+                    const images = slideshowBg.querySelectorAll('.slideshow-image');
+                    images[currentImageIndex].classList.remove('active');
+                    currentImageIndex = (currentImageIndex + 1) % images.length;
+                    images[currentImageIndex].classList.add('active');
+                }, 5000); // 5秒ごとに切り替え
+            }
+
+            function stopSlideshow() {
+                // スライドショーを閉じる
+                slideshowOverlay.style.display = 'none';
+                slideshowOverlay.classList.remove('active');
+                
+                // タイマーを停止
+                if (slideshowTimer) {
+                    clearInterval(slideshowTimer);
+                    slideshowTimer = null;
+                }
+                
+                // 音声を停止
+                if (currentAudio) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0;
+                    currentAudio.removeEventListener('timeupdate', updateSeekBar);
+                    currentAudio.removeEventListener('loadedmetadata', updateDuration);
+                    currentAudio.removeEventListener('ended', onAudioEnded);
+                    currentAudio = null;
+                }
+                
+                // フルスクリーンを解除
+                if (document.fullscreenElement) {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+                }
+                
+                // UIをリセット
+                updatePlayButtonUI(false);
+                seekBar.value = 0;
+                seekBar.style.setProperty('--seek-progress', '0%');
+                currentTime.textContent = '0:00';
+                durationTime.textContent = '0:00';
+            }
+
+            function toggleFullscreen() {
+                if (!document.fullscreenElement) {
+                    // フルスクリーンに入る前にaudioを一時停止
+                    let wasPlaying = false;
+                    if (currentAudio && !currentAudio.paused) {
+                        currentAudio.pause();
+                        wasPlaying = true;
+                    }
+                    
+                    // フルスクリーンに入る
+                    if (slideshowOverlay.requestFullscreen) {
+                        slideshowOverlay.requestFullscreen();
+                    } else if (slideshowOverlay.webkitRequestFullscreen) {
+                        slideshowOverlay.webkitRequestFullscreen();
+                    } else if (slideshowOverlay.msRequestFullscreen) {
+                        slideshowOverlay.msRequestFullscreen();
+                    }
+                    
+                    // フルスクリーンに入った後にaudioを再開
+                    setTimeout(() => {
+                        if (wasPlaying && currentAudio) {
+                            currentAudio.play().catch(e => console.log("Play failed after fullscreen:", e));
+                        }
+                    }, 100);
+                } else {
+                    // フルスクリーンから出る
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+                }
+            }
+
+            // イベントリスナー
+            closeSlideshow.addEventListener('click', stopSlideshow);
+            togglePlayBtn.addEventListener('click', togglePlay);
+            toggleFullscreenBtn.addEventListener('click', toggleFullscreen);
+            
+            // フルスクリーン変更時の対応
+            document.addEventListener('fullscreenchange', function() {
+                if (document.fullscreenElement) {
+                    // フルスクリーンに入った場合
+                    setTimeout(() => {
+                        updateSeekBar();
+                    }, 100);
+                }
+            });
+            
+            // シークバーのイベントリスナー
+            seekBar.addEventListener('mousedown', function() {
+                isSeekingAudio = true;
+            });
+            
+            seekBar.addEventListener('touchstart', function() {
+                isSeekingAudio = true;
+            });
+            
+            seekBar.addEventListener('input', function() {
+                if (currentAudio && !isNaN(currentAudio.duration) && currentAudio.duration > 0) {
+                    const seekTime = parseFloat(seekBar.value);
+                    const progress = (seekTime / currentAudio.duration) * 100;
+                    currentTime.textContent = formatTime(seekTime);
+                    seekBar.style.setProperty('--seek-progress', `${progress}%`);
+                }
+            });
+            
+            seekBar.addEventListener('change', function() {
+                if (currentAudio && !isNaN(currentAudio.duration) && currentAudio.duration > 0) {
+                    const seekTime = parseFloat(seekBar.value);
+                    currentAudio.currentTime = seekTime;
+                    const progress = (seekTime / currentAudio.duration) * 100;
+                    seekBar.style.setProperty('--seek-progress', `${progress}%`);
+                }
+            });
+            
+            seekBar.addEventListener('mouseup', function() {
+                setTimeout(() => {
+                    isSeekingAudio = false;
+                }, 100);
+            });
+            
+            seekBar.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    isSeekingAudio = false;
+                }, 100);
+            });
 
             document.addEventListener('click', function(e) {
                 const playBtn = e.target.closest('.play-button');
                 if (playBtn) {
+                    // ポップアップの親要素からIDを取得（実際にはマーカーに関連付けるのが良いが、今の構造ではデータ属性から探す）
+                    // ここでは、guidePointsを走査してaudioUrlが一致するものを探す、またはもっとスマートな方法でIDを渡す
                     const audioUrl = playBtn.dataset.audio;
-                    
-                    if (currentAudio && !currentAudio.paused) {
-                        currentAudio.pause();
-                        playBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>`;
-                        if (currentAudio.src === audioUrl) {
-                            currentAudio = null;
-                            return;
-                        }
+                    const guide = guideData.guides.find(g => g.audio === audioUrl);
+                    if (guide) {
+                        openSlideshow(guide.id);
                     }
-
-                    currentAudio = new Audio(audioUrl);
-                    currentAudio.play();
-                    playBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>`;
-
-                    currentAudio.onended = function() {
-                        playBtn.innerHTML = `<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>`;
-                        currentAudio = null;
-                    };
                 }
             });
 
