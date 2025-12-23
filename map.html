@@ -206,11 +206,14 @@
             let guidePoints = [];
             try {
                 const response = await fetch('guide-data.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const data = await response.json();
                 guidePoints = data.guides;
             } catch (error) {
                 console.error('ガイドデータの読み込みに失敗しました:', error);
-                alert('ガイドデータの読み込みに失敗しました。ページを再読み込みしてください。');
+                alert('ガイドデータの読み込みに失敗しました。ネットワーク状況を確認するか、しばらく経ってから再度お試しください。\nエラー詳細: ' + error.message);
                 return;
             }
 
