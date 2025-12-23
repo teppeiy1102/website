@@ -240,7 +240,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 57vh;
+            height: 50vh;
             background: linear-gradient(to top, 
                 rgba(0, 0, 0, 0.732) 50%, 
                 rgba(0, 0, 0, 0.429) 90%, 
@@ -641,23 +641,11 @@
                 if (!currentAudio || isSeekingAudio) return;
                 
                 const currentValue = currentAudio.currentTime;
-                const maxValue = currentAudio.duration;
+                const maxValue = parseFloat(seekBar.max);
                 
-                // durationが確定している場合
-                if (!isNaN(maxValue) && maxValue > 0 && maxValue !== Infinity) {
-                    seekBar.max = maxValue;
+                if (maxValue > 0) {
+                    seekBar.value = currentValue;
                     const progress = (currentValue / maxValue) * 100;
-                    seekBar.style.setProperty('--seek-progress', `${progress}%`);
-                    durationTime.textContent = formatTime(maxValue);
-                    seekBar.value = currentValue;
-                } 
-                // durationがInfinity（ストリーミング等）の場合
-                else if (maxValue === Infinity) {
-                    // 再生位置に合わせて暫定的にmaxを拡張
-                    const interimMax = Math.max(currentValue * 1.2, 100);
-                    seekBar.max = interimMax;
-                    seekBar.value = currentValue;
-                    const progress = (currentValue / interimMax) * 100;
                     seekBar.style.setProperty('--seek-progress', `${progress}%`);
                 }
                 
@@ -720,19 +708,26 @@
             }
 
             function updateDuration() {
-                if (currentAudio && !isNaN(currentAudio.duration) && currentAudio.duration > 0 && currentAudio.duration !== Infinity) {
-                    const duration = currentAudio.duration;
-                    durationTime.textContent = formatTime(duration);
+                if (!currentAudio) return;
+                
+                const duration = currentAudio.duration;
+                if (!isNaN(duration) && duration > 0 && isFinite(duration)) {
                     seekBar.max = duration;
-                    seekBar.value = currentAudio.currentTime;
-                    const progress = (currentAudio.currentTime / duration) * 100;
-                    seekBar.style.setProperty('--seek-progress', `${progress}%`);
+                    durationTime.textContent = formatTime(duration);
+                    seekBar.value = 0;
+                    seekBar.style.setProperty('--seek-progress', '0%');
                 }
             }
 
             function onAudioEnded() {
                 updatePlayButtonUI(false);
                 if (slideshowTimer) clearInterval(slideshowTimer);
+                
+                // 再生終了時にシークバーを最後まで進める
+                const maxValue = parseFloat(seekBar.max);
+                seekBar.value = maxValue;
+                seekBar.style.setProperty('--seek-progress', '100%');
+                currentTime.textContent = formatTime(maxValue);
             }
 
             function updatePlayButtonUI(isPlaying) {
@@ -872,21 +867,18 @@
             });
             
             seekBar.addEventListener('input', function() {
-                if (currentAudio && !isNaN(currentAudio.duration) && currentAudio.duration > 0) {
-                    const seekTime = parseFloat(seekBar.value);
-                    const progress = (seekTime / currentAudio.duration) * 100;
-                    currentTime.textContent = formatTime(seekTime);
-                    seekBar.style.setProperty('--seek-progress', `${progress}%`);
-                }
+                if (!currentAudio) return;
+                const seekTime = parseFloat(seekBar.value);
+                const maxValue = parseFloat(seekBar.max);
+                currentTime.textContent = formatTime(seekTime);
+                const progress = (seekTime / maxValue) * 100;
+                seekBar.style.setProperty('--seek-progress', `${progress}%`);
             });
             
             seekBar.addEventListener('change', function() {
-                if (currentAudio && !isNaN(currentAudio.duration) && currentAudio.duration > 0) {
-                    const seekTime = parseFloat(seekBar.value);
-                    currentAudio.currentTime = seekTime;
-                    const progress = (seekTime / currentAudio.duration) * 100;
-                    seekBar.style.setProperty('--seek-progress', `${progress}%`);
-                }
+                if (!currentAudio) return;
+                const seekTime = parseFloat(seekBar.value);
+                currentAudio.currentTime = seekTime;
             });
             
             seekBar.addEventListener('mouseup', function() {

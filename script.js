@@ -58,8 +58,8 @@ const translations = {
         "modal.features": "GUIDE FEATURES",
         "modal.specialty": "SPECIALTY",
         "modal.intro": "INTERVIEW",
-        "nav.worldguide": "世界のガイド",
-        "hero.button.worldguide": "世界のエリアを見る"
+        "nav.worldguide": "サンプルガイド",
+        "hero.button.worldguide": "サンプルガイドを見る"
     },
     en: {
         "app.title": "DocoDemo Guide",
@@ -115,8 +115,8 @@ const translations = {
         "modal.features": "GUIDE FEATURES",
         "modal.specialty": "SPECIALTY",
         "modal.intro": "INTERVIEW",
-        "nav.worldguide": "World Guide",
-        "hero.button.worldguide": "Explore World Areas"
+        "nav.worldguide": "Sample Guide",
+        "hero.button.worldguide": "Explore Sample Guides"
     }
 };
 
