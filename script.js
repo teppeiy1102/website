@@ -59,8 +59,11 @@ const translations = {
         "modal.specialty": "SPECIALTY",
         "modal.intro": "INTERVIEW",
         "nav.worldguide": "サンプルガイド",
-        "hero.button.worldguide": "サンプルガイドを見る"
+        "hero.button.worldguide": "サンプルガイドを見る",
+        "hero.sample.text": "実際のガイドサンプルを\n体験してみましょう",
+        "map.banner.text": "世界各地の実際のガイドサンプルを体験できます"
     },
+
     en: {
         "app.title": "DocoDemo Guide",
         "page.title": "DocoDemo Guide - AI makes your trip more fun",
@@ -116,8 +119,11 @@ const translations = {
         "modal.specialty": "SPECIALTY",
         "modal.intro": "INTERVIEW",
         "nav.worldguide": "Sample Guide",
-        "hero.button.worldguide": "Explore Sample Guides"
+        "hero.button.worldguide": "Explore Sample Guides",
+        "hero.sample.text": "Experience actual\nguide samples",
+        "map.banner.text": "Experience actual guide samples from around the world"
     }
+
 };
 
 let currentLanguage = 'ja';
@@ -192,6 +198,9 @@ function updateLanguage() {
 
     // フッタータイトルのアニメーションを再初期化（テキスト変更後）
     initFooterTitleAnimation();
+
+    // ヒーローのスマホ画像カルーセルのテキストを更新
+    initHeroPhoneCarousel();
 
     // ペルソナとスクリーンショットを再描画
     // skipShowPersonaをtrueにして、updateLanguage内でshowPersonaを呼ばない
@@ -466,7 +475,10 @@ function initDragScroll() {
 // ========================================
 function initHeroPhoneCarousel() {
     const phoneScreen = document.getElementById('hero-phone-screen');
-    if (!phoneScreen) return;
+    if (!phoneScreen) {
+        console.log('phoneScreen not found');
+        return;
+    }
 
     // ガイド画像のパス（imageフォルダ内の実際のファイル名）
     const guideImages = [
@@ -479,22 +491,38 @@ function initHeroPhoneCarousel() {
         'image/rakuko.jpg'
     ];
 
-    // 内部コンテナを作成
-    const innerContainer = document.createElement('div');
-    innerContainer.classList.add('phone-screen-inner');
+    // 既存のコンテナがあれば再利用、なければ作成
+    let innerContainer = phoneScreen.querySelector('.phone-screen-inner');
+    if (!innerContainer) {
+        innerContainer = document.createElement('div');
+        innerContainer.classList.add('phone-screen-inner');
 
-    // 画像を2セット作成して無限スクロールを実現
-    for (let i = 0; i < 2; i++) {
-        guideImages.forEach((imagePath, index) => {
-            const img = document.createElement('img');
-            img.src = imagePath;
-            img.alt = `ガイド ${index + 1}`;
-            img.classList.add('carousel-slide');
-            innerContainer.appendChild(img);
-        });
+        // 画像を2セット作成して無限スクロールを実現
+        for (let i = 0; i < 2; i++) {
+            guideImages.forEach((imagePath, index) => {
+                const img = document.createElement('img');
+                img.src = imagePath;
+                img.alt = `ガイド ${index + 1}`;
+                img.classList.add('carousel-slide');
+                innerContainer.appendChild(img);
+            });
+        }
+
+        phoneScreen.appendChild(innerContainer);
     }
-
-    phoneScreen.appendChild(innerContainer);
+    
+    // 固定位置のテキストオーバーレイを作成または更新
+    let textOverlay = phoneScreen.querySelector('.phone-screen-text-overlay');
+    if (!textOverlay) {
+        textOverlay = document.createElement('div');
+        textOverlay.classList.add('phone-screen-text-overlay');
+        phoneScreen.appendChild(textOverlay);
+    }
+    
+    // テキストを設定（言語に応じて）
+    const textValue = translations[currentLanguage]['hero.sample.text'];
+    textOverlay.textContent = textValue;
+    console.log('Set text overlay:', textValue);
 }
 
 // ========================================

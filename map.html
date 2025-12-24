@@ -291,6 +291,24 @@
             animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
             animation-delay: 0.4s;
         }
+        .slideshow-persona-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.526);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            overflow: hidden;
+            background: white;
+            z-index: 3;
+        }
+        .slideshow-persona-badge img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         .slideshow-close {
             position: absolute;
             top: 30px;
@@ -322,7 +340,7 @@
             z-index: 3001;
             display: none;
             flex-direction: column;
-            gap: 15px;
+            gap: 0px;
             align-items: center;
             padding: 10px 30px 30px;
             background: linear-gradient(to top, 
@@ -338,7 +356,7 @@
         .playback-controls {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
             width: 100%;
             max-width: 800px;
         }
@@ -348,8 +366,8 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.3);
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -376,8 +394,8 @@
         .seek-bar-wrapper {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 15px 20px;
+            gap: 0px;
+            padding: 15px 0px;
             background: rgba(0, 0, 0, 0.6);
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
@@ -489,18 +507,21 @@
         戻る
     </a>
 
-    <div class="map-info-banner" style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 12px 24px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--color-text); font-weight: 500;">
+    <div class="map-info-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 12px 24px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--color-text); font-weight: 500;">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
             <circle cx="12" cy="10" r="3"/>
         </svg>
-        <span>世界各地の実際のガイドサンプルを体験できます</span>
+        <span id="map-banner-text" data-i18n="map.banner.text">世界各地の実際のガイドサンプルを体験できます</span>
     </div>
 
     <div id="map"></div>
 
     <div id="slideshow-overlay">
         <div class="slideshow-bg-container" id="slideshow-bg"></div>
+        <div class="slideshow-persona-badge" id="slideshow-persona-badge">
+            <img src="" alt="" id="slideshow-persona-img">
+        </div>
         <button class="slideshow-close" id="close-slideshow" title="閉じる">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M18 6L6 18M6 6l12 12"/>
@@ -518,6 +539,9 @@
                     <svg id="play-icon" viewBox="0 0 24 24" style="display: none;"><path d="M8 5v14l11-7z"/></svg>
                     <svg id="pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
                 </button>
+                <button class="control-button" id="toggle-fullscreen" title="フルスクリーン">
+                    <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                </button>
                 <div class="seek-container">
                     <div class="seek-bar-wrapper">
                         <span class="time-display" id="current-time">0:00</span>
@@ -525,9 +549,7 @@
                         <span class="time-display" id="duration-time">0:00</span>
                     </div>
                 </div>
-                <button class="control-button" id="toggle-fullscreen" title="フルスクリーン">
-                    <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
-                </button>
+                
             </div>
         </div>
     </div>
@@ -670,6 +692,13 @@
                 // タイトルとテキストの設定
                 slideshowTitle.textContent = guide.name;
                 slideshowText.textContent = guide.text;
+                
+                // ペルソナ画像の設定
+                const personaImg = document.getElementById('slideshow-persona-img');
+                if (personaImg && guide.persona) {
+                    personaImg.src = guide.persona.image;
+                    personaImg.alt = guide.persona.name;
+                }
                 
                 // 画像の初期化
                 slideshowBg.innerHTML = '';
