@@ -3,7 +3,7 @@ const guideData = {
     {
       "id": 1,
       "latlng": [35.658610, 139.745396],
-      "name": "東京駅",
+      "name": "東京タワー",
       "address": "東京都港区芝公園4丁目",
       "persona": {
         "name": "高橋 真理",
