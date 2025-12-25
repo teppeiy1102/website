@@ -295,6 +295,12 @@
             position: absolute;
             top: 15px;
             left: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 3;
+        }
+        .slideshow-persona-image-wrapper {
             width: 120px;
             height: 120px;
             border-radius: 50%;
@@ -302,12 +308,37 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.4);
             overflow: hidden;
             background: white;
-            z-index: 3;
+            flex-shrink: 0;
         }
-        .slideshow-persona-badge img {
+        .slideshow-persona-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        .slideshow-persona-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .slideshow-persona-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.8);
+            line-height: 1.2;
+        }
+        .slideshow-persona-guidename {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: white;
+            background: var(--color-primary);
+            padding: 4px 12px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            align-self: flex-start;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
         }
         .slideshow-close {
             position: absolute;
@@ -520,7 +551,13 @@
     <div id="slideshow-overlay">
         <div class="slideshow-bg-container" id="slideshow-bg"></div>
         <div class="slideshow-persona-badge" id="slideshow-persona-badge">
-            <img src="" alt="" id="slideshow-persona-img">
+            <div class="slideshow-persona-image-wrapper">
+                <img src="" alt="" id="slideshow-persona-img">
+            </div>
+            <div class="slideshow-persona-text">
+                <div class="slideshow-persona-name" id="slideshow-persona-name"></div>
+                <div class="slideshow-persona-guidename" id="slideshow-persona-guidename"></div>
+            </div>
         </div>
         <button class="slideshow-close" id="close-slideshow" title="閉じる">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -695,9 +732,20 @@
                 
                 // ペルソナ画像の設定
                 const personaImg = document.getElementById('slideshow-persona-img');
+                const personaName = document.getElementById('slideshow-persona-name');
+                const personaGuidename = document.getElementById('slideshow-persona-guidename');
+                
                 if (personaImg && guide.persona) {
                     personaImg.src = guide.persona.image;
                     personaImg.alt = guide.persona.name;
+                }
+                
+                if (personaName && guide.persona) {
+                    personaName.textContent = guide.persona.name;
+                }
+                
+                if (personaGuidename && guide.persona) {
+                    personaGuidename.textContent = guide.persona.guideName;
                 }
                 
                 // 画像の初期化
