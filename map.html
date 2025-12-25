@@ -1,41 +1,68 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>世界のガイド - どこでもバスガイド</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --color-primary: #3B82F6;
             --color-text: #1f2937;
             --color-bg: #f8f9fa;
         }
+
         @keyframes fadeInOut {
-            0% { opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { opacity: 0; }
+            0% {
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
         }
+
         @keyframes slideUp {
-            from { transform: translateY(100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
-        body, html {
+
+        body,
+        html {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
             font-family: 'Noto Sans JP', sans-serif;
         }
+
         #map {
             height: 100%;
             width: 100%;
             z-index: 1;
         }
+
         .back-button {
             position: fixed;
             top: 20px;
@@ -44,7 +71,7 @@
             background: white;
             padding: 10px 20px;
             border-radius: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             text-decoration: none;
             color: var(--color-text);
             font-weight: 700;
@@ -53,44 +80,51 @@
             gap: 8px;
             transition: all 0.3s ease;
         }
+
         .back-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
         }
-        
+
         /* カスタムポップアップのスタイル */
         .leaflet-popup-content-wrapper {
             border-radius: 16px;
             padding: 0;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
+
         .leaflet-popup-content {
             margin: 0;
             width: 320px !important;
         }
+
         .guide-popup {
             display: flex;
             flex-direction: column;
         }
+
         .guide-header {
             position: relative;
             height: 280px;
         }
+
         .guide-spot-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .guide-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, 
-                rgba(0,0,0,0) 0%, 
-                rgba(0,0,0,0.2) 50%, 
-                rgba(0,0,0,0.8) 100%);
+            background: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0.2) 50%,
+                    rgba(0, 0, 0, 0.8) 100%);
             pointer-events: none;
         }
+
         .guide-persona-badge {
             position: absolute;
             top: 60px;
@@ -99,16 +133,18 @@
             height: 70px;
             border-radius: 50%;
             border: 2px solid white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             overflow: hidden;
             background: white;
             z-index: 2;
         }
+
         .guide-persona-badge img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .guide-persona-info {
             position: absolute;
             bottom: 20px;
@@ -117,12 +153,14 @@
             color: white;
             z-index: 2;
         }
+
         .guide-persona-name-wrapper {
             display: flex;
             align-items: baseline;
             gap: 8px;
             margin-bottom: 4px;
         }
+
         .guide-persona-guide-name {
             font-size: 0.75rem;
             font-weight: 700;
@@ -133,22 +171,26 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
         .guide-persona-real-name {
             font-size: 1.1rem;
             font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
+
         .guide-persona-description {
             font-size: 0.8rem;
             line-height: 1.4;
             opacity: 0.9;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
             margin: 0;
         }
+
         .guide-body {
             padding: 20px;
             background: white;
         }
+
         .guide-address {
             font-size: 0.75rem;
             color: #6b7280;
@@ -158,6 +200,7 @@
             gap: 4px;
             word-break: break-all;
         }
+
         .guide-title {
             font-size: 1.25rem;
             font-weight: 800;
@@ -169,6 +212,7 @@
             overflow: hidden;
             line-height: 1.3;
         }
+
         .guide-text {
             font-size: 0.9rem;
             line-height: 1.6;
@@ -179,11 +223,13 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+
         .guide-controls {
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .play-button {
             background: var(--color-primary);
             color: white;
@@ -196,18 +242,20 @@
             justify-content: center;
             cursor: pointer;
             transition: all 0.2s ease;
-            box-shadow: 0 4px 10px rgba(59,130,246,0.4);
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
         }
+
         .play-button:hover {
             transform: scale(1.1);
             background: #2563EB;
         }
+
         .play-button svg {
             width: 24px;
             height: 24px;
             fill: currentColor;
         }
-        
+
         /* スライドショーオーバーレイ */
         #slideshow-overlay {
             position: fixed;
@@ -218,11 +266,13 @@
             overflow: hidden;
             color: white;
         }
+
         .slideshow-bg-container {
             position: absolute;
             inset: 0;
             z-index: 1;
         }
+
         .slideshow-image {
             position: absolute;
             inset: 0;
@@ -232,65 +282,75 @@
             opacity: 0;
             transition: opacity 1.5s ease-in-out;
         }
+
         .slideshow-image.active {
             opacity: 1;
         }
+
         .slideshow-content {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             height: 50vh;
-            background: linear-gradient(to top, 
-                rgba(0, 0, 0, 0.732) 50%, 
-                rgba(0, 0, 0, 0.429) 90%, 
-                rgba(0, 0, 0, 0) 100%);
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, 0.732) 50%,
+                    rgba(0, 0, 0, 0.429) 90%,
+                    rgba(0, 0, 0, 0) 100%);
             z-index: 2;
             display: flex;
             flex-direction: column;
             overflow: hidden;
         }
+
         .slideshow-title {
             font-size: 2rem;
             font-weight: 800;
             margin: 0;
             padding: 20px 40px 10px;
-            text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
             animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
             animation-delay: 0.2s;
             flex-shrink: 0;
         }
+
         .slideshow-text-container {
             flex: 1;
             overflow-y: auto;
             padding: 0 40px 180px;
             scrollbar-width: thin;
-            scrollbar-color: rgba(255,255,255,0.3) transparent;
+            scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
         }
+
         .slideshow-text-container::-webkit-scrollbar {
             width: 8px;
         }
+
         .slideshow-text-container::-webkit-scrollbar-track {
             background: transparent;
         }
+
         .slideshow-text-container::-webkit-scrollbar-thumb {
-            background: rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 4px;
         }
+
         .slideshow-text-container::-webkit-scrollbar-thumb:hover {
-            background: rgba(255,255,255,0.5);
+            background: rgba(255, 255, 255, 0.5);
         }
+
         .slideshow-text {
             font-size: 1.4rem;
             line-height: 1.8;
             max-width: 1000px;
             margin: 0;
-            color: rgba(255,255,255,1);
-            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            color: rgba(255, 255, 255, 1);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
             font-weight: 400;
             animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
             animation-delay: 0.4s;
         }
+
         .slideshow-persona-badge {
             position: absolute;
             top: 15px;
@@ -300,33 +360,38 @@
             gap: 15px;
             z-index: 3;
         }
+
         .slideshow-persona-image-wrapper {
-            width: 120px;
-            height: 120px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             border: 3px solid rgba(255, 255, 255, 0.526);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
             overflow: hidden;
             background: white;
             flex-shrink: 0;
         }
+
         .slideshow-persona-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .slideshow-persona-text {
             display: flex;
             flex-direction: column;
             gap: 4px;
         }
+
         .slideshow-persona-name {
             font-size: 1.5rem;
             font-weight: 800;
             color: white;
-            text-shadow: 0 3px 8px rgba(0,0,0,0.8);
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
             line-height: 1.2;
         }
+
         .slideshow-persona-guidename {
             font-size: 0.9rem;
             font-weight: 700;
@@ -338,16 +403,17 @@
             letter-spacing: 0.5px;
             display: inline-block;
             align-self: flex-start;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         }
+
         .slideshow-close {
             position: absolute;
             top: 30px;
             right: 30px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
             width: 50px;
             height: 50px;
@@ -359,10 +425,12 @@
             z-index: 3;
             transition: all 0.3s ease;
         }
+
         .slideshow-close:hover {
-            background: rgba(255,255,255,0.4);
+            background: rgba(255, 255, 255, 0.4);
             transform: rotate(90deg);
         }
+
         .slideshow-controls {
             position: fixed;
             bottom: 0;
@@ -374,16 +442,18 @@
             gap: 0px;
             align-items: center;
             padding: 10px 30px 30px;
-            background: linear-gradient(to top, 
-                rgba(0, 0, 0, 0.9) 0%, 
-                rgba(0, 0, 0, 0.7) 50%, 
-                rgba(0, 0, 0, 0) 100%);
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, 0.9) 0%,
+                    rgba(0, 0, 0, 0.7) 50%,
+                    rgba(0, 0, 0, 0) 100%);
             -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
         }
+
         #slideshow-overlay.active .slideshow-controls {
             display: flex;
         }
+
         .playback-controls {
             display: flex;
             align-items: center;
@@ -391,11 +461,12 @@
             width: 100%;
             max-width: 800px;
         }
+
         .control-button {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
             width: 40px;
             height: 40px;
@@ -407,21 +478,25 @@
             transition: all 0.3s ease;
             flex-shrink: 0;
         }
+
         .control-button:hover {
-            background: rgba(255,255,255,0.4);
+            background: rgba(255, 255, 255, 0.4);
             transform: scale(1.1);
         }
+
         .control-button svg {
             width: 28px;
             height: 28px;
             fill: currentColor;
         }
+
         .seek-container {
             flex: 1;
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
+
         .seek-bar-wrapper {
             display: flex;
             align-items: center;
@@ -433,25 +508,28 @@
             border-radius: 50px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .time-display {
             font-size: 0.9rem;
             font-weight: 700;
             color: white;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
             min-width: 50px;
             text-align: center;
             font-variant-numeric: tabular-nums;
         }
+
         .seek-bar {
             flex: 1;
             -webkit-appearance: none;
             appearance: none;
             height: 6px;
             border-radius: 3px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             outline: none;
             cursor: pointer;
         }
+
         .seek-bar::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -460,12 +538,14 @@
             border-radius: 50%;
             background: white;
             cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             transition: all 0.15s ease;
         }
+
         .seek-bar::-webkit-slider-thumb:hover {
             transform: scale(1.2);
         }
+
         .seek-bar::-moz-range-thumb {
             width: 18px;
             height: 18px;
@@ -473,32 +553,36 @@
             background: white;
             cursor: pointer;
             border: none;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             transition: all 0.15s ease;
         }
+
         .seek-bar::-moz-range-thumb:hover {
             transform: scale(1.2);
         }
+
         .seek-bar::-webkit-slider-runnable-track {
-            background: linear-gradient(to right, 
-                var(--color-primary) 0%, 
-                var(--color-primary) var(--seek-progress, 0%), 
-                rgba(255,255,255,0.2) var(--seek-progress, 0%), 
-                rgba(255,255,255,0.2) 100%);
+            background: linear-gradient(to right,
+                    var(--color-primary) 0%,
+                    var(--color-primary) var(--seek-progress, 0%),
+                    rgba(255, 255, 255, 0.2) var(--seek-progress, 0%),
+                    rgba(255, 255, 255, 0.2) 100%);
             height: 6px;
             border-radius: 3px;
         }
+
         .seek-bar::-moz-range-track {
             height: 6px;
             border-radius: 3px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
         }
+
         .seek-bar::-moz-range-progress {
             background: var(--color-primary);
             height: 6px;
             border-radius: 3px;
         }
-        
+
         /* ローディング表示 */
         #loading {
             position: fixed;
@@ -511,6 +595,7 @@
             justify-content: center;
             transition: opacity 0.5s ease;
         }
+
         .spinner {
             width: 50px;
             height: 50px;
@@ -519,12 +604,19 @@
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
+
 <body>
     <div id="loading">
         <div class="spinner"></div>
@@ -533,15 +625,17 @@
 
     <a href="index.html" class="back-button">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
+            <path d="M19 12H5M12 19l-7-7 7-7" />
         </svg>
         戻る
     </a>
 
-    <div class="map-info-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 12px 24px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--color-text); font-weight: 500;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-            <circle cx="12" cy="10" r="3"/>
+    <div class="map-info-banner"
+        style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 12px 24px; border-radius: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--color-text); font-weight: 500;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            style="flex-shrink: 0;">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
         </svg>
         <span id="map-banner-text" data-i18n="map.banner.text">世界各地の実際のガイドサンプルを体験できます</span>
     </div>
@@ -561,7 +655,7 @@
         </div>
         <button class="slideshow-close" id="close-slideshow" title="閉じる">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M18 6L6 18M6 6l12 12"/>
+                <path d="M18 6L6 18M6 6l12 12" />
             </svg>
         </button>
         <div class="slideshow-content">
@@ -573,11 +667,17 @@
         <div class="slideshow-controls">
             <div class="playback-controls">
                 <button class="control-button" id="toggle-play" title="再生/一時停止">
-                    <svg id="play-icon" viewBox="0 0 24 24" style="display: none;"><path d="M8 5v14l11-7z"/></svg>
-                    <svg id="pause-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    <svg id="play-icon" viewBox="0 0 24 24" style="display: none;">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                    <svg id="pause-icon" viewBox="0 0 24 24">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                    </svg>
                 </button>
                 <button class="control-button" id="toggle-fullscreen" title="フルスクリーン">
-                    <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+                    </svg>
                 </button>
                 <div class="seek-container">
                     <div class="seek-bar-wrapper">
@@ -586,15 +686,16 @@
                         <span class="time-display" id="duration-time">0:00</span>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="guide-data.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // 地図の初期化
             const map = L.map('map', {
                 zoomControl: false
@@ -690,7 +791,7 @@
             const currentTime = document.getElementById('current-time');
             const durationTime = document.getElementById('duration-time');
             const toggleFullscreenBtn = document.getElementById('toggle-fullscreen');
-            
+
             let slideshowTimer = null;
             let currentImages = [];
             let currentImageIndex = 0;
@@ -706,16 +807,16 @@
 
             function updateSeekBar() {
                 if (!currentAudio || isSeekingAudio) return;
-                
+
                 const currentValue = currentAudio.currentTime;
                 const maxValue = parseFloat(seekBar.max);
-                
+
                 if (maxValue > 0) {
                     seekBar.value = currentValue;
                     const progress = (currentValue / maxValue) * 100;
                     seekBar.style.setProperty('--seek-progress', `${progress}%`);
                 }
-                
+
                 currentTime.textContent = formatTime(currentValue);
             }
 
@@ -725,29 +826,29 @@
 
                 currentImages = guide.images || [guide.spotImage];
                 currentImageIndex = 0;
-                
+
                 // タイトルとテキストの設定
                 slideshowTitle.textContent = guide.name;
                 slideshowText.textContent = guide.text;
-                
+
                 // ペルソナ画像の設定
                 const personaImg = document.getElementById('slideshow-persona-img');
                 const personaName = document.getElementById('slideshow-persona-name');
                 const personaGuidename = document.getElementById('slideshow-persona-guidename');
-                
+
                 if (personaImg && guide.persona) {
                     personaImg.src = guide.persona.image;
                     personaImg.alt = guide.persona.name;
                 }
-                
+
                 if (personaName && guide.persona) {
                     personaName.textContent = guide.persona.name;
                 }
-                
+
                 if (personaGuidename && guide.persona) {
                     personaGuidename.textContent = guide.persona.guideName;
                 }
-                
+
                 // 画像の初期化
                 slideshowBg.innerHTML = '';
                 currentImages.forEach((src, index) => {
@@ -760,7 +861,7 @@
                 // オーバーレイの表示
                 slideshowOverlay.style.display = 'block';
                 slideshowOverlay.classList.add('active');
-                
+
                 // 音声再生の準備
                 if (currentAudio) {
                     currentAudio.pause();
@@ -768,18 +869,18 @@
                     currentAudio.removeEventListener('loadedmetadata', updateDuration);
                     currentAudio.removeEventListener('ended', onAudioEnded);
                 }
-                
+
                 currentAudio = new Audio();
-                
+
                 // 音声イベントリスナーを先に登録
                 currentAudio.addEventListener('timeupdate', updateSeekBar);
                 currentAudio.addEventListener('loadedmetadata', updateDuration);
                 currentAudio.addEventListener('ended', onAudioEnded);
-                
+
                 // srcを設定して再生
                 currentAudio.src = guide.audio;
                 currentAudio.load();
-                
+
                 currentAudio.play().catch(e => console.log("Auto-play prevented or failed:", e));
                 updatePlayButtonUI(true);
 
@@ -794,7 +895,7 @@
 
             function updateDuration() {
                 if (!currentAudio) return;
-                
+
                 const duration = currentAudio.duration;
                 if (!isNaN(duration) && duration > 0 && isFinite(duration)) {
                     seekBar.max = duration;
@@ -807,7 +908,7 @@
             function onAudioEnded() {
                 updatePlayButtonUI(false);
                 if (slideshowTimer) clearInterval(slideshowTimer);
-                
+
                 // 再生終了時にシークバーを最後まで進める
                 const maxValue = parseFloat(seekBar.max);
                 seekBar.value = maxValue;
@@ -827,7 +928,7 @@
 
             function togglePlay() {
                 if (!currentAudio) return;
-                
+
                 if (currentAudio.paused) {
                     currentAudio.play();
                     startSlideshow();
@@ -855,13 +956,13 @@
                 // スライドショーを閉じる
                 slideshowOverlay.style.display = 'none';
                 slideshowOverlay.classList.remove('active');
-                
+
                 // タイマーを停止
                 if (slideshowTimer) {
                     clearInterval(slideshowTimer);
                     slideshowTimer = null;
                 }
-                
+
                 // 音声を停止
                 if (currentAudio) {
                     currentAudio.pause();
@@ -871,7 +972,7 @@
                     currentAudio.removeEventListener('ended', onAudioEnded);
                     currentAudio = null;
                 }
-                
+
                 // フルスクリーンを解除
                 if (document.fullscreenElement) {
                     if (document.exitFullscreen) {
@@ -882,7 +983,7 @@
                         document.msExitFullscreen();
                     }
                 }
-                
+
                 // UIをリセット
                 updatePlayButtonUI(false);
                 seekBar.value = 0;
@@ -899,7 +1000,7 @@
                         currentAudio.pause();
                         wasPlaying = true;
                     }
-                    
+
                     // フルスクリーンに入る
                     if (slideshowOverlay.requestFullscreen) {
                         slideshowOverlay.requestFullscreen();
@@ -908,7 +1009,7 @@
                     } else if (slideshowOverlay.msRequestFullscreen) {
                         slideshowOverlay.msRequestFullscreen();
                     }
-                    
+
                     // フルスクリーンに入った後にaudioを再開
                     setTimeout(() => {
                         if (wasPlaying && currentAudio) {
@@ -931,9 +1032,9 @@
             closeSlideshow.addEventListener('click', stopSlideshow);
             togglePlayBtn.addEventListener('click', togglePlay);
             toggleFullscreenBtn.addEventListener('click', toggleFullscreen);
-            
+
             // フルスクリーン変更時の対応
-            document.addEventListener('fullscreenchange', function() {
+            document.addEventListener('fullscreenchange', function () {
                 if (document.fullscreenElement) {
                     // フルスクリーンに入った場合
                     setTimeout(() => {
@@ -941,17 +1042,17 @@
                     }, 100);
                 }
             });
-            
+
             // シークバーのイベントリスナー
-            seekBar.addEventListener('mousedown', function() {
+            seekBar.addEventListener('mousedown', function () {
                 isSeekingAudio = true;
             });
-            
-            seekBar.addEventListener('touchstart', function() {
+
+            seekBar.addEventListener('touchstart', function () {
                 isSeekingAudio = true;
             });
-            
-            seekBar.addEventListener('input', function() {
+
+            seekBar.addEventListener('input', function () {
                 if (!currentAudio) return;
                 const seekTime = parseFloat(seekBar.value);
                 const maxValue = parseFloat(seekBar.max);
@@ -959,26 +1060,26 @@
                 const progress = (seekTime / maxValue) * 100;
                 seekBar.style.setProperty('--seek-progress', `${progress}%`);
             });
-            
-            seekBar.addEventListener('change', function() {
+
+            seekBar.addEventListener('change', function () {
                 if (!currentAudio) return;
                 const seekTime = parseFloat(seekBar.value);
                 currentAudio.currentTime = seekTime;
             });
-            
-            seekBar.addEventListener('mouseup', function() {
-                setTimeout(() => {
-                    isSeekingAudio = false;
-                }, 100);
-            });
-            
-            seekBar.addEventListener('touchend', function() {
+
+            seekBar.addEventListener('mouseup', function () {
                 setTimeout(() => {
                     isSeekingAudio = false;
                 }, 100);
             });
 
-            document.addEventListener('click', function(e) {
+            seekBar.addEventListener('touchend', function () {
+                setTimeout(() => {
+                    isSeekingAudio = false;
+                }, 100);
+            });
+
+            document.addEventListener('click', function (e) {
                 const playBtn = e.target.closest('.play-button');
                 if (playBtn) {
                     // ポップアップの親要素からIDを取得（実際にはマーカーに関連付けるのが良いが、今の構造ではデータ属性から探す）
@@ -1001,4 +1102,5 @@
         });
     </script>
 </body>
+
 </html>
