@@ -41,7 +41,7 @@ const translations = {
         "howuse.title": "かんたん3ステップ",
         "howuse.description": "すぐに始められる、シンプルな使い方",
         "step.1.title": "ガイドを選ぶ",
-        "step.1.desc": "7人の個性豊かなAIガイドから、お好みのキャラクターを選択します。",
+        "step.1.desc": "8人の個性豊かなAIガイドから、お好みのキャラクターを選択します。",
         "step.2.title": "位置情報を設定",
         "step.2.desc": "現在地でボタンを押すか、地図上でスポットを選んでガイドを取得。自動で詳しい情報を生成します。",
         "step.3.title": "旅を楽しむ",
@@ -73,7 +73,7 @@ const translations = {
         "nav.download": "Download",
         "hero.title.line1": "Wherever you are",
         "hero.title.line2": "AI guides your trip",
-        "hero.description": "Using location information, 7 unique AI guides will guide you through the sightseeing information, history, and culture of your current location.",
+        "hero.description": "Using location information, 8 unique AI guides will guide you through the sightseeing information, history, and culture of your current location.",
         "hero.button.download": "Download for Free",
         "hero.button.learnMore": "Learn More",
         "features.tag": "Features",
@@ -101,7 +101,7 @@ const translations = {
         "howuse.title": "Easy 3 Steps",
         "howuse.description": "Start right away with simple usage",
         "step.1.title": "Choose a Guide",
-        "step.1.desc": "Select your favorite character from 7 unique AI guides.",
+        "step.1.desc": "Select your favorite character from 8 unique AI guides.",
         "step.2.title": "Set Location",
         "step.2.desc": "Press the button at your current location or select a spot on the map to get a guide. Detailed information is automatically generated.",
         "step.3.title": "Enjoy the Trip",
@@ -488,7 +488,8 @@ function initHeroPhoneCarousel() {
         'image/akari.jpg',
         'image/midori.jpg',
         'image/ai.jpg',
-        'image/rakuko.jpg'
+        'image/rakuko.jpg',
+        'image/yuki.jpg'
     ];
 
     // 既存のコンテナがあれば再利用、なければ作成
