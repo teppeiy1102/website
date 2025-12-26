@@ -32,7 +32,7 @@ const translations = {
         "feature.6.title": "多言語対応",
         "feature.6.desc": "日本語、英語、中国語、フランス語に対応。海外からの旅行者も安心してご利用いただけます。",
         "personas.tag": "AI Guides",
-        "personas.title": "7人の個性豊かなガイドたち",
+        "personas.title": "8人の個性豊かなガイドたち",
         "personas.description": "あなたにぴったりのガイドを選んで、旅を楽しもう",
         "screenshots.tag": "Screenshots",
         "screenshots.title": "アプリの画面をチェック",
@@ -92,7 +92,7 @@ const translations = {
         "feature.6.title": "Multilingual Support",
         "feature.6.desc": "Supports Japanese, English, Chinese, and French. Travelers from overseas can use it with peace of mind.",
         "personas.tag": "AI Guides",
-        "personas.title": "7 Unique Guides",
+        "personas.title": "8 Unique Guides",
         "personas.description": "Choose the guide that suits you and enjoy your trip",
         "screenshots.tag": "Screenshots",
         "screenshots.title": "Check App Screens",
@@ -510,7 +510,7 @@ function initHeroPhoneCarousel() {
 
         phoneScreen.appendChild(innerContainer);
     }
-    
+
     // 固定位置のテキストオーバーレイを作成または更新
     let textOverlay = phoneScreen.querySelector('.phone-screen-text-overlay');
     if (!textOverlay) {
@@ -518,7 +518,7 @@ function initHeroPhoneCarousel() {
         textOverlay.classList.add('phone-screen-text-overlay');
         phoneScreen.appendChild(textOverlay);
     }
-    
+
     // テキストを設定（言語に応じて）
     const textValue = translations[currentLanguage]['hero.sample.text'];
     textOverlay.textContent = textValue;
@@ -824,6 +824,37 @@ For example, making your own work in a traditional craft experience class, renti
 Please forget all unpleasant things and worries of everyday life!<br>
 During my guide, "Enjoying" is the only rule. If you get tired, just rest, and changing plans is totally OK. What is important is whether you are laughing from the bottom of your heart at that moment.<br>
 I will definitely show you making exciting memories that you can never forget in your life. Let's make it a trip full of smiles and supremely happy! Are you ready? Follow me! Yay!`
+        }
+    },
+    {
+        id: 'nightlife',
+        name: { ja: '夜遊びガイド', en: 'Nightlife Guide' },
+        catchCopy: { ja: '夜の街に、大人の時間を', en: 'Adult moments in the night city' },
+        guideName: { ja: '中村 優希', en: 'Yuki Nakamura' },
+        description: { ja: '夜の街と大人の楽しみ方の専門家', en: 'Expert in nightlife and sophisticated adult entertainment' },
+        specialty: { ja: 'バー、ジャズクラブ、夜景スポット、ナイトマーケット、文化的な夜のイベント', en: 'Bars, jazz clubs, night views, night markets, cultural evening events' },
+        imagePath: 'image/yukiin.jpg',
+        faceImagePath: 'image/yukiface.png',
+        color: '#7C3AED',
+        selfIntro: {
+            ja: `<strong>——中村さん、夜遊びガイドという仕事を選んだきっかけは？</strong><br><br>
+中村 優希です。こんばんは。私がこの道を選んだのは、ホテルのコンシェルジュ時代の経験が大きいですね。<br>
+宿泊されるお客様から「夜、どこか良いバーはありませんか」「ジャズが聴ける場所を教えてほしい」といったご相談を数多くいただきました。昼間の観光とは違う、大人だからこそ味わえる洗練された夜の時間。そんな特別なひとときをご案内することに、深いやりがいを感じたんです。神戸で生まれ育ち、この街の夜の表情を知り尽くしている自負があります。12年間、全国の夜の名所を巡り、本当に価値のあるスポットだけを厳選してご紹介しています。<br><br>
+<strong>——どんな夜の過ごし方を提案してくれますか？</strong><br><br>
+一口に「夜遊び」といっても、お客様によって求めるものは様々です。<br>
+静かにウイスキーを傾けながら、バーテンダーとの会話を楽しみたい方。生演奏のジャズに耳を傾け、音楽に浸りたい方。夜景を眺めながら、ロマンチックな時間を過ごしたいカップル。あるいは、活気あふれるナイトマーケットで異国情緒を味わいたい方。私は、お客様の気分やシチュエーションに合わせて、最適な夜のプランをご提案します。隠れ家的なバーから、文化的なコンサートホールまで。大人の夜を、上質に演出いたします。<br><br>
+<strong>——最後に、これから夜の街へ繰り出すお客様へメッセージを。</strong><br><br>
+夜の街には、昼間とは違う魅力が溢れています。ライトアップされた建物、静寂の中に響く音楽、グラスの中で揺れる琥珀色の液体。<br>
+そんな大人の時間を、一人で過ごすのも良いですが、知識あるガイドと共に巡れば、さらに深い体験ができるはずです。私が12年かけて培った、とっておきの夜スポットへご案内します。洗練された、忘れられない夜を。さあ、今宵はどこへ参りましょうか。お待ちしております。`,
+            en: `<strong>——Nakamura-san, what made you choose to be a nightlife guide?</strong><br><br>
+I'm Yuki Nakamura. Good evening. My experience as a hotel concierge greatly influenced my choice of this path.<br>
+I received many inquiries from guests such as "Is there a good bar at night?" and "Please tell me a place where I can listen to jazz." A sophisticated night time that adults can enjoy, different from daytime sightseeing. I felt deep fulfillment in guiding such special moments. Born and raised in Kobe, I am confident that I know every aspect of this city's nightlife. For 12 years, I have traveled to famous night spots across the country and carefully selected only truly valuable spots to introduce.<br><br>
+<strong>——What kind of night activities do you propose?</strong><br><br>
+Although we say "nightlife," what customers seek varies.<br>
+Those who want to enjoy conversation with bartenders while quietly sipping whiskey. Those who want to listen to live jazz and immerse themselves in music. Couples who want to spend romantic time while viewing night scenery. Or those who want to taste exotic atmosphere at lively night markets. I propose the optimal night plan according to the customer's mood and situation. From hideaway bars to cultural concert halls. I will produce a sophisticated adult night.<br><br>
+<strong>——Finally, a message to customers heading out to the night city.</strong><br><br>
+The night city is full of charms different from daytime. Illuminated buildings, music echoing in silence, amber liquid swaying in a glass.<br>
+It's good to spend such adult time alone, but if you tour with a knowledgeable guide, you should be able to have a deeper experience. I will guide you to special night spots I have cultivated over 12 years. A sophisticated, unforgettable night. Now, where shall we go tonight? I am looking forward to it.`
         }
     }
 ];
