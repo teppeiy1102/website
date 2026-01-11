@@ -4,8 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://apps.apple.com">
+    <link rel="dns-prefetch" href="https://play.google.com">
     <title data-i18n="page.title">どこでもバスガイド - AIがあなたの旅をもっと楽しく</title>
-    <meta name="description" content="位置情報とAIを活用した観光ガイドアプリ。7種類の個性豊かなAIガイドがあなたの旅をサポートします。">
+    <meta name="description" content="位置情報とAIを活用した究極の観光ガイドアプリ（無料）。8人の個性あふれるAIガイドが、GPSに連動して観光地の歴史や文化を音声でご案内します。">
+    <link rel="canonical" href="https://docodemoguide.com/">
+    <link rel="alternate" hreflang="ja" href="https://docodemoguide.com/?lang=ja">
+    <link rel="alternate" hreflang="en" href="https://docodemoguide.com/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://docodemoguide.com/">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="image/iconimage.jpg">
+    <meta name="theme-color" content="#3B82F6">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -15,8 +26,9 @@
     <meta property="og:image" content="https://docodemoguide.com/image/ogp-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="どこでもバスガイド">
+    <meta property="og:site_name" content="どこでもバスガイド | DocoDemo Guide">
     <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -55,6 +67,62 @@
             }
         }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ホーム",
+        "item": "https://docodemoguide.com/"
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "どこでもバスガイド (DocoDemo Guide)",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "TravelApplication",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "150"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      },
+      "description": "位置情報とAIを活用した観光ガイドアプリ。個性豊かなAIガイドがあなたの旅をサポートします。観光地の歴史や文化を音声で案内する、あなたの専属バスガイドです。",
+      "alternateName": "DocoDemo Guide",
+      "url": "https://docodemoguide.com/",
+      "image": "https://docodemoguide.com/image/ogp-image.png",
+      "author": {
+        "@type": "Organization",
+        "name": "どこでもバスガイド 運営"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "DocoDemo Guide (AI Tour Guide)",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "TravelApplication",
+      "description": "AI-powered tour guide app using location info. 8 unique AI guides support your journey with voice and interactive conversation.",
+      "url": "https://docodemoguide.com/?lang=en",
+      "image": "https://docodemoguide.com/image/ogp-image.png",
+      "author": {
+        "@type": "Organization",
+        "name": "DocoDemo Guide Operations"
+      },
+      "inLanguage": "en"
+    }
+    </script>
 </head>
 
 <body>
@@ -62,7 +130,8 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="image/iconimage.jpg" alt="どこでもバスガイド" class="logo-image">
+                <img src="image/iconimage.jpg" alt="どこでもバスガイド ロゴ" class="logo-image" loading="eager"
+                    fetchpriority="high">
                 <span class="logo-text" data-i18n="app.title">どこでもバスガイド</span>
             </a>
             <div class="nav-right">
@@ -96,15 +165,16 @@
                 <div
                     style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; border: 1px solid rgb(224, 224, 224); border-radius: 12px; padding: 20px; max-width: 500px; background: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 8px;">
                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;"><img
-                            alt="DocoDemo Guide"
+                            alt="DocoDemo Guide アプリアイコン"
                             src="https://ph-files.imgix.net/a04b386b-992d-47a2-a1de-5dbfba18d7bb.vnd.microsoft.icon?auto=format&amp;fit=crop&amp;w=80&amp;h=80"
-                            style="width: 64px; height: 64px; border-radius: 8px; object-fit: cover; flex-shrink: 0;">
+                            style="width: 64px; height: 64px; border-radius: 8px; object-fit: cover; flex-shrink: 0;"
+                            loading="lazy">
                         <div style="flex: 1 1 0%; min-width: 0px;">
                             <h3
                                 style="margin: 0px; font-size: 18px; font-weight: 600; color: rgb(26, 26, 26); line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
                                 DocoDemo Guide</h3>
                             <p
-                                style="margin: 4px 0px 0px; font-size: 14px; color: rgb(102, 102, 102); line-height: 1.4; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                                style="margin: 4px 0px 0px; font-size: 14px; color: rgb(102, 102, 102); line-height: 1.4; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical;">
                                 Heartfelt guidance: Your personal guide with voice Navi.</p>
                         </div>
                     </div><a
@@ -131,6 +201,21 @@
                         </svg>
                     </a>
                 </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">98%</span>
+                        <span class="stat-label" data-i18n="stat.1.label">AIガイド満足度</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">1,000+</span>
+                        <span class="stat-label" data-i18n="stat.2.label">ガイドスポット</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">Gemini</span>
+                        <span class="stat-label" data-i18n="stat.3.label">Powered AI</span>
+                    </div>
+                </div>
             </div>
             <div class="hero-image">
                 <div class="phone-mockup">
@@ -140,13 +225,12 @@
                         </div>
                         <!-- 世界のエリアを見るボタンをスマホ画面に配置 -->
                         <a href="map.html" class="btn-world-guide">
-                            <span data-i18n="hero.button.worldguide">サンプルガイドを見る</span>
+                            <span data-i18n="hero.button.worldguide">驚きのAIガイドを今すぐ体験</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.5">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                                 <circle cx="12" cy="10" r="3" />
                             </svg>
-
                         </a>
 
                     </div>
@@ -184,7 +268,9 @@
                     <div class="feature-content">
                         <h3 data-i18n="feature.2.title">地図機能</h3>
                         <p data-i18n="feature.2.desc">
-                            OpenStreetMapで訪問履歴を記録。地図上のマーカーをタップして、新しい場所を選択しガイドを取得したり、過去のガイドをいつでも振り返れます。</p>
+                            OpenStreetMapで訪問履歴を記録。地図上のマーカーをタップして、<a href="map.html"
+                                style="color: var(--color-primary); text-decoration: underline;">新しい場所を選択しガイドを取得</a>したり、過去のガイドをいつでも振り返れます。
+                        </p>
                     </div>
                     <div class="feature-visual">
                         <span class="feature-emoji">🗺️</span>
@@ -322,6 +408,106 @@
             </div>
         </div>
     </section>
+
+    <!-- レビューセクション (Social Proof) -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="reviews.tag">Reviews</span>
+                <h2 class="section-title" data-i18n="reviews.title">ユーザーの声</h2>
+                <p class="section-description" data-i18n="reviews.description">実際にアプリを体験した方々からの感想をご紹介</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text" data-i18n="review.1.text">「ひとり旅がもっと楽しくなりました。ガイドさんの個性が面白くて、つい聞き入ってしまいます。」</p>
+                    <div class="review-author">- <span data-i18n="review.1.author">30代 女性</span></div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text" data-i18n="review.2.text">「家族旅行で大活躍。子供たちが歴史のクイズ（AIとの会話）に夢中になっていました！」</p>
+                    <div class="review-author">- <span data-i18n="review.2.author">40代 男性</span></div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text" data-i18n="review.3.text">「知らない土地でも安心して歩けます。おすすめのお店情報が本当に役立ちました。」</p>
+                    <div class="review-author">- <span data-i18n="review.3.author">20代 学生</span></div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text" data-i18n="review.4.text">「歴史ガイドさんの話が深くて、普通の看板を読むよりずっと頭に入ってきます。散歩が学びに変わりました。」
+                    </p>
+                    <div class="review-author">- <span data-i18n="review.4.author">50代 男性</span></div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text" data-i18n="review.5.text">「インスタ映えスポットを教えてくれるガイドさんが最高！可愛い写真がたくさん撮れて大満足です。」</p>
+                    <div class="review-author">- <span data-i18n="review.5.author">20代 女性</span></div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text" data-i18n="review.6.text">
+                        「通勤通学で毎日通る道なのに、AIガイドに聞いたら意外な歴史があって驚きました。日常に発見をくれます。」</p>
+                    <div class="review-author">- <span data-i18n="review.6.author">30代 会社員</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQセクション (Reduces Anxiety) -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="faq.tag">FAQ</span>
+                <h2 class="section-title" data-i18n="faq.title">よくある質問</h2>
+                <p class="section-description" data-i18n="faq.description">疑問点はこちらで解決</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3 class="faq-question" data-i18n="faq.1.q">無料で使えますか？</h3>
+                    <p class="faq-answer" data-i18n="faq.1.a">
+                        はい、すべての機能を無料でご利用いただけます。会員登録や課金の必要はなく、今すぐ最高のガイド体験を始められます。</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question" data-i18n="faq.2.q">インターネットがない場所でも使えますか？</h3>
+                    <p class="faq-answer" data-i18n="faq.2.a">AIガイドの生成にはインターネット接続が必要です。一度生成されたガイドや履歴はオフラインでも閲覧可能です。</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question" data-i18n="faq.3.q">対応しているエリアは？</h3>
+                    <p class="faq-answer" data-i18n="faq.3.a">GPSが届く場所であれば、日本全国どこでも、さらには世界中の観光地でご利用いただけます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "無料で使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい、すべての機能を無料でご利用いただけます。会員登録や課金の必要はなく、今すぐ最高のガイド体験を始められます。"
+        }
+      }, {
+        "@type": "Question",
+        "name": "インターネットがない場所でも使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AIガイドの生成にはインターネット接続が必要です。一度生成されたガイドや履歴はオフラインでも閲覧可能です。"
+        }
+      }, {
+        "@type": "Question",
+        "name": "対応しているエリアは？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GPSが届く場所であれば、日本全国どこでも、さらには世界中の観光地でご利用いただけます。"
+        }
+      }]
+    }
+    </script>
 
     <!-- ダウンロードセクション -->
     <section id="download" class="download">

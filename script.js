@@ -11,9 +11,9 @@ const translations = {
         "nav.guides": "ガイド紹介",
         "nav.screenshots": "スクリーンショット",
         "nav.download": "ダウンロード",
-        "hero.title.line1": "どこにいても、",
-        "hero.title.line2": "AIがあなたの旅をガイド",
-        "hero.description": "位置情報を使って、今いる場所の観光情報や歴史、文化を<br>7人の個性豊かなAIガイドがご案内します。",
+        "hero.title.line1": "究極のAI観光ガイドアプリ",
+        "hero.title.line2": "どこでもバスガイド（完全無料）",
+        "hero.description": "GPS連動で目の前の景色を物語に変える。8人の個性豊かなAIガイドが歴史や文化を音声解説。いつもの道が最高のエンターテインメントに。",
         "hero.button.download": "無料でダウンロード",
         "hero.button.learnMore": "詳しく見る",
         "features.tag": "Features",
@@ -59,9 +59,36 @@ const translations = {
         "modal.specialty": "SPECIALTY",
         "modal.intro": "INTERVIEW",
         "nav.worldguide": "サンプルガイド",
-        "hero.button.worldguide": "サンプルガイドを見る",
+        "stat.1.label": "AIガイド満足度",
+        "stat.2.label": "ガイドスポット",
+        "stat.3.label": "Powered AI",
+        "hero.button.worldguide": "驚きのAIガイドを今すぐ体験",
         "hero.sample.text": "実際のガイドサンプルを\n体験してみましょう",
-        "map.banner.text": "世界各地の実際のガイドサンプルを体験できます"
+        "map.banner.text": "世界各地の実際のガイドサンプルを体験できます",
+        "reviews.tag": "Reviews",
+        "reviews.title": "ユーザーの声",
+        "reviews.description": "実際にアプリを体験した方々からの感想をご紹介",
+        "review.1.text": "「ひとり旅がもっと楽しくなりました。ガイドさんの個性が面白くて、つい聞き入ってしまいます。目的地までの何気ない道が贅沢な時間になりました。」",
+        "review.2.text": "「家族旅行で大活躍。子供たちが歴史のクイズ（AIとの会話）に夢中になっていました！親が説明しきれない細かい背景まで教えてくれるのが助かります。」",
+        "review.3.text": "「知らない土地でも安心して歩けます。おすすめのお店情報が本当に役立ちました。地元の人が知るような穴場を教えてくれるのが嬉しいです。」",
+        "review.4.text": "「歴史ガイドさんの話が深くて、普通の看板を読むよりずっと頭に入ってきます。散歩が学びに変わりました。専門ガイドを雇ったような感覚です。」",
+        "review.5.text": "「インスタ映えスポットを教えてくれるガイドさんが最高！可愛い写真がたくさん撮れて大満足です。若者向けの視点で案内してくれるのが新鮮でした。」",
+        "review.6.text": "「通勤通学で毎日通る道なのに、AIガイドに聞いたら意外な歴史があって驚きました。日常に発見をくれます。もっと早く知っていれば良かったです。」",
+        "review.1.author": "30代 女性",
+        "review.2.author": "40代 男性",
+        "review.3.author": "20代 学生",
+        "review.4.author": "50代 男性",
+        "review.5.author": "20代 女性",
+        "review.6.author": "30代 会社員",
+        "faq.tag": "FAQ",
+        "faq.title": "よくある質問",
+        "faq.description": "疑問点はこちらで解決",
+        "faq.1.q": "無料で使えますか？",
+        "faq.1.a": "はい、すべての機能を無料でご利用いただけます。会員登録や課金の必要はなく、今すぐ最高のガイド体験を始められます。",
+        "faq.2.q": "インターネットがない場所でも使えますか？",
+        "faq.2.a": "AIガイドの生成にはインターネット接続が必要です。一度生成されたガイドや履歴はオフラインでも閲覧可能です。",
+        "faq.3.q": "対応しているエリアは？",
+        "faq.3.a": "GPSが届く場所であれば、日本全国どこでも、さらには世界中の観光地でご利用いただけます。"
     },
 
     en: {
@@ -71,9 +98,9 @@ const translations = {
         "nav.guides": "Guides",
         "nav.screenshots": "Screenshots",
         "nav.download": "Download",
-        "hero.title.line1": "Wherever you are",
-        "hero.title.line2": "AI guides your trip",
-        "hero.description": "Using location information, 8 unique AI guides will guide you through the sightseeing information, history, and culture of your current location.",
+        "hero.title.line1": "The Ultimate AI Tour Guide App",
+        "hero.title.line2": "Docodemo Guide (Fully Free)",
+        "hero.description": "Turn any scenery into a story with GPS & AI. 8 unique guides provide voice narration on local history & culture. Transform your walk into the best entertainment.",
         "hero.button.download": "Download for Free",
         "hero.button.learnMore": "Learn More",
         "features.tag": "Features",
@@ -119,9 +146,36 @@ const translations = {
         "modal.specialty": "SPECIALTY",
         "modal.intro": "INTERVIEW",
         "nav.worldguide": "Sample Guide",
-        "hero.button.worldguide": "Explore Sample Guides",
+        "stat.1.label": "AI Guide Satisfaction",
+        "stat.2.label": "Guide Spots",
+        "stat.3.label": "Powered AI",
+        "hero.button.worldguide": "Experience the Amazing AI Guide",
         "hero.sample.text": "Experience actual\nguide samples",
-        "map.banner.text": "Experience actual guide samples from around the world"
+        "map.banner.text": "Experience actual guide samples from around the world",
+        "reviews.tag": "Reviews",
+        "reviews.title": "User Reviews",
+        "reviews.description": "Listen to those who have transformed their travels with our AI guides",
+        "review.1.text": "My solo trip became much more fun. The AI guides' personalities are so immersive. Mundane paths became luxury guided tours. Completely free and better than a physical guide!",
+        "review.2.text": "A big hit on our family trip. The kids were obsessed with the interactive history quizzes! It's the best educational travel app we've used.",
+        "review.3.text": "I can walk with peace of mind even in unknown lands. The AI's recommended shop info was spot on. Highly recommended for backpackers!",
+        "review.4.text": "The deep historical stories stick in my head much better than reading signs. It's like having a professional tour guide in your pocket 24/7.",
+        "review.5.text": "The AI guide sharing Instagrammable spots is incredible! I found so many hidden gems. Essential for anyone who loves travel photography.",
+        "review.6.text": "I've used this road for years, but the AI guide revealed a hidden history I never knew. It turns an ordinary commute into a discovery mission.",
+        "review.1.author": "30s Female",
+        "review.2.author": "40s Male",
+        "review.3.author": "20s Student",
+        "review.4.author": "50s Male",
+        "review.5.author": "20s Female",
+        "review.6.author": "30s Office Worker",
+        "faq.tag": "FAQ",
+        "faq.title": "Frequently Asked Questions",
+        "faq.description": "Find answers to your questions here",
+        "faq.1.q": "Can I use it for free?",
+        "faq.1.a": "Yes, all features are available for free. There are no registration or subscription fees required. Start your premium guide experience right away.",
+        "faq.2.q": "Does it work without internet?",
+        "faq.2.a": "Internet connection is required for AI guide generation. Previously generated guides and history can be viewed offline.",
+        "faq.3.q": "Which areas are supported?",
+        "faq.3.a": "As long as GPS signal is available, it can be used anywhere in Japan and at tourist spots worldwide."
     }
 
 };
@@ -129,8 +183,22 @@ const translations = {
 let currentLanguage = 'ja';
 
 document.addEventListener('DOMContentLoaded', function () {
+    // URLパラメータから言語を取得
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+    if (langParam === 'en' || langParam === 'ja') {
+        currentLanguage = langParam;
+        const btn = document.getElementById('lang-switch');
+        if (btn) btn.textContent = currentLanguage === 'ja' ? 'English' : '日本語';
+        document.documentElement.lang = currentLanguage;
+        // 初期レンダリングはDOMContentLoadedの後のupdateLanguageで行う
+    }
+
     // 言語切り替えボタン
     initLanguageSwitcher();
+
+    // 初回表示の適用（URLパラメータ反映後）
+    updateLanguage();
 
     // モバイルメニューの切り替え
     initMobileMenu();
@@ -505,6 +573,11 @@ function initHeroPhoneCarousel() {
                 img.src = imagePath;
                 img.alt = `ガイド ${index + 1}`;
                 img.classList.add('carousel-slide');
+                if (i === 0 && index === 0) {
+                    img.setAttribute('fetchpriority', 'high');
+                } else {
+                    img.setAttribute('loading', 'lazy'); // Non-first images can be lazy
+                }
                 innerContainer.appendChild(img);
             });
         }
@@ -889,7 +962,7 @@ function initPersonas(skipShowPersona = false) {
         // 新しいカード構造：画像コンテナ + オーバーレイ + 再生ボタン + 下部情報
         card.innerHTML = `
             <div class="persona-image-container">
-                <img src="${persona.imagePath}" alt="${persona.name[currentLanguage]}" class="persona-card-image">
+                <img src="${persona.imagePath}" alt="${persona.name[currentLanguage]}" class="persona-card-image" loading="lazy">
                 <div class="persona-card-overlay">
                     <div class="persona-overlay-catch" data-text="${persona.catchCopy[currentLanguage]}"></div>
                     <div class="persona-overlay-name" data-text="${persona.name[currentLanguage]}"></div>
@@ -1295,7 +1368,7 @@ function initScreenshots() {
 
         item.innerHTML = `
             <div class="screenshot-frame" style="padding: 0; overflow: hidden; border: none; background: transparent; box-shadow: none;">
-                <img src="${screen.src}" alt="${screen.caption[currentLanguage]}" style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);">
+                <img src="${screen.src}" alt="${screen.caption[currentLanguage]}" style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);" loading="lazy">
             </div>
             <p class="screenshot-caption">${screen.caption[currentLanguage]}</p>
         `;

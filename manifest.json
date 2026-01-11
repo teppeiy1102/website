@@ -1,0 +1,21 @@
+{
+    "name": "どこでもバスガイド",
+    "short_name": "どこでもガイド",
+    "description": "位置情報とAIを活用した観光ガイドアプリ。7種類の個性豊かなAIガイドがあなたの旅をサポートします。",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#3B82F6",
+    "icons": [
+        {
+            "src": "image/iconimage.jpg",
+            "sizes": "192x192",
+            "type": "image/jpeg"
+        },
+        {
+            "src": "image/iconimage.jpg",
+            "sizes": "512x512",
+            "type": "image/jpeg"
+        }
+    ]
+}
