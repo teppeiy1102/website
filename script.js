@@ -31,6 +31,10 @@ const translations = {
         "feature.5.desc": "AIが重要なキーワードを自動抽出。気になるワードをタップするだけで、詳しい情報にアクセス。",
         "feature.6.title": "多言語対応",
         "feature.6.desc": "日本語、英語、中国語、フランス語に対応。海外からの旅行者も安心してご利用いただけます。",
+        "feature.7.title": "ガイドブック機能",
+        "feature.7.desc": "観光地の詳細情報をまとめたガイドブック。主要スポットやタイムスケジュール、おすすめアクティビティ、グルメ情報などを網羅。",
+        "feature.8.title": "クイズ機能",
+        "feature.8.desc": "ガイドの内容に基づいたクイズで楽しく学習。旅の思い出をより深く刻めます。",
         "personas.tag": "AI Guides",
         "personas.title": "8人の個性豊かなガイドたち",
         "personas.description": "あなたにぴったりのガイドを選んで、旅を楽しもう",
@@ -118,6 +122,10 @@ const translations = {
         "feature.5.desc": "AI automatically extracts important keywords. Just tap the word you are interested in to access detailed information.",
         "feature.6.title": "Multilingual Support",
         "feature.6.desc": "Supports Japanese, English, Chinese, and French. Travelers from overseas can use it with peace of mind.",
+        "feature.7.title": "Guidebook Function",
+        "feature.7.desc": "A guidebook summarizing detailed information about tourist spots. Covering main spots, time schedules, recommended activities, and gourmet information.",
+        "feature.8.title": "Quiz Function",
+        "feature.8.desc": "Learn enjoyably with quizzes based on guide content. Engrave travel memories more deeply.",
         "personas.tag": "AI Guides",
         "personas.title": "8 Unique Guides",
         "personas.description": "Choose the guide that suits you and enjoy your trip",
@@ -436,7 +444,8 @@ function initParallax() {
             const parallaxSpeed = 0.3;
 
             if (scrollY < window.innerHeight) {
-                heroImage.style.transform = `translateY(${scrollY * parallaxSpeed}px) rotateY(-10deg) rotateX(5deg)`;
+                // 回転を削除して、より平面的なブレンディングにする
+                heroImage.style.transform = `translateY(${scrollY * parallaxSpeed}px)`;
             }
         });
     }
@@ -547,18 +556,33 @@ function initHeroPhoneCarousel() {
         console.log('phoneScreen not found');
         return;
     }
+   const guideImages = [
+       'image/screen/screen11.jpg',
+       'image/screen/screen12.jpg',
+       'image/screen/screen13.jpg',
+       'image/screen/screen14.jpg',
+       'image/screen/screen1.jpg',
+       'image/screen/screen2.jpg',
+       'image/screen/screen3.jpg',
+       'image/screen/screen4.jpg',
+       'image/screen/screen5.jpg',
+       'image/screen/screen6.jpg',
+       'image/screen/screen7.jpg',
+       'image/screen/screen8.jpg',
+   ];
+
 
     // ガイド画像のパス（imageフォルダ内の実際のファイル名）
-    const guideImages = [
-        'image/mari.jpg',
-        'image/fumiko.jpg',
-        'image/mika.jpg',
-        'image/akari.jpg',
-        'image/midori.jpg',
-        'image/ai.jpg',
-        'image/rakuko.jpg',
-        'image/yuki.jpg'
-    ];
+ //   const guideImages = [
+ //       'image/mari.jpg',
+ //       'image/fumiko.jpg',
+ //       'image/mika.jpg',
+ //       'image/akari.jpg',
+ //       'image/midori.jpg',
+ //       'image/ai.jpg',
+ //       'image/rakuko.jpg',
+ //       'image/yuki.jpg'
+ //   ];
 
     // 既存のコンテナがあれば再利用、なければ作成
     let innerContainer = phoneScreen.querySelector('.phone-screen-inner');
@@ -934,12 +958,15 @@ It's good to spend such adult time alone, but if you tour with a knowledgeable g
 ];
 
 const screenshotsData = [
+    { src: 'image/screen/screen12.jpg', caption: { ja: 'ガイドブックライブラリー', en: 'Guidebook Library' } },
+    { src: 'image/screen/screen13.jpg', caption: { ja: 'ガイドブック', en: 'Guidebook' } },
+    { src: 'image/screen/screen14.jpg', caption: { ja: 'クイズ画面', en: 'Quiz Screen' } },
     { src: 'image/screen/screen1.jpg', caption: { ja: 'ホーム画面', en: 'Home Screen' } },
     { src: 'image/screen/screen2.jpg', caption: { ja: '地図画面', en: 'Map Screen' } },
     { src: 'image/screen/screen3.jpg', caption: { ja: 'チャット画面', en: 'Chat Screen' } },
     { src: 'image/screen/screen8.jpg', caption: { ja: 'X検索、Web検索', en: 'X Search, Web Search' } },
     { src: 'image/screen/screen4.jpg', caption: { ja: 'ペルソナ選択', en: 'Persona Selection' } },
-    { src: 'image/screen/screen5.jpg', caption: { ja: 'ガイド画面', en: 'Guide Screen' } },
+    { src: 'image/screen/screen11.jpg', caption: { ja: 'ガイド画面', en: 'Guide Screen' } },
     { src: 'image/screen/screen6.jpg', caption: { ja: '履歴画面', en: 'History Screen' } },
     { src: 'image/screen/screen7.jpg', caption: { ja: 'ガイド時間設定', en: 'Guide Time Setting' } },
 ];
