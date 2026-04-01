@@ -848,6 +848,58 @@ section {
     background: var(--color-bg-alt);
 }
 
+/* ========================================
+   コンセプトイントロセクション
+   ======================================== */
+.concept-intro {
+    padding: 120px 0 80px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.concept-lead {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800;
+    color: #000;
+    line-height: 1.4;
+    margin-bottom: 60px;
+    padding: 0 5%;
+}
+
+.concept-visual {
+    width: 80%; /* 左右を80%に絞ることで実質的に中央部分を強調 */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden; /* はみ出しをカット */
+    border-radius: 40px; /* 角丸を適用 */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.concept-graph-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* 1.2倍に拡大して中央をズーム（実質的に周囲を20%カットするような効果） */
+    transform: scale(1.2); 
+    transform-origin: center center;
+}
+
+@media (max-width: 768px) {
+    .concept-visual {
+        width: 90%;
+        border-radius: 20px;
+    }
+    .concept-intro {
+        padding: 80px 0 40px;
+    }
+    .concept-lead {
+        font-size: 1.75rem;
+        margin-bottom: 40px;
+    }
+}
+
 .features.full-width-features {
     padding: 0;
     overflow-x: hidden;
