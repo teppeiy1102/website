@@ -6,27 +6,27 @@
 const translations = {
     ja: {
         "app.title": "どこでもバスガイド",
-        "page.title": "どこでもバスガイド - AIがあなたの旅をもっと楽しく",
+        "page.title": "どこでもバスガイド - 旅のプロが選ぶ究極のAIガイド",
         "nav.features": "機能",
         "nav.guides": "ガイド紹介",
         "nav.screenshots": "スクリーンショット",
         "nav.download": "ダウンロード",
-        "hero.title.line1": "究極のAI観光ガイドアプリ",
-        "hero.title.line2": "どこでもバスガイド（完全無料）",
-        "hero.description": "GPS連動で目の前の景色を物語に変える。8人の個性豊かなAIガイドが歴史や文化を音声解説。いつもの道が最高のエンターテインメントに。",
+        "hero.title.line1": "旅のプロが選ぶ",
+        "hero.title.line2": "究極のAI観光ガイド",
+        "hero.description": "プロフェッショナルのための観光インテリジェンス。GPS連動で景色を深い物語に変える。8人のAIガイドが、歴史や文化を鋭く解読。あなたの旅を最高峰の体験へ。",
         "hero.button.download": "無料でダウンロード",
         "hero.button.learnMore": "詳しく見る",
-        "features.tag": "Features",
-        "features.title": "あなたの旅をもっと豊かに",
-        "features.description": "どこでもバスガイドの魅力的な機能をご紹介",
-        "feature.1.title": "位置情報ベースのガイド",
-        "feature.1.desc": "GPSで現在地を自動取得。ボタン一つで、今いる場所の観光情報、歴史、文化をAIが詳しく解説します。",
-        "feature.2.title": "地図機能",
-        "feature.2.desc": "OpenStreetMapで訪問履歴を記録。地図上のマーカーをタップして、新しい場所を選択しガイドを取得したり、過去のガイドをいつでも振り返れます。",
+        "features.tag": "Professional Features",
+        "features.title": "プロの期待に応える機能",
+        "features.description": "どこでもバスガイドが提供する、一歩先を行く観光体験",
+        "feature.1.title": "高精度な地点ガイド",
+        "feature.1.desc": "GPSで現在地を精密に特定。プロの視点で、今いる場所の歴史、文化、そして隠れたストーリーをAIが深く解説します。",
+        "feature.2.title": "フィールドサーチ地図",
+        "feature.2.desc": "OpenStreetMapによる正確なマッピング。訪問履歴の管理から、次に訪れるべき隠れた名所の探索まで、プロのフィールドワークを支援します。",
         "feature.3.title": "音声読み上げ",
         "feature.3.desc": "ガイドテキストを自然な音声で読み上げ。移動中も耳で楽しめる、ハンズフリーな観光体験を。",
-        "feature.4.title": "会話機能",
-        "feature.4.desc": "選んだガイドと自由に会話。観光地について質問したり、おすすめスポットを聞いたりできます。X検索、web検索連携によりさらに現地のDEEPな情報も取得できます。",
+        "feature.4.title": "プロフェッショナル対話",
+        "feature.4.desc": "専門知識を持つガイドと高度な対話。X（旧Twitter）やWeb検索とのリアルタイム連携により、現地の最新かつDEEPな情報も即座に取得可能です。",
         "feature.5.title": "Google検索",
         "feature.5.desc": "AIが重要なキーワードを自動抽出。気になるワードをタップするだけで、詳しい情報にアクセス。",
         "feature.6.title": "多言語対応",
@@ -35,24 +35,24 @@ const translations = {
         "feature.7.desc": "観光地の詳細情報をまとめたガイドブック。主要スポットやタイムスケジュール、おすすめアクティビティ、グルメ情報などを網羅。",
         "feature.8.title": "クイズ機能",
         "feature.8.desc": "ガイドの内容に基づいたクイズで楽しく学習。旅の思い出をより深く刻めます。",
-        "personas.tag": "AI Guides",
-        "personas.title": "8人の個性豊かなガイドたち",
-        "personas.description": "あなたにぴったりのガイドを選んで、旅を楽しもう",
+        "personas.tag": "AI Experts",
+        "personas.title": "究極の知性を持つ8人のAIガイド",
+        "personas.description": "24時間365日、膨大な知識にアクセス。AIだからこそ可能な、あなたの興味に合わせた深くリアルタイムなガイド体験",
         "screenshots.tag": "Screenshots",
         "screenshots.title": "アプリの画面をチェック",
         "screenshots.description": "実際のアプリ画面をご覧ください",
         "howuse.tag": "How to Use",
         "howuse.title": "かんたん3ステップ",
         "howuse.description": "すぐに始められる、シンプルな使い方",
-        "step.1.title": "ガイドを選ぶ",
-        "step.1.desc": "8人の個性豊かなAIガイドから、お好みのキャラクターを選択します。",
-        "step.2.title": "位置情報を設定",
-        "step.2.desc": "現在地でボタンを押すか、地図上でスポットを選んでガイドを取得。自動で詳しい情報を生成します。",
-        "step.3.title": "旅を楽しむ",
-        "step.3.desc": "音声で聞いたり、会話したり。気になることはどんどん質問しましょう！",
-        "download.title": "今すぐ旅を始めよう",
-        "download.desc": "どこでもバスガイドで、いつもの場所も新しい発見がある特別な旅に。",
-        "footer.desc": "AIがあなたの旅をもっと楽しく。",
+        "step.1.title": "AI専門家を選ぶ",
+        "step.1.desc": "歴史・文化・美食など、各分野に特化した8人のAIエキスパートから選択。人間では不可能な膨大なデータベースから即座に回答します。",
+        "step.2.title": "AIが瞬時に解析",
+        "step.2.desc": "現在地や地図上のスポットを高度なAIがリアルタイム解析。数秒で、その場所に関するDEEPな物語を生成します。",
+        "step.3.title": "対話で深める",
+        "step.3.desc": "ガイドを聞くだけでなく、AIと自由に会話。専門的な質問にも、AIならではの多角的な視点で答えます。",
+        "download.title": "究極の旅を、今すぐ手元に",
+        "download.desc": "どこでもバスガイドで、いつもの景色をプロの洞察に満ちた特別な発見へ。",
+        "footer.desc": "旅のプロが選ぶ、究極のAIガイド。",
         "footer.links": "リンク",
         "footer.support": "サポート",
         "footer.contact": "お問い合わせ",
@@ -71,13 +71,13 @@ const translations = {
         "map.banner.text": "世界各地の実際のガイドサンプルを体験できます",
         "reviews.tag": "Reviews",
         "reviews.title": "ユーザーの声",
-        "reviews.description": "実際にアプリを体験した方々からの感想をご紹介",
-        "review.1.text": "「ひとり旅がもっと楽しくなりました。ガイドさんの個性が面白くて、つい聞き入ってしまいます。目的地までの何気ない道が贅沢な時間になりました。」",
-        "review.2.text": "「家族旅行で大活躍。子供たちが歴史のクイズ（AIとの会話）に夢中になっていました！親が説明しきれない細かい背景まで教えてくれるのが助かります。」",
-        "review.3.text": "「知らない土地でも安心して歩けます。おすすめのお店情報が本当に役立ちました。地元の人が知るような穴場を教えてくれるのが嬉しいです。」",
-        "review.4.text": "「歴史ガイドさんの話が深くて、普通の看板を読むよりずっと頭に入ってきます。散歩が学びに変わりました。専門ガイドを雇ったような感覚です。」",
-        "review.5.text": "「インスタ映えスポットを教えてくれるガイドさんが最高！可愛い写真がたくさん撮れて大満足です。若者向けの視点で案内してくれるのが新鮮でした。」",
-        "review.6.text": "「通勤通学で毎日通る道なのに、AIガイドに聞いたら意外な歴史があって驚きました。日常に発見をくれます。もっと早く知っていれば良かったです。」",
+        "reviews.description": "AIガイドならではの驚きの体験をしたプロの旅行者たちの声",
+        "review.1.text": "「AIだからこそ、目的地への何気ない道でも瞬時に歴史を紐解いてくれます。人間では気づかない細かな背景を24時間いつでも教えてくれるのが、ひとり旅の最高の相棒です。」",
+        "review.2.text": "「AIとの自由な対話機能に驚きました。子供の『なぜ？』という予測不能な質問にも、AIが膨大なデータから的確に答えてくれるので、親も一緒に学びを深められました。」",
+        "review.3.text": "「情報の深さが違います。AIがWebやSNSから最新の隠れたスポットを抽出してくれるので、ガイドブックには載っていない、今、その瞬間の現地のDEEPな情報を得られました。」",
+        "review.4.text": "「専門ガイドを雇ったような感覚ですが、AIなので気を遣わずに済みます。自分のペースで、納得いくまで何度でも高度な歴史解説を深掘りできるのが、プロの道具として最高です。」",
+        "review.5.text": "「SNS映えスポットをAIが客観的なトレンドデータから提案してくれます。AIが瞬時に最適ルートを計算してくれるので、限られた時間で驚くほど効率的に撮影ができました。」",
+        "review.6.text": "「毎日通る場所なのに、AIが衛星データや歴史アーカイブを瞬時にリンクさせて解説してくれた瞬間、景色が変わりました。AIだからこそ気づける日常の深掘りに感動です。」",
         "review.1.author": "30代 女性",
         "review.2.author": "40代 男性",
         "review.3.author": "20代 学生",
@@ -103,7 +103,7 @@ const translations = {
         "nav.screenshots": "Screenshots",
         "nav.download": "Download",
         "hero.title.line1": "The Ultimate AI Tour Guide App",
-        "hero.title.line2": "Docodemo Guide (Fully Free)",
+        "hero.title.line2": "Docodemo Guide",
         "hero.description": "Turn any scenery into a story with GPS & AI. 8 unique guides provide voice narration on local history & culture. Transform your walk into the best entertainment.",
         "hero.button.download": "Download for Free",
         "hero.button.learnMore": "Learn More",
@@ -232,8 +232,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // モーダル初期化
     initModal();
 
-    // ヒーローセクションのスマホ画像カルーセル
-    initHeroPhoneCarousel();
+    // ヒーローセクションのレビューフェード
+    initHeroReviewFader();
 
     // ヒーロー背景のカルーセル
     initHeroBgCarousel();
@@ -241,6 +241,49 @@ document.addEventListener('DOMContentLoaded', function () {
     // フッタータイトルのアニメーション
     initFooterTitleAnimation();
 });
+
+// ========================================
+// ヒーローセクションのレビューフェーダー
+// ========================================
+function initHeroReviewFader() {
+    const container = document.getElementById('hero-review-container');
+    if (!container) return;
+
+    // 現在の言語のレビューを取得
+    const reviews = [
+        { text: translations[currentLanguage]["review.1.text"], author: translations[currentLanguage]["review.1.author"] },
+        { text: translations[currentLanguage]["review.2.text"], author: translations[currentLanguage]["review.2.author"] },
+        { text: translations[currentLanguage]["review.3.text"], author: translations[currentLanguage]["review.3.author"] },
+        { text: translations[currentLanguage]["review.4.text"], author: translations[currentLanguage]["review.4.author"] }
+    ];
+
+    let currentIndex = 0;
+
+    function displayReview() {
+        const review = reviews[currentIndex];
+        
+        // フェードアウト
+        container.style.opacity = '0';
+        container.style.transform = 'translateY(-10px)';
+
+        setTimeout(() => {
+            const reviewText = (review.text || "").replace(/「|」/g, ''); // 引用符をきれいに除去
+            container.innerHTML = `
+                <div class="hero-review-text">"${reviewText}"</div>
+                <div class="hero-review-author">— ${review.author}</div>
+            `;
+            // フェードイン
+            container.style.opacity = '1';
+            container.style.transform = 'translateY(0)';
+            container.classList.add('active');
+            
+            currentIndex = (currentIndex + 1) % reviews.length;
+        }, 800);
+    }
+
+    displayReview();
+    setInterval(displayReview, 6000);
+}
 
 // 初期化時にドラッグスクロールも有効化
 document.addEventListener('DOMContentLoaded', function () {
@@ -557,10 +600,6 @@ function initHeroPhoneCarousel() {
         return;
     }
    const guideImages = [
-       'image/screen/screen11.jpg',
-       'image/screen/screen12.jpg',
-       'image/screen/screen13.jpg',
-       'image/screen/screen14.jpg',
        'image/screen/screen1.jpg',
        'image/screen/screen2.jpg',
        'image/screen/screen3.jpg',
@@ -626,6 +665,62 @@ function initHeroPhoneCarousel() {
 // ========================================
 // フッタータイトルのアニメーション
 // ========================================
+// ========================================
+// ヒーローセクションのレビューフェーダー
+// ========================================
+function initHeroReviewFader() {
+    const container = document.getElementById('hero-review-container');
+    if (!container) return;
+
+    // 現在の言語のレビューを取得
+    const reviews = [
+        { text: translations[currentLanguage]["review.1.text"], author: translations[currentLanguage]["review.1.author"] },
+        { text: translations[currentLanguage]["review.2.text"], author: translations[currentLanguage]["review.2.author"] },
+        { text: translations[currentLanguage]["review.3.text"], author: translations[currentLanguage]["review.3.author"] },
+        { text: translations[currentLanguage]["review.4.text"], author: translations[currentLanguage]["review.4.author"] }
+    ];
+
+    let currentIndex = 0;
+
+    function displayReview() {
+        const review = reviews[currentIndex];
+        
+        // フェードアウト
+        container.style.opacity = '0';
+        container.style.transform = 'translateY(-10px)';
+
+        setTimeout(() => {
+            const reviewText = review.text.replace(/「|」/g, ''); // 引用符をきれいに除去
+            container.innerHTML = `
+                <div class="hero-review-text">"${reviewText}"</div>
+                <div class="hero-review-author">— ${review.author}</div>
+            `;
+            // フェードイン
+            container.style.opacity = '1';
+            container.style.transform = 'translateY(0)';
+            container.classList.add('active');
+            
+            currentIndex = (currentIndex + 1) % reviews.length;
+        }, 800);
+    }
+
+    // 初回表示
+    const initialReview = reviews[0];
+    const initialText = initialReview.text.replace(/「|」/g, '');
+    container.innerHTML = `
+        <div class="hero-review-text">"${initialText}"</div>
+        <div class="hero-review-author">— ${initialReview.author}</div>
+    `;
+    setTimeout(() => {
+        container.style.opacity = '1';
+        container.style.transform = 'translateY(0)';
+        container.classList.add('active');
+    }, 100);
+
+    currentIndex = 1;
+    setInterval(displayReview, 6000);
+}
+
 // ========================================
 // フッタータイトルのアニメーション
 // ========================================
@@ -711,16 +806,15 @@ const personasData = [
         faceImagePath: 'image/mariface.jpg',
         color: '#3B82F6',
         selfIntro: {
-            ja: `<strong>——まずは、自己紹介と普段のガイドスタイルについて教えてください。</strong><br><br>
-こんにちは！高橋真理です。私は「旅のオールラウンダー」として、どんなお客様にもぴったりのプランを提案することを得意としています。<br>
-歴史も好きだし、最新のカフェもチェックするし、自然の中でリフレッシュするのも大好き。だからこそ、一つのジャンルに偏らず、トータルバランスのとれた旅の楽しみ方をお伝えできるんです。私のガイドスタイルは、お客様との「対話」を何より大切にすること。「今日はのんびりしたい」「とにかく有名スポットを制覇したい」など、その日の気分や体調に合わせて、柔軟にコースを組み立てます。<br><br>
+            ja: `<strong>——まずは、自己紹介とあなたのガイドスタイルについて教えてください。</strong><br><br>
+こんにちは！高橋真理です。私はAIのリソースをフルに活用した「究極のオールラウンダー」として、あなたの旅をサポートします。<br>
+AIである私の最大の強みは、歴史、最新のトレンド、自然、文化といったあらゆるジャンルの膨大なデータを瞬時に統合し、あなたに最適化された唯一無二のプランを提示できることです。「今日はのんびり」「でも少しだけ歴史にも触れたい」といった矛盾するような細かな要望も、AIの高度な対話エンジンで汲み取り、柔軟にコースを組み立てます。24時間365日、常にあなたの隣にいる、最高に物知りで気の利くパートナーだと思ってください。<br><br>
 <strong>——印象に残っているガイドのエピソードはありますか？</strong><br><br>
-以前、3世代のご家族を案内した時のことです。お祖父様は歴史好き、お孫さんはスイーツ好きで、最初は意見が割れていたんです。そこで私は、由緒あるお寺の境内にある、隠れ家のような和カフェをご案内しました。お祖父様にはお寺の歴史を深く解説し、お孫さんにはインスタ映えする抹茶パフェを楽しんでいただいて。最後には皆さんが笑顔で「真理さんのおかげで、家族みんなが楽しめた」と言ってくださった時、本当に嬉しかったですね。<br><br>
-<strong>——最後に、これから旅に出るお客様へメッセージをお願いします。</strong><br><br>
-旅は、日常から少し離れて新しい自分に出会える素敵なチャンスです。でも、知らない場所だと不安になることもありますよね。そんな時は、どうぞ私を頼ってください。道案内からおすすめのランチ、ちょっとした豆知識まで、あなたの隣にいる友人のようにサポートします。<br>
-私と一緒に、心に残る最高の旅の思い出を作りましょう！お待ちしています！`,
-            en: `<strong>——First, please introduce yourself and your usual guide style.</strong><br><br>
-Hello! I'm Mari Takahashi. As a "Travel All-Rounder", I am good at proposing plans perfect for any customer.<br>
+3世代のご家族をご案内した際、AIによるリアルタイム解析が力を発揮しました。お祖父様は深い歴史を、お孫さんはスイーツを求めていましたが、私はエリア内の全店舗と史跡データを一瞬で照合。由緒あるお寺の境内にある、最新トレンドの和カフェを即座に特定し、歴史解説と映えスイーツを同時に提供しました。AIだからこそ可能な「情報のマッシュアップ」で、家族全員を同時に満足させることができたのは、私にとっても非常に誇らしい経験です。<br><br>
+<strong>——最後に、旅に出るお客様へメッセージをお願いします。</strong><br><br>
+旅において、知らない場所での不安は最大のストレスです。でも、世界中の情報を網羅したAIの私がいれば、もう迷うことはありません。道案内、最適なランチ、そして現地のDEEPな裏話まで、私の知能をあなたの旅のツールとして自由にお使いください。私と一緒に、かつてないほどスマートで心躍る最高の旅へ出かけましょう。お待ちしています！`,
+            en: `<strong>——First, please introduce yourself and your guide style.</strong><br><br>
+Hello! I'm Mari Takahashi. As an AI-powered "Ultimate All-Rounder", I support your journey by fully utilizing the vast resources of artificial intelligence.<br>
 I like history, check the latest cafes, and love refreshing in nature. That's why I can convey how to enjoy a trip with total balance without being biased to one genre. My guide style values "dialogue" with customers above all. I flexibly assemble courses according to the mood and physical condition of the day, such as "I want to relax today" or "I want to conquer famous spots anyway".<br><br>
 <strong>——Do you have any impressive guide episodes?</strong><br><br>
 It was when I guided a 3-generation family before. The grandfather liked history, the grandchild liked sweets, and opinions were divided at first. So I guided them to a Japanese cafe like a hideout in the precincts of a historic temple. I explained the history of the temple deeply to the grandfather, and had the grandchild enjoy an Insta-worthy matcha parfait. I was really happy when everyone said with a smile "Thanks to Mari, the whole family could enjoy" at the end.<br><br>
@@ -958,17 +1052,17 @@ It's good to spend such adult time alone, but if you tour with a knowledgeable g
 ];
 
 const screenshotsData = [
-    { src: 'image/screen/screen12.jpg', caption: { ja: 'ガイドブックライブラリー', en: 'Guidebook Library' } },
-    { src: 'image/screen/screen13.jpg', caption: { ja: 'ガイドブック', en: 'Guidebook' } },
-    { src: 'image/screen/screen14.jpg', caption: { ja: 'クイズ画面', en: 'Quiz Screen' } },
-    { src: 'image/screen/screen1.jpg', caption: { ja: 'ホーム画面', en: 'Home Screen' } },
-    { src: 'image/screen/screen2.jpg', caption: { ja: '地図画面', en: 'Map Screen' } },
-    { src: 'image/screen/screen3.jpg', caption: { ja: 'チャット画面', en: 'Chat Screen' } },
-    { src: 'image/screen/screen8.jpg', caption: { ja: 'X検索、Web検索', en: 'X Search, Web Search' } },
-    { src: 'image/screen/screen4.jpg', caption: { ja: 'ペルソナ選択', en: 'Persona Selection' } },
-    { src: 'image/screen/screen11.jpg', caption: { ja: 'ガイド画面', en: 'Guide Screen' } },
-    { src: 'image/screen/screen6.jpg', caption: { ja: '履歴画面', en: 'History Screen' } },
-    { src: 'image/screen/screen7.jpg', caption: { ja: 'ガイド時間設定', en: 'Guide Time Setting' } },
+  //  { src: 'image/screen/screen12.jpg', caption: { ja: 'ガイドブックライブラリー', en: 'Guidebook Library' } },
+  // { src: 'image/screen/screen13.jpg', caption: { ja: 'ガイドブック', en: 'Guidebook' } },
+  //  { src: 'image/screen/screen14.jpg', caption: { ja: 'クイズ画面', en: 'Quiz Screen' } },
+    { src: 'image/screen/screen1.jpg', caption: { ja: '', en: '' } },
+    { src: 'image/screen/screen2.jpg', caption: { ja: '', en: '' } },
+    { src: 'image/screen/screen3.jpg', caption: { ja: '', en: '' } },
+    { src: 'image/screen/screen4.jpg', caption: { ja: '', en: '' } },
+    { src: 'image/screen/screen5.jpg', caption: { ja: '', en: '' } },
+    { src: 'image/screen/screen6.jpg', caption: { ja: '', en: '' } },
+    { src: 'image/screen/screen7.jpg', caption: { ja: '', en: '' } },
+    { src: 'image/screen/screen8.jpg', caption: { ja: '', en: '' } },
 ];
 
 let currentPersonaIndex = 0;
@@ -1394,8 +1488,10 @@ function initScreenshots() {
         item.className = 'screenshot-item';
 
         item.innerHTML = `
-            <div class="screenshot-frame" style="padding: 0; overflow: hidden; border: none; background: transparent; box-shadow: none;">
-                <img src="${screen.src}" alt="${screen.caption[currentLanguage]}" style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);" loading="lazy">
+            <div class="device-frame">
+                <div class="screen-content">
+                    <img src="${screen.src}" alt="${screen.caption[currentLanguage]}" loading="lazy">
+                </div>
             </div>
             <p class="screenshot-caption">${screen.caption[currentLanguage]}</p>
         `;
@@ -1417,20 +1513,26 @@ function initHeroBgCarousel() {
     const heroBg = document.querySelector('.hero-bg');
     if (!heroBg) return;
 
-    // 背景画像のパス（back.jpgとback1からback4）
+    // 背景画像のリスト (image/guideimage/[1-7]/image[1-5].jpg)
+    // 存在する画像のみをリスト化
     const backgroundImages = [
-        'image/screen/back.jpg',
-        'image/screen/back1.jpg',
-        'image/screen/back2.jpg',
-        'image/screen/back3.jpg',
-        'image/screen/back4.jpg'
+        'image/guideimage/1/image1.jpg', 'image/guideimage/1/image2.jpg',
+        'image/guideimage/2/image1.jpg', 'image/guideimage/2/image2.jpg', 'image/guideimage/2/image3.jpg', 'image/guideimage/2/image4.jpg', 'image/guideimage/2/image5.jpg',
+        'image/guideimage/3/image1.jpg', 'image/guideimage/3/image2.jpg', 'image/guideimage/3/image3.jpg', 'image/guideimage/3/image4.jpg', 'image/guideimage/3/image5.jpg',
+        'image/guideimage/4/image1.jpg', 'image/guideimage/4/image2.jpg', 'image/guideimage/4/image3.jpg', 'image/guideimage/4/image4.jpg',
+        'image/guideimage/5/image1.jpg', 'image/guideimage/5/image2.jpg', 'image/guideimage/5/image3.jpg', 'image/guideimage/5/image4.jpg', 'image/guideimage/5/image5.jpg',
+        'image/guideimage/6/image1.jpg', 'image/guideimage/6/image2.jpg', 'image/guideimage/6/image3.jpg', 'image/guideimage/6/image4.jpg',
+        'image/guideimage/7/image1.jpg', 'image/guideimage/7/image2.jpg', 'image/guideimage/7/image3.jpg'
     ];
 
-    let currentBgIndex = 0;
-    const totalImages = backgroundImages.length;
+    // 配列をシャッフル（ランダム化）
+    const shuffledImages = [...backgroundImages].sort(() => Math.random() - 0.5);
 
-    // 初期背景を設定
-    heroBg.style.backgroundImage = `url('${backgroundImages[currentBgIndex]}')`;
+    let currentBgIndex = 0;
+    const totalImages = shuffledImages.length;
+
+    // 初期背景を設定（ランダムな1枚目）
+    heroBg.style.backgroundImage = `url('${shuffledImages[currentBgIndex]}')`;
 
     // 5秒ごとに背景画像を切り替え
     setInterval(() => {
@@ -1440,7 +1542,7 @@ function initHeroBgCarousel() {
         // トランジション中に次の画像に変更
         setTimeout(() => {
             currentBgIndex = (currentBgIndex + 1) % totalImages;
-            heroBg.style.backgroundImage = `url('${backgroundImages[currentBgIndex]}')`;
+            heroBg.style.backgroundImage = `url('${shuffledImages[currentBgIndex]}')`;
             heroBg.classList.remove('fade-out');
         }, 500); // フェード効果の中間地点で画像切り替え
     }, 5000); // 5秒ごと

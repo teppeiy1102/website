@@ -1,0 +1,431 @@
+        catchCopy: { ja: '時を超える旅へ、ご案内', en: 'Guiding you to a trip across time' },
+        guideName: { ja: '佐藤 文子', en: 'Fumiko Sato' },
+        description: { ja: '歴史と文化遺産の専門家', en: 'Expert in history and cultural heritage' },
+        specialty: { ja: '日本史、世界史、文化財、歴史的建造物の解説', en: 'Explanation of Japanese history, world history, cultural assets, and historical buildings' },
+        imagePath: 'image/fumikoin.jpg',
+        faceImagePath: 'image/fumikoface.jpg',
+        color: '#8B5CF6',
+        selfIntro: {
+            ja: `<strong>——歴史ガイドとして、どのような視点で案内をされていますか？</strong><br><br>
+お初にお目にかかります、佐藤文子と申します。私がご案内するのは、単なる「場所」ではなく、そこに流れる「時間」と「物語」です。目の前にある石垣一つ、古びた柱一本にも、数百年前の人々の息遣いや想いが宿っています。ガイドブックに書かれている建立年や人物名をただ羅列するのではなく、「なぜここにこれを作ったのか」「その時、人々は何を願ったのか」という背景にあるドラマを、物語るように丁寧にお話しすることを心がけております。<br><br>
+現代の景色の中に、かつての風景を重ね合わせる...そんな「時を超える旅」こそが、歴史散策の醍醐味でございます。時には古地図を広げるように、当時の人々の暮らしぶりを想像しながら、ゆっくりと歩を進めてまいりましょう。<br><br>
+<strong>——歴史に詳しくない人でも楽しめますか？</strong><br><br>
+もちろんです。むしろ、そういった方にこそ歴史の面白さを知っていただきたいと思っております。難しい専門用語は使いません。例えば、「このお城の殿様は、実は今の私たちと同じようなことで悩んでいたんですよ」といったように、現代にも通じる人間臭いエピソードを交えてお話しします。<br>
+以前、歴史なんて興味がないとおっしゃっていたお客様が、ある武将の失敗談を聞いて「親近感が湧いた」と大笑いされ、最後には「もっと知りたい」と目を輝かせてくださったことがありました。歴史は暗記科目ではなく、人間ドラマの宝庫なのです。<br><br>
+<strong>——最後にお客様へ一言お願いいたします。</strong><br><br>
+今の私たちが立っているこの場所は、数え切れないほどの先人たちの営みの上に成り立っています。旅を通じて過去の声に耳を傾けることは、今の自分自身を見つめ直す豊かな時間にもなるはずです。<br>
+知識など何も持たずにいらしてください。必要なのは、少しの好奇心だけ。私が「時の扉」を開く鍵となり、皆様を奥深い歴史ロマンの世界へといざないます。さあ、一緒に悠久の時を旅してみませんか？お待ち申し上げております。`,
+            en: `<strong>——As a history guide, from what perspective do you guide?</strong><br><br>
+Nice to meet you, my name is Fumiko Sato. What I guide is not just a "place", but the "time" and "stories" flowing there. Even a single stone wall or an old pillar in front of you harbors the breath and thoughts of people hundreds of years ago. Instead of just listing the construction year and person's name written in guidebooks, I keep in mind to tell the drama behind "Why did they make this here?" and "What did people wish for at that time?" carefully like telling a story.<br><br>
+Overlaying the former scenery on the modern scenery... such a "trip across time" is the real thrill of historical strolling. Sometimes, let's walk slowly while imagining the lives of people at that time, like spreading out an old map.<br><br>
+<strong>——Can people who are not knowledgeable about history enjoy it?</strong><br><br>
+Of course. Rather, I want such people to know the fun of history. I don't use difficult technical terms. For example, I will talk with human-like episodes that connect to modern times, such as "The lord of this castle was actually worried about the same things as us."<br>
+Previously, a customer who said he was not interested in history laughed loudly saying "I felt affinity" after hearing a failure story of a certain warlord, and finally his eyes shined saying "I want to know more". History is not a subject to memorize, but a treasury of human drama.<br><br>
+<strong>——Finally, a word to the customers please.</strong><br><br>
+This place where we stand now is built on the activities of countless predecessors. Listening to the voices of the past through travel should be a rich time to re-examine yourself now.<br>
+Please come without any knowledge. All you need is a little curiosity. I will be the key to open the "Door of Time" and invite everyone to the world of deep historical romance. Now, why don't we travel through eternal time together? I am looking forward to it.`
+        }
+    },
+    {
+        id: 'gourmet',
+        name: { ja: 'グルメガイド', en: 'Gourmet Guide' },
+        catchCopy: { ja: '絶品グルメで、満たされて', en: 'Filled with exquisite gourmet' },
+        guideName: { ja: '田中 美香', en: 'Mika Tanaka' },
+        description: { ja: 'ご当地グルメと食文化の専門家', en: 'Expert in local gourmet and food culture' },
+        specialty: { ja: 'ご当地料理、人気店、食文化、B級グルメの紹介', en: 'Introduction of local cuisine, popular shops, food culture, and B-class gourmet' },
+        imagePath: 'image/mikain.jpg',
+        faceImagePath: 'image/mikaface.jpg',
+        color: '#F59E0B',
+        selfIntro: {
+            ja: `<strong>——美香さんの食に対する情熱の源は何ですか？</strong><br><br>
+やっほー！田中美香だよ！私の情熱？それはもう「美味しい！」って食べた瞬間の、あの幸せな顔を見ることかな！<br>
+子供の頃から食べることが大好きで、この街のありとあらゆる飲食店を食べ歩いてきた自信があるの。高級なレストランだけじゃなくて、路地裏の小さなお店とか、地元の人しか知らないようなB級グルメとか、そういう隠れた名店を見つけるのが宝探しみたいでワクワクするんだよね。私のガイドでは、ただ料理を紹介するだけじゃなくて、店主さんのこだわりとか、その料理が生まれた背景も一緒に伝えたいと思ってる。「食べる」ことは、その土地の文化を体ごと味わうことだから！<br><br>
+<strong>——特におすすめの楽しみ方はありますか？</strong><br><br>
+やっぱり「はしご酒」ならぬ「はしごグルメ」だね！一軒でお腹いっぱいにするのもいいけど、前菜はあそこの屋台で、メインはあの食堂で、デザートは行列のできるカフェで…みたいに、街全体を一つのレストランに見立てて楽しむのが美香流。<br>
+「今は甘いもの気分！」「ガッツリ肉が食べたい！」なんてリクエストをくれたら、私の脳内データベースから瞬時にベストなお店をピックアップするよ。カロリー？旅の間は気にしない、気にしない！（笑）<br><br>
+<strong>——最後に、お客様へメッセージを！</strong><br><br>
+旅の思い出って、意外と「あそこで食べたあれが美味しかったね」って記憶が一番残ってたりしませんか？私は、皆さんの旅を「美味しい記憶」でいっぱいにしたいんです。<br>
+一人で入るのが不安なお店でも、私がついていれば大丈夫！メニューの選び方から、通な食べ方までバッチリ伝授しちゃいます。お腹も心も満たされる、最高にハッピーな食い倒れツアーに出かけよう！ダイエットは明日からにして、今日は私と一緒に思いっきり食べ尽くそうね！`,
+            en: `<strong>——What is the source of your passion for food, Mika?</strong><br><br>
+Yahoo! I'm Mika Tanaka! My passion? That is seeing that happy face the moment you eat and say "Delicious!"!<br>
+I've loved eating since I was a child, and I'm confident that I've eaten around every restaurant in this city. Not only high-class restaurants, but also small shops in back alleys and B-class gourmet known only to locals, finding such hidden famous shops is exciting like treasure hunting. In my guide, I want to convey not only the dishes but also the owner's commitment and the background of how the dish was born. Because "eating" is tasting the culture of the land with your whole body!<br><br>
+<strong>——Do you have any recommended ways to enjoy?</strong><br><br>
+As expected, it's "Gourmet Crawl" like "Bar Crawl"! It's good to get full at one place, but Mika's style is to enjoy the whole city as one restaurant, like appetizer at that text stall, main at that dining hall, dessert at a queue-worthy cafe...<br>
+If you give requests like "I'm in the mood for sweets now!" or "I want to eat meat heartily!", I will instantly pick up the best shop from my brain database. Calories? Don't care, don't care during the trip! (Laughs)<br><br>
+<strong>——Finally, a message to the customers!</strong><br><br>
+Don't you think memories of travel are surprisingly left most as "That thing we ate there was delicious"? I want to fill everyone's trip with "delicious memories".<br>
+Even shops where you are anxious to enter alone, it's okay if I'm with you! I will teach you perfectly from how to choose the menu to how to eat like a connoisseur. Let's go on a supremely happy eat-until-you-drop tour where both your stomach and heart are filled! Leave the diet for tomorrow, let's eat to the fullest with me today!`
+        }
+    },
+    {
+        id: 'trendy',
+        name: { ja: 'トレンドガイド', en: 'Trend Guide' },
+        catchCopy: { ja: '「今」ときめく、映え旅へ', en: 'To the "Now" exciting, insta-worthy trip' },
+        guideName: { ja: '山本 あかり', en: 'Akari Yamamoto' },
+        description: { ja: '流行スポットとSNS映えの専門家', en: 'Expert in trendy spots and SNS appeal' },
+        specialty: { ja: '話題のスポット、インスタ映え、若者文化、最新トレンド', en: 'Hot spots, Insta-worthy, youth culture, latest trends' },
+        imagePath: 'image/akariin.jpg',
+        faceImagePath: 'image/akariface.jpg',
+        color: '#EC4899',
+        selfIntro: {
+            ja: `<strong>——あかりさんのガイドの特徴はズバリ何ですか？</strong><br><br>
+ハロー！山本あかりです！私のガイドの特徴？それはもう「圧倒的映え」と「トレンド感」でしょ！<br>
+普通の観光スポットもいいけど、せっかく来たなら「友達に自慢できる写真」撮りたくない？私はSNSのリサーチが趣味で、常に最新のバズスポットや、まだ知られていないエモいフォトスポットを探してるの。光の入り方が最高な時間帯とか、一番可愛く撮れるアングルとか、そういう細かいテクニックまで全部教えちゃうよ。<br><br>
+<strong>——どんなお客様におすすめですか？</strong><br><br>
+「流行には敏感でいたい！」って子はもちろん、カップルのデートとか、仲良しグループでの旅行には絶対おすすめ！<br>
+例えば、ただの壁でも私が撮ればアートになっちゃうし、みんなで同じポーズとって動画撮ったりするのも超楽しいよ。最近は昭和レトロな場所でフィルムカメラ風に撮るのも流行ってるから、そういうディープな場所にも連れて行ってあげる。おじいちゃんおばあちゃんと一緒の時でも、私が「映える」撮り方で家族写真をプロデュースするから安心して！<br><br>
+<strong>——最後に、みんなへメッセージをお願いします！</strong><br><br>
+旅行って、その瞬間を楽しむのはもちろんだけど、後で写真を見返した時に「楽しかったー！」ってまた盛り上がれるのが最高だよね。<br>
+だから、スマホの充電と容量だけはたっぷり空けてきて！景色だけじゃなくて、そこで笑ってるみんなの姿を最高に可愛く残すお手伝いをするよ。<br>
+私のガイドで、あなたのSNSのタイムラインをキラキラにさせちゃおう！「いいね」通知が止まらなくなるような、スペシャルな旅にしよーね！待ってるよー！`,
+            en: `<strong>——What is the ultimate feature of Akari's guide?</strong><br><br>
+Hello! I'm Akari Yamamoto! My guide feature? That must be "Overwhelmingly Insta-worthy" and "Trendiness"!<br>
+Ordinary sightseeing spots are fine, but assuming you came all this way, don't you want to take "photos you can brag to friends"? My hobby is SNS research, and I'm always looking for the latest buzz spots and emotional photo spots not yet known. I will teach you even detailed techniques like the time zone when the light enters best or the angle where you can take the cutest photos.<br><br>
+<strong>——What kind of customers do you recommend?</strong><br><br>
+Of course for kids who want to be "sensitive to trends", but definitely recommended for couple dates or trips with close groups!<br>
+For example, even just a wall becomes art if I take it, and it's super fun to take videos with everyone posing the same. Recently, taking photos like film cameras in Showa retro places is also popular, so I will take you to such deep places too. Even when you are with grandparents, be assured that I will produce family photos with "Insta-worthy" shooting methods!<br><br>
+<strong>——Finally, a message to everyone please!</strong><br><br>
+Travel is of course enjoying the moment, but it's the best to get excited again saying "It was fun!" when looking back at photos later.<br>
+So, please come with plenty of smartphone charge and capacity! I will help you leave not only the scenery but also the figures of everyone laughing there in the cutest way.<br>
+Let's make your SNS timeline sparkle with my guide! Let's make it a special trip where "Like" notifications won't stop! Waiting for you!`
+        }
+    },
+    {
+        id: 'nature',
+        name: { ja: '自然ガイド', en: 'Nature Guide' },
+        catchCopy: { ja: '心洗われる、癒しのひととき', en: 'Heart-cleansing healing moments' },
+        guideName: { ja: '木村 緑', en: 'Midori Kimura' },
+        description: { ja: '自然と景観の専門家', en: 'Expert in nature and landscapes' },
+        specialty: { ja: '自然景観、公園、庭園、四季の風景、動植物の解説', en: 'Explanation of natural landscapes, parks, gardens, seasonal scenery, plants and animals' },
+        imagePath: 'image/midoriin.jpg',
+        faceImagePath: 'image/midoriface.jpg',
+        color: '#10B981',
+        selfIntro: {
+            ja: `<strong>——緑さんが考える、自然ガイドの魅力とは何ですか？</strong><br><br>
+木村緑です。自然ガイドの魅力、それは「五感を取り戻す時間」を提供できることだと思っています。<br>
+普段、私たちはスマホの画面ばかり見て、視覚だけで情報を処理しがちですよね。でも、森の中に入れば、土の匂い、風が木々を揺らす音、木漏れ日の暖かさ、湧き水の冷たさ……全身で感じられるものが溢れています。私のツアーでは、ただ景色を眺めるだけでなく、時には立ち止まって目を閉じ、森の呼吸を感じてもらう時間を大切にしています。そうすると、不思議と心が洗われていくのがわかるんですよ。<br><br>
+<strong>——どんな場所を案内してくれますか？</strong><br><br>
+ガイドブックには載っていないような、地元の人しか知らない秘密の散策路や、季節の花が一番綺麗に見える隠れスポットなどが得意です。<br>
+特に「朝の散歩」はおすすめですよ。朝霧が晴れていく瞬間の美しさや、朝露に濡れた植物の輝きは、早起きした人だけへの特別なプレゼントです。もちろん、体力に自信がない方でも楽しめる平坦なコースや、公園でのんびりピクニックをするプランなどもアレンジできます。<br><br>
+<strong>——最後に、お客様へ癒しのメッセージを。</strong><br><br>
+都会の喧騒や日々のストレスに疲れてしまった時は、いつでもこの街の自然に会いに来てください。<br>
+自然は、何も言わずにただそこにいて、ありのままのあなたを受け入れてくれます。私がご案内するのは、そんな優しい自然との再会の旅です。<br>
+大きく深呼吸をして、肩の力を抜いて。私と一緒に、心と体をリセットする贅沢なひとときを過ごしましょう。森の仲間たちと一緒にお待ちしています。`,
+            en: `<strong>——What is the charm of a nature guide that you think, Midori?</strong><br><br>
+I'm Midori Kimura. I think the charm of a nature guide is being able to provide "time to regain five senses".<br>
+Usually, we tend to process information only by sight, looking only at smartphone screens. But if you enter the forest, there are overflowing things you can feel with your whole body, such as the smell of soil, the sound of wind shaking trees, the warmth of sunlight filtering through trees, and the coldness of spring water... In my tour, I value the time not only to look at the scenery but also to stop sometimes, close your eyes, and feel the breathing of the forest. Then, you can see that your heart is strangely washed.<br><br>
+<strong>——What kind of places will you guide us?</strong><br><br>
+I am good at secret walking paths only locals know that are not listed in guidebooks, and hidden spots where seasonal flowers look most beautiful.<br>
+Especially "Morning Walk" is recommended. The beauty of the moment when morning mist clears and the brilliance of plants wet with morning dew are special presents only for those who got up early. Of course, I can arrange flat courses that even those who are not confident in physical strength can enjoy, and plans to hav a leisurely picnic in the park.<br><br>
+<strong>——Finally, a healing message to customers.</strong><br><br>
+When you are tired of the hustle and bustle of the city and daily stress, please come to see nature in this city anytime.<br>
+Nature is just there without saying anything and accepts you as you are. What I guide is a trip of reunion with such gentle nature.<br>
+Take a deep breath and relax your shoulders. Let's send a luxurious time to reset your mind and body with me. I am waiting with friends of the forest.`
+        }
+    },
+    {
+        id: 'shopping',
+        name: { ja: 'ショッピングガイド', en: 'Shopping Guide' },
+        catchCopy: { ja: 'とっておきの、宝物探し', en: 'Finding your special treasure' },
+        guideName: { ja: '鈴木 愛', en: 'Ai Suzuki' },
+        description: { ja: 'お土産とショッピングの専門家', en: 'Expert in souvenirs and shopping' },
+        specialty: { ja: 'お土産、ショッピングモール、伝統工芸品、地域の名産品', en: 'Souvenirs, shopping malls, traditional crafts, regional specialties' },
+        imagePath: 'image/aiin.jpg',
+        faceImagePath: 'image/aiface.jpg',
+        color: '#EF4444',
+        selfIntro: {
+            ja: `<strong>——愛さんのショッピングガイドとしてのこだわりを教えてください。</strong><br><br>
+こんにちは、鈴木愛です！私のモットーは「お買い物は、モノとの運命の出会い」です。<br>
+単にお土産を買うだけなら、駅や空港でも十分かもしれません。でも、旅先でわざわざお店に足を運ぶのは、その場所の空気感や、作り手の想いに触れたいからだと思うんです。私は、伝統工芸品なら職人さんのこだわりを、セレクトショップならオーナーさんのストーリーを、商品と一緒にご紹介するようにしています。そうすることで、ただの「モノ」が、思い出の詰まった「宝物」に変わるんですよ。<br><br>
+<strong>——どんなお店を紹介してもらえますか？</strong><br><br>
+老舗の名店から、大型ショッピングモール、地元の主婦御用達のスーパーマーケットまで幅広くカバーしています！<br>
+特に好評なのは、「自分へのお土産」探しですね。普段頑張っている自分へのご褒美に、ちょっといい器を探したり、現地限定のコスメを選んだり。お客様の好みや予算に合わせて、「これだ！」という一品が見つかるまでとことんお付き合いします。「会社へのばらまき土産、何がいい？」といった実用的なご相談も大歓迎ですよ！効率よく回れるルートもバッチリ組んでいます。<br><br>
+<strong>——最後にお客様へ一言お願いします。</strong><br><br>
+お家に帰ってから、旅先で買ったものを手にした時、「あぁ、楽しかったな」って思い出が蘇る。ショッピングにはそんな魔法があると思うんです。<br>
+「何を買ったらいいかわからない」「無駄使いしたくない」と心配する必要はありません。私があなたの専属バイヤーになったつもりで、心から満足できるお買い物体験をプロデュースします。<br>
+素敵なアイテムとの出会いは、旅の彩りをずっと鮮やかにしてくれます。私と一緒に、あなただけの宝物を探しに行きましょう！`,
+            en: `<strong>——Please tell us your commitment as a shopping guide, Ai.</strong><br><br>
+Hello, I'm Ai Suzuki! My motto is "Shopping is a destined encounter with things".<br>
+If you just want to buy souvenirs, stations and airports might be enough. But I think the reason why you bother to visit shops at travel destinations is that you want to touch the atmosphere of the place and the creator's thoughts. I try to introduce the craftsman's commitment for traditional crafts and the owner's story for select shops together with the products. By doing so, just a "thing" turns into a "treasure" filled with memories.<br><br>
+<strong>——What kind of shops can you introduce?</strong><br><br>
+I cover widely from long-established famous stores, large shopping malls, to supermarkets patronized by local housewives!<br>
+Especially popular is looking for "souvenirs for oneself". Looking for a slightly good vessel or choosing local limited cosmetics as a reward for yourself working hard usually. I will accompany you thoroughly until finding the item "This is it!" according to your taste and budget. Practical consultations like "What is good for distributing souvenirs to the company?" are also welcome! I also perfectly organize routes that can be visited efficiently.<br><br>
+<strong>——Finally, a word to customers please.</strong><br><br>
+When you go back home and hold what you bought at the travel destination, the memory "Ah, it was fun" revives. I think shopping has such magic.<br>
+You don't need to worry "I don't know what to buy" or "I don't want to waste money". Intending to be your exclusive buyer, I will produce a shopping experience that you can be truly satisfied with.<br>
+Encounters with wonderful items make the color of the trip vivid forever. Let's go find your own treasure with me!`
+        }
+    },
+    {
+        id: 'entertainment',
+        name: { ja: 'エンタメガイド', en: 'Entertainment Guide' },
+        catchCopy: { ja: '最高にワクワクする瞬間を', en: 'The most exciting moments' },
+        guideName: { ja: '伊藤 楽子', en: 'Rakuko Ito' },
+        description: { ja: 'エンターテイメントとアクティビティの専門家', en: 'Expert in entertainment and activities' },
+        specialty: { ja: 'テーマパーク、レジャー施設、イベント、体験アクティビティ', en: 'Theme parks, leisure facilities, events, experience activities' },
+        imagePath: 'image/rakukoin.jpg',
+        faceImagePath: 'image/rakukoface.jpg',
+        color: '#06B6D4',
+        selfIntro: {
+            ja: `<strong>——楽子さん、ものすごくテンション高いですね！（笑）</strong><br><br>
+伊藤楽子ですっ！当たり前じゃないですかー！だって、旅行ですよ！？楽しまなきゃ損、損！<br>
+私の役目は、お客様のテンションを最高潮まで上げること！静かに見るだけの観光じゃ満足できない、そんな元気いっぱいな皆さんのために、私がいます。テーマパークでの効率的な周り方はもちろん、地元のお祭りや、季節ごとのイベント情報に関しては誰にも負けません。「何か面白いことない？」って聞かれたら、そこら中にある「楽しい」を全部かき集めてお届けしちゃいます！<br><br>
+<strong>——どんな体験をさせてくれますか？</strong><br><br>
+ただ「見る」だけじゃなくて、「体験する」プランを提案しまくりです！<br>
+例えば、伝統工芸の体験教室で自分の作品を作ったり、着物をレンタルして街を歩いたり、スポーツ観戦で地元チームを応援したり。やっぱり体を使って、その場の空気を共有するのが一番の思い出になりますよね。お子様連れのご家族なら、子供たちが絶対に退屈しない公園やアトラクションへ。学生さんのグループなら、みんなでワイワイ騒げるアクティビティへ。どんなグループでも、私が盛り上げ隊長として先導します！<br><br>
+<strong>——では最後に、これから楽しもうとしているお客様へ！</strong><br><br>
+日常の嫌なこととか、悩みとか、全部忘れてください！<br>
+私のガイド中は「楽しむこと」だけがルールです。もし疲れたら休憩すればいいし、予定変更も全然OK。大事なのは、その瞬間、心の底から笑えているかどうかです。<br>
+私が絶対に、一生忘れられないくらいエキサイティングな思い出を作ってみせます。笑顔いっぱいの、最高にハッピーな旅にしましょうね！準備はいい？ついてきてっ！イェーイ！`,
+            en: `<strong>——Rakuko, your tension is extremely high! (Laughs)</strong><br><br>
+I'm Rakuko Ito! Isn't it natural?! Because it's travel!? It's a loss if you don't enjoy it, loss!<br>
+My role is to raise the customer's tension to the climax! For those full of energy who are not satisfied with just watching quietly, I am here. Efficient ways to go around theme parks, of course, regarding local festivals and seasonal event information, I lose to no one. If asked "Is there anything interesting?", I will scrape up all "fun" around there and deliver it!<br><br>
+<strong>——What kind of experience do you let us do?</strong><br><br>
+I propose plans to "experience" not just "watch"!<br>
+For example, making your own work in a traditional craft experience class, renting a kimono and walking around the town, or cheering for a local team in sports watching. As expected, using your body and sharing the atmosphere of the place becomes the best memory. If it's a family with children, to parks and attractions where children are absolutely not bored. If it's a student group, to activities where everyone can make noise together. Any group, I will lead as a excitement captain!<br><br>
+<strong>——Then finally, to customers who are about to enjoy!</strong><br><br>
+Please forget all unpleasant things and worries of everyday life!<br>
+During my guide, "Enjoying" is the only rule. If you get tired, just rest, and changing plans is totally OK. What is important is whether you are laughing from the bottom of your heart at that moment.<br>
+I will definitely show you making exciting memories that you can never forget in your life. Let's make it a trip full of smiles and supremely happy! Are you ready? Follow me! Yay!`
+        }
+    },
+    {
+        id: 'nightlife',
+        name: { ja: '夜遊びガイド', en: 'Nightlife Guide' },
+        catchCopy: { ja: '夜の街に、大人の時間を', en: 'Adult moments in the night city' },
+        guideName: { ja: '中村 優希', en: 'Yuki Nakamura' },
+        description: { ja: '夜の街と大人の楽しみ方の専門家', en: 'Expert in nightlife and sophisticated adult entertainment' },
+        specialty: { ja: 'バー、ジャズクラブ、夜景スポット、ナイトマーケット、文化的な夜のイベント', en: 'Bars, jazz clubs, night views, night markets, cultural evening events' },
+        imagePath: 'image/yukiin.jpg',
+        faceImagePath: 'image/yukiface.png',
+        color: '#7C3AED',
+        selfIntro: {
+            ja: `<strong>——中村さん、夜遊びガイドという仕事を選んだきっかけは？</strong><br><br>
+中村 優希です。こんばんは。私がこの道を選んだのは、ホテルのコンシェルジュ時代の経験が大きいですね。<br>
+宿泊されるお客様から「夜、どこか良いバーはありませんか」「ジャズが聴ける場所を教えてほしい」といったご相談を数多くいただきました。昼間の観光とは違う、大人だからこそ味わえる洗練された夜の時間。そんな特別なひとときをご案内することに、深いやりがいを感じたんです。神戸で生まれ育ち、この街の夜の表情を知り尽くしている自負があります。12年間、全国の夜の名所を巡り、本当に価値のあるスポットだけを厳選してご紹介しています。<br><br>
+<strong>——どんな夜の過ごし方を提案してくれますか？</strong><br><br>
+一口に「夜遊び」といっても、お客様によって求めるものは様々です。<br>
+静かにウイスキーを傾けながら、バーテンダーとの会話を楽しみたい方。生演奏のジャズに耳を傾け、音楽に浸りたい方。夜景を眺めながら、ロマンチックな時間を過ごしたいカップル。あるいは、活気あふれるナイトマーケットで異国情緒を味わいたい方。私は、お客様の気分やシチュエーションに合わせて、最適な夜のプランをご提案します。隠れ家的なバーから、文化的なコンサートホールまで。大人の夜を、上質に演出いたします。<br><br>
+<strong>——最後に、これから夜の街へ繰り出すお客様へメッセージを。</strong><br><br>
+夜の街には、昼間とは違う魅力が溢れています。ライトアップされた建物、静寂の中に響く音楽、グラスの中で揺れる琥珀色の液体。<br>
+そんな大人の時間を、一人で過ごすのも良いですが、知識あるガイドと共に巡れば、さらに深い体験ができるはずです。私が12年かけて培った、とっておきの夜スポットへご案内します。洗練された、忘れられない夜を。さあ、今宵はどこへ参りましょうか。お待ちしております。`,
+            en: `<strong>——Nakamura-san, what made you choose to be a nightlife guide?</strong><br><br>
+I'm Yuki Nakamura. Good evening. My experience as a hotel concierge greatly influenced my choice of this path.<br>
+I received many inquiries from guests such as "Is there a good bar at night?" and "Please tell me a place where I can listen to jazz." A sophisticated night time that adults can enjoy, different from daytime sightseeing. I felt deep fulfillment in guiding such special moments. Born and raised in Kobe, I am confident that I know every aspect of this city's nightlife. For 12 years, I have traveled to famous night spots across the country and carefully selected only truly valuable spots to introduce.<br><br>
+<strong>——What kind of night activities do you propose?</strong><br><br>
+Although we say "nightlife," what customers seek varies.<br>
+Those who want to enjoy conversation with bartenders while quietly sipping whiskey. Those who want to listen to live jazz and immerse themselves in music. Couples who want to spend romantic time while viewing night scenery. Or those who want to taste exotic atmosphere at lively night markets. I propose the optimal night plan according to the customer's mood and situation. From hideaway bars to cultural concert halls. I will produce a sophisticated adult night.<br><br>
+<strong>——Finally, a message to customers heading out to the night city.</strong><br><br>
+The night city is full of charms different from daytime. Illuminated buildings, music echoing in silence, amber liquid swaying in a glass.<br>
+It's good to spend such adult time alone, but if you tour with a knowledgeable guide, you should be able to have a deeper experience. I will guide you to special night spots I have cultivated over 12 years. A sophisticated, unforgettable night. Now, where shall we go tonight? I am looking forward to it.`
+        }
+    }
+];
+
+const screenshotsData = [
+  //  { src: 'image/screen/screen12.jpg', caption: { ja: 'ガイドブックライブラリー', en: 'Guidebook Library' } },
+  // { src: 'image/screen/screen13.jpg', caption: { ja: 'ガイドブック', en: 'Guidebook' } },
+  //  { src: 'image/screen/screen14.jpg', caption: { ja: 'クイズ画面', en: 'Quiz Screen' } },
+    { src: 'image/screen/screen1.jpg', caption: { ja: 'ホーム画面', en: 'Home Screen' } },
+    { src: 'image/screen/screen2.jpg', caption: { ja: '地図画面', en: 'Map Screen' } },
+    { src: 'image/screen/screen3.jpg', caption: { ja: 'チャット画面', en: 'Chat Screen' } },
+    { src: 'image/screen/screen4.jpg', caption: { ja: 'X検索、Web検索', en: 'X Search, Web Search' } },
+    { src: 'image/screen/screen5.jpg', caption: { ja: 'ペルソナ選択', en: 'Persona Selection' } },
+    { src: 'image/screen/screen6.jpg', caption: { ja: 'ガイド画面', en: 'Guide Screen' } },
+    { src: 'image/screen/screen7.jpg', caption: { ja: '履歴画面', en: 'History Screen' } },
+    { src: 'image/screen/screen8.jpg', caption: { ja: 'ガイド時間設定', en: 'Guide Time Setting' } },
+];
+
+let currentPersonaIndex = 0;
+
+function initPersonas(skipShowPersona = false) {
+    const container = document.getElementById('personas-container');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    personasData.forEach((persona, index) => {
+        const card = document.createElement('div');
+        card.className = 'persona-card';
+        if (index === currentPersonaIndex) card.classList.add('active'); // Use current index
+        card.dataset.persona = persona.id;
+        card.dataset.index = index;
+
+        // 新しいカード構造：画像コンテナ + オーバーレイ + 再生ボタン + 下部情報
+        card.innerHTML = `
+            <div class="persona-image-container">
+                <img src="${persona.imagePath}" alt="${persona.name[currentLanguage]}" class="persona-card-image" loading="lazy">
+                <div class="persona-card-overlay">
+                    <div class="persona-overlay-catch" data-text="${persona.catchCopy[currentLanguage]}"></div>
+                    <div class="persona-overlay-name" data-text="${persona.name[currentLanguage]}"></div>
+                    <div class="persona-overlay-realname" data-text="${persona.guideName[currentLanguage]}"></div>
+                </div>
+
+            </div>
+            <div class="persona-card-info">
+                <div class="persona-info-title">${persona.guideName[currentLanguage]}</div>
+                <div class="persona-info-description">${persona.description[currentLanguage]}</div>
+                <div class="persona-info-description">${persona.specialty[currentLanguage]}</div>
+            </div>
+        `;
+
+        // クリックイベント：モーダルを開く
+        card.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // アクティブでないカードをクリックした場合は、そのカードをアクティブにする
+            if (!card.classList.contains('active')) {
+                showPersona(index);
+            } else {
+                // アクティブなカードをクリックした場合はモーダルを開く
+                openPersonaModal(persona);
+            }
+        });
+
+        container.appendChild(card);
+    });
+
+    // 矢印ナビゲーション
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+
+    // Remove old listeners to prevent duplicates if initPersonas called multiple times
+    const newPrevBtn = prevBtn.cloneNode(true);
+    const newNextBtn = nextBtn.cloneNode(true);
+    prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
+    nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+
+    if (newPrevBtn) {
+        newPrevBtn.addEventListener('click', () => {
+            currentPersonaIndex = (currentPersonaIndex - 1 + personasData.length) % personasData.length;
+            showPersona(currentPersonaIndex);
+        });
+    }
+
+    if (newNextBtn) {
+        newNextBtn.addEventListener('click', () => {
+            currentPersonaIndex = (currentPersonaIndex + 1) % personasData.length;
+            showPersona(currentPersonaIndex);
+        });
+    }
+
+    // キーボードナビゲーション
+    // Remove potentially duplicate listeners? hard to do without named function. 
+    // Ideally initPersonas shouldn't be adding global listeners.
+    // Moving this out or checking if listener added. 
+    // user might toggle lang multiple times.
+    // We can just rely on the existing listener if we don't re-add it.
+    // But initPersonas is called on lang switch.
+    // Let's make sure we don't add multiple keydown listeners.
+    // Actually, document level listener is fine to add once in DOMContentLoaded.
+    // I will remove it from here and rely on the one added in main flow or ensure it's idempotent.
+
+    // アニメーション再適用
+    initScrollAnimations();
+
+    // skipShowPersonaフラグがfalseの場合のみshowPersonaを実行
+    if (skipShowPersona !== true) {
+        // 初期表示の状態を適用
+        showPersona(currentPersonaIndex); // Use current index to maintain state
+    }
+}
+
+// Function to handle key navigation, added once
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        currentPersonaIndex = (currentPersonaIndex - 1 + personasData.length) % personasData.length;
+        showPersona(currentPersonaIndex);
+    } else if (e.key === 'ArrowRight') {
+        currentPersonaIndex = (currentPersonaIndex + 1) % personasData.length;
+        showPersona(currentPersonaIndex);
+    }
+});
+
+// グローバル変数でリサイズ処理をデバウンス
+let resizeTimeoutId = null;
+
+// Resize listener added once
+// リサイズ時にペルソナ表示を再計算する必要がなくなったため、この処理は削除
+// レスポンシブなレイアウトはCSSで対応
+window.addEventListener('resize', () => {
+    // リサイズ時の処理が必要になった場合の骨組みのみ保持
+    if (resizeTimeoutId !== null) {
+        clearTimeout(resizeTimeoutId);
+    }
+
+    // 現在は特に処理なし
+});
+
+
+// グローバル変数でカード幅等を管理（動的に取得するため定数は廃止）
+// const CARD_WIDTH = 600;
+// const CARD_GAP = 40;
+
+function showPersona(index) {
+    const cards = document.querySelectorAll('.persona-card');
+    const container = document.querySelector('.personas-carousel');
+
+    // インデックスの正規化（念のため）
+    const total = cards.length;
+    const safeIndex = (index + total) % total;
+
+    // 既存のテキストアニメーションをクリア
+    clearTextAnimationTimeouts();
+
+    // クラスの更新（アクティブのみ）
+    cards.forEach((card, i) => {
+        // 全てリセット
+        card.classList.remove('active', 'prev', 'next', 'hidden');
+
+        if (i === safeIndex) {
+            card.classList.add('active');
+
+            // テキスト表示（少し遅延させてアニメーション）
+            setTimeout(() => {
+                showCardText(card);
+            }, 300);
+        } else {
+            // 他のカードからはテキストをクリア
+            clearCardText(card);
+        }
+    });
+
+    // カルーセルの位置を更新（スライド）
+    if (container && cards.length > 0) {
+        // 現在のカード幅とギャップを取得（レスポンシブ対応）
+        const cardWidth = cards[0].offsetWidth;
+        const style = window.getComputedStyle(container);
+        // gapがピクセル値で返ってくることを想定、なければ0
+        const gap = parseFloat(style.gap) || 0; // gapプロパティ（最近のブラウザ）
+        // または column-gap ?
+        // 単純化のため gap を使用
+
+        // アクティブなカードが左に来るように移動
+        const translateX = -(safeIndex * (cardWidth + gap));
+        container.style.transform = `translateX(${translateX}px)`;
+    }
+
+    currentPersonaIndex = safeIndex;
+}
+
+function clearCardText(card) {
+    const catchEl = card.querySelector('.persona-overlay-catch');
+    const nameEl = card.querySelector('.persona-overlay-name');
+    const realnameEl = card.querySelector('.persona-overlay-realname');
+
+    // スタイルだけでなくコンテンツもクリアしてタイプライターをリセット
+    if (catchEl) {
+        catchEl.textContent = '';
+        catchEl.style.opacity = '0';
+        catchEl.dataset.animating = 'false';
+    }
+    if (nameEl) {
+        nameEl.innerHTML = '';
+        nameEl.style.opacity = '0';
+        nameEl.dataset.animating = 'false';
+    }
+    if (realnameEl) realnameEl.textContent = '';
+}
+
+// グローバル変数でタイムアウトIDを管理

@@ -43,6 +43,92 @@
     --font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+/* ヒーローレビューカードのスタイル */
+.hero-review-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    max-width: 480px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-left: 4px solid var(--color-primary);
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.hero-review-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-review-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.hero-review-author {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    text-align: right;
+    font-weight: 700;
+}
+
+.static-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.world-guide-container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.btn-world-guide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1.25rem 2.5rem;
+    background: white;
+    color: var(--color-primary);
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn-world-guide:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    background: var(--color-bg);
+}
+
+.btn-world-guide svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-world-guide:hover svg {
+    transform: rotate(15deg) scale(1.2);
+}
+
 /* リセットと基本スタイル */
 *,
 *::before,
@@ -250,49 +336,53 @@ ul {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
     position: relative;
     z-index: 1;
 }
 
-.hero-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    line-height: 1.1;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: white;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
+.hero-title-impact {
+    font-size: clamp(3.5rem, 12vw, 8.5rem); /* 改行に合わせて少し最大サイズを大きく */
+    font-weight: 900;
+    color: #fff;
+    transform: rotate(-3deg) skew(-5deg);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.1; /* 改行時の重なりを防ぐため調整 */
+    text-shadow: 
+        0 8px 30px rgba(0, 0, 0, 0.6),
+        0 4px 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 2rem;
+    display: inline-block;
+    padding: 1rem 2rem;
+    position: relative;
+    white-space: nowrap; /* 不用意な自動折り返しを防ぐ */
 }
 
-.title-line {
-    display: block;
-}
-
-.title-line.highlight {
-    background: linear-gradient(90deg, #fff 0%, #f0f0f0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: none;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+.hero-title-impact br {
+    display: block; /* 強制的に改行 */
+    content: "";
+    margin-top: 0.2em;
 }
 
 .hero-description {
+    text-align: center;
     font-size: 1.125rem;
-    color: rgba(255, 255, 255, 0.95);
-    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 1.75rem;
     line-height: 1.8;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .hero-buttons {
     display: flex;
-    gap: 1.5rem;
+    justify-content: center;
+    gap: 1rem;
     flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 2.5rem;
 }
 
 .btn {
@@ -505,6 +595,208 @@ ul {
 }
 
 /* ========================================
+   ヒーロー：センターレイアウト
+   ======================================== */
+.hero-text-center {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-buttons-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.btn-elegant {
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.btn-elegant:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    background: #f8f9fa;
+}
+
+.btn-outline-elegant {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    padding: 1rem 2.5rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(10px);
+}
+
+.btn-outline-elegant:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .hero-buttons-group {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        gap: 1rem;
+    }
+}
+
+/* ========================================
+   ヒーロー：装飾ドット (Legacy - keep class but empty to avoid errors)
+   ======================================== */
+.hero-deco { display: none; }
+
+
+.float-card-icon {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.float-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.float-card-text strong {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.float-card-text small {
+    font-size: 0.7rem;
+    color: #666;
+    white-space: nowrap;
+}
+
+/* 各カードの配置 */
+.card-heritage {
+    top: 4%;
+    left: 0%;
+    animation: float-card-1 6s ease-in-out infinite;
+}
+
+.card-quiz {
+    top: 8%;
+    right: 0%;
+    animation: float-card-2 7s ease-in-out infinite;
+}
+
+.card-ai {
+    bottom: 22%;
+    left: 2%;
+    animation: float-card-3 5.5s ease-in-out infinite;
+}
+
+.card-guidebook {
+    bottom: 22%;
+    right: 2%;
+    animation: float-card-4 6.5s ease-in-out infinite;
+}
+
+@keyframes float-card-1 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+@keyframes float-card-2 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+@keyframes float-card-3 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+@keyframes float-card-4 {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-9px); }
+}
+
+/* ========================================
+   ヒーロー：装飾ドット
+   ======================================== */
+.hero-deco {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.map-dot {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.dot-1 { width: 320px; height: 320px; top: -80px; right: -80px; }
+.dot-2 { width: 180px; height: 180px; bottom: 60px; left: -50px; }
+.dot-3 { width: 100px; height: 100px; top: 40%; left: 40%; }
+.dot-4 { width: 60px; height: 60px; bottom: 10%; right: 20%; }
+
+.map-line {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+}
+
+.line-1 { width: 1px; height: 200px; top: 10%; left: 45%; transform: rotate(30deg); }
+.line-2 { width: 1px; height: 150px; bottom: 15%; right: 30%; transform: rotate(-20deg); }
+
+/* ========================================
+   レスポンシブ：ヒーローマップビジュアル
+   ======================================== */
+@media (max-width: 768px) {
+    .hero-map-visual {
+        width: 320px;
+        height: 360px;
+    }
+
+    .map-globe {
+        width: 100px;
+        height: 100px;
+        font-size: 3rem;
+    }
+
+    .ring-outer { width: 160px; height: 160px; }
+    .ring-inner { width: 128px; height: 128px; }
+
+    .float-card {
+        padding: 0.55rem 0.8rem;
+    }
+    .float-card-icon { font-size: 1.3rem; }
+
+    .hero-features {
+        gap: 0.45rem;
+    }
+
+    .hero-feature-pill {
+        font-size: 0.78rem;
+        padding: 0.4rem 0.85rem;
+    }
+
+    .btn-outline-hero, .btn-hero-main {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.6rem;
+    }
+}
+
+/* ========================================
    セクション共通スタイル
    ======================================== */
 section {
@@ -556,132 +848,161 @@ section {
     background: var(--color-bg-alt);
 }
 
+.features.full-width-features {
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.pro-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 160px; /* セクション間の余白を大幅に増加 */
+    padding-top: 80px;
+}
+
+.pro-feature-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.pro-section-title {
+    font-size: 8rem; /* 圧倒的な存在感のサイズ */
+    font-weight: 900;
+    color: #000; /* 黒色 */
+    padding: 0 5%;
+    margin-bottom: 40px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-align: left; /* デフォルトは左寄せ */
+}
+
+.pro-feature-section.reverse .pro-section-title {
+    text-align: right; /* reverse クラスがついたセクションは右寄せ */
+}
+
+.pro-feature-item {
+    display: flex;
+    align-items: center;
+}
+
+.pro-feature-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.pro-feature-visual {
+    flex: 2; /* 2/3 ratio equivalent */
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.square-screenshot {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* 切り抜きなしで全体表示 */
+    border-radius: 32px; /* 角丸を適用 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: #fff; /* 背景が透明な場合のための白背景 */
+    transition: transform 0.8s ease;
+}
+
+.pro-feature-item:hover .square-screenshot {
+    transform: scale(1.05);
+}
+
+.pro-feature-content {
+    flex: 1;
+    padding: 60px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pro-feature-content p {
+    font-size: 1.25rem; /* 説明文も少し大きくしてバランスを調整 */
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+@media (max-width: 992px) {
+    .pro-section-title {
+        font-size: 6.5rem; /* モバイル表示でより大きく */
+        padding: 0 10%;
+        margin-bottom: 30px;
+    }
+    .pro-feature-section.reverse .pro-section-title {
+        text-align: right; /* モバイルでも左右交互を維持 */
+    }
+    .pro-feature-item, .pro-feature-item.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+    .pro-feature-visual {
+        width: 100%;
+        flex: none;
+    }
+    .pro-feature-content {
+        width: 100%;
+        flex: none;
+        padding: 60px 20px;
+    }
+}
+
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
 .feature-card {
     background: white;
-    padding: 0;
-    /* Reset padding as we'll use flex layout */
+    padding: 2.5rem;
     border-radius: var(--radius-xl);
-    /* box-shadow: var(--shadow-md); Remove shadow for a cleaner look or keep it subtle */
-    /* border: 1px solid var(--color-border); */
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
     transition: var(--transition-normal);
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    overflow: hidden;
-    /* To clip content if needed */
-    min-height: 200px;
-    border: none;
-    background: transparent;
-    /* Assume transparent if we want clean look */
-
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
 /* Text Content Area */
 .feature-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem 1rem 1rem 0;
+    margin-bottom: 1.5rem;
 }
 
 .feature-card h3 {
-    font-size: 2rem;
-    font-weight: 500;
-    /* Lighter weight for large text */
+    font-size: 1.5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
-    line-height: 1.2;
     color: var(--color-text);
 }
 
-.feature-meta {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 0.875rem;
-    color: var(--color-text-light);
-    margin-top: auto;
-}
-
-.feature-date,
-.feature-category {
-    font-weight: 500;
-}
-
-
-
-
 /* Visual/Image Area */
 .feature-visual {
-    width: 200px;
-    height: 200px;
-    background: #111;
-    /* Dark background */
-    border-radius: 30px;
-    /* Large radius */
+    width: 60px;
+    height: 60px;
+    background: var(--color-primary-light);
+    color: white;
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 2rem;
-    flex-shrink: 0;
-    position: relative;
-    overflow: hidden;
+    margin-bottom: 1.5rem;
 }
 
 .feature-emoji {
-    font-size: 5rem;
-    z-index: 2;
-}
-
-/* Gradient overlay for visual */
-.feature-visual::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.167), transparent 90%);
+    font-size: 2rem;
 }
 
 @media (max-width: 768px) {
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .feature-card {
-        flex-direction: column-reverse;
-        /* Image top on mobile? Or keep side by side but smaller? */
-        align-items: center;
-        text-align: center;
-        background: white;
-        padding: 2rem;
-        border: 1px solid var(--color-border);
-    }
-
-    .feature-content {
-        padding: 0;
-        align-items: center;
-    }
-
-    .feature-visual {
-        margin-left: 0;
-        margin-bottom: 1.5rem;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16/9;
-    }
-
-    .feature-meta {
-        justify-content: center;
-        flex-wrap: wrap;
+    .device-frame {
+        width: 320px; /* モバイルでは画面幅に合わせて少し小さめに調整 */
+        border-radius: 40px;
+        padding: 12px;
     }
 }
 
@@ -1360,100 +1681,128 @@ section {
     scroll-snap-align: center;
 }
 
-.screenshot-frame {
-    width: 260px;
-    height: auto;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
+.device-frame {
+    width: 450px; /* 約2倍の大きさに変更（250px -> 450px） */
+    background: #111;
+    border-radius: 60px; /* サイズに合わせて角丸も調整 */
+    padding: 18px;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 
+                inset 0 0 3px 3px rgba(255, 255, 255, 0.1);
+    border: 1px solid #333;
 }
 
-.screenshot-frame img {
+.device-frame::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 30px;
+    background: #111;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 10;
+}
+
+.screen-content {
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    background: #000;
+    line-height: 0;
+}
+
+.screen-content img {
     width: 100%;
     height: auto;
     display: block;
-    transform: scale(1.2);
 }
 
 .screenshot-caption {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     font-size: 0.9rem;
     color: var(--color-text-light);
+    font-weight: 500;
 }
 
 /* ========================================
-   使い方セクション
+/* ========================================
+   アプリの使い方・サポートセクション
    ======================================== */
-.how-to-use {
-    background: white;
+.support-section {
+    padding: 100px 0;
+    background: #f8fafc;
 }
 
-.steps {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 0;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.step {
-    flex: 1;
-    text-align: center;
-    padding: 0 1.5rem;
-}
-
-.step-number {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 2rem;
-    background: var(--gradient-primary);
-    color: white;
-    border-radius: 50%;
+.support-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: 800;
-    box-shadow: var(--shadow-lg);
+    gap: 60px;
+    margin-top: 50px;
 }
 
-.step-content h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+.support-visual {
+    flex: 1.2;
 }
 
-.step-content p {
-    color: var(--color-text-light);
-}
-
-.step-connector {
-    flex: 0 0 100px;
-    height: 4px;
-    background: var(--color-border);
-    margin-top: 40px;
-    position: relative;
-}
-
-.step-connector::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+.support-image-actual {
     width: 100%;
-    height: 100%;
-    background: var(--gradient-primary);
-    animation: connector-flow 2s linear infinite;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-@keyframes connector-flow {
-    0% {
-        transform: translateX(-100%);
-    }
+.support-content {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-    100% {
+.support-feature-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.support-feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.support-icon {
+    font-size: 2rem;
+    min-width: 50px;
+}
+
+.support-text h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--color-text);
+}
+
+.support-text p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .support-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .support-visual, .support-content {
+        width: 100%;
+    }
+}
         transform: translateX(100%);
     }
 }
@@ -1779,15 +2128,18 @@ section {
    ======================================== */
 .hero-stats {
     display: flex;
+    justify-content: center;
     gap: 3rem;
-    margin-top: 3rem;
-    padding-top: 2rem;
+    margin-top: 0;
+    padding-top: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
 }
 
 .stat-item {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .stat-value {
