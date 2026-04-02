@@ -919,7 +919,7 @@ section {
 }
 
 .pro-section-title {
-    font-size: 8rem; /* 圧倒的な存在感のサイズ */
+    font-size: 4.5rem; /* 6remから縮小 */
     font-weight: 900;
     color: #000; /* 黒色 */
     padding: 0 5%;
@@ -943,7 +943,7 @@ section {
 }
 
 .pro-feature-visual {
-    flex: 2; /* 2/3 ratio equivalent */
+    flex: 1; /* 比率 1 */
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -951,20 +951,17 @@ section {
 
 .square-screenshot {
     width: 100%;
+    max-width: 250px;
     height: auto;
-    object-fit: contain; /* 切り抜きなしで全体表示 */
-    border-radius: 32px; /* 角丸を適用 */
+    object-fit: contain;
+    border-radius: 32px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    background: #fff; /* 背景が透明な場合のための白背景 */
-    transition: transform 0.8s ease;
-}
-
-.pro-feature-item:hover .square-screenshot {
-    transform: scale(1.05);
+    background: #fff;
+    border: 3px solid #000; /* 黒い縁を追加 */
 }
 
 .pro-feature-content {
-    flex: 1;
+    flex: 2; /* 前回の指示でテキスト2、画像1にしたはずですが、ファイル内容がflex:1になっていたため、改めて2に設定します */
     padding: 60px 8%;
     display: flex;
     flex-direction: column;
@@ -979,7 +976,7 @@ section {
 
 @media (max-width: 992px) {
     .pro-section-title {
-        font-size: 6.5rem; /* モバイル表示でより大きく */
+        font-size: 3.5rem; /* モバイル表示でより小さく調整（6.5remから変更） */
         padding: 0 10%;
         margin-bottom: 30px;
     }
@@ -993,11 +990,12 @@ section {
     .pro-feature-visual {
         width: 100%;
         flex: none;
+        margin-bottom: 2rem;
     }
     .pro-feature-content {
         width: 100%;
         flex: none;
-        padding: 60px 20px;
+        padding: 40px 20px;
     }
 }
 
@@ -1734,13 +1732,13 @@ section {
 }
 
 .device-frame {
-    width: 450px; /* 約2倍の大きさに変更（250px -> 450px） */
+    width: 250px; /* 330pxから250pxへ縮小 */
     background: #111;
-    border-radius: 60px; /* サイズに合わせて角丸も調整 */
-    padding: 18px;
+    border-radius: 40px; /* サイズダウンに合わせて調整 */
+    padding: 12px;
     position: relative;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 
-                inset 0 0 3px 3px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                inset 0 0 2px 2px rgba(255, 255, 255, 0.1);
     border: 1px solid #333;
 }
 
@@ -1802,8 +1800,11 @@ section {
 
 .support-image-actual {
     width: 100%;
+    max-width: 250px; /* サポート画像もmax 250px */
+    margin: 0 auto;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    display: block;
 }
 
 .support-content {
