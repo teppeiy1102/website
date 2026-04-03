@@ -344,14 +344,15 @@ ul {
 }
 
 .hero-title-impact {
-    font-size: clamp(2.5rem, 10vw, 8.5rem); /* スマホでの最小サイズを3.5remから2.5remへ */
+    font-size: clamp(2.5rem, 10vw, 8.5rem);
+    /* スマホでの最小サイズを3.5remから2.5remへ */
     font-weight: 900;
     color: #fff;
     transform: rotate(-3deg) skew(-5deg);
     text-transform: uppercase;
     letter-spacing: -0.02em;
     line-height: 1.1;
-    text-shadow: 
+    text-shadow:
         0 8px 30px rgba(0, 0, 0, 0.6),
         0 4px 10px rgba(0, 0, 0, 0.4);
     margin-bottom: 2rem;
@@ -364,7 +365,8 @@ ul {
 }
 
 .hero-title-impact br {
-    display: block; /* 強制的に改行 */
+    display: block;
+    /* 強制的に改行 */
     content: "";
     margin-top: 0.2em;
 }
@@ -463,11 +465,13 @@ ul {
     width: 100%;
     height: 100%;
     background: transparent;
-    border-radius: 40px; /* 角丸な感じに */
+    border-radius: 40px;
+    /* 角丸な感じに */
     overflow: hidden;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.1); /* 控えめな枠線 */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    /* 控えめな枠線 */
 }
 
 /* 横スクロールコンテナ */
@@ -480,7 +484,8 @@ ul {
 }
 
 .phone-screen img {
-    width: 300px; /* .phone-frameの幅に合わせる */
+    width: 300px;
+    /* .phone-frameの幅に合わせる */
     height: 100%;
     object-fit: cover;
     flex-shrink: 0;
@@ -601,13 +606,15 @@ ul {
    ======================================== */
 .hero-text-center {
     width: 100%;
-    max-width: 1000px; /* テキストが収まりやすいよう少し広げる */
+    max-width: 1000px;
+    /* テキストが収まりやすいよう少し広げる */
     margin: 0 auto;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 1rem; /* 左右の余白を確保 */
+    padding: 0 1rem;
+    /* 左右の余白を確保 */
     box-sizing: border-box;
 }
 
@@ -652,22 +659,30 @@ ul {
     .hero-buttons-group {
         flex-direction: column;
         width: 100%;
-        max-width: 320px; /* 少し幅を広げる */
+        max-width: 320px;
+        /* 少し幅を広げる */
         gap: 1rem;
         margin-left: auto;
         margin-right: auto;
-        align-items: center; /* 子要素（ボタン）を中央に */
+        align-items: center;
+        /* 子要素（ボタン）を中央に */
     }
-    .btn-elegant, .btn-outline-elegant {
-        width: 100%; /* モバイルでボタンを幅いっぱいに */
-        justify-content: center; /* テキストを中央揃え */
+
+    .btn-elegant,
+    .btn-outline-elegant {
+        width: 100%;
+        /* モバイルでボタンを幅いっぱいに */
+        justify-content: center;
+        /* テキストを中央揃え */
     }
 }
 
 /* ========================================
    ヒーロー：装飾ドット (Legacy - keep class but empty to avoid errors)
    ======================================== */
-.hero-deco { display: none; }
+.hero-deco {
+    display: none;
+}
 
 
 .float-card-icon {
@@ -721,20 +736,51 @@ ul {
 }
 
 @keyframes float-card-1 {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
+
 @keyframes float-card-2 {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
 }
+
 @keyframes float-card-3 {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
 }
+
 @keyframes float-card-4 {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-9px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
 }
 
 /* ========================================
@@ -755,10 +801,33 @@ ul {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.dot-1 { width: 320px; height: 320px; top: -80px; right: -80px; }
-.dot-2 { width: 180px; height: 180px; bottom: 60px; left: -50px; }
-.dot-3 { width: 100px; height: 100px; top: 40%; left: 40%; }
-.dot-4 { width: 60px; height: 60px; bottom: 10%; right: 20%; }
+.dot-1 {
+    width: 320px;
+    height: 320px;
+    top: -80px;
+    right: -80px;
+}
+
+.dot-2 {
+    width: 180px;
+    height: 180px;
+    bottom: 60px;
+    left: -50px;
+}
+
+.dot-3 {
+    width: 100px;
+    height: 100px;
+    top: 40%;
+    left: 40%;
+}
+
+.dot-4 {
+    width: 60px;
+    height: 60px;
+    bottom: 10%;
+    right: 20%;
+}
 
 .map-line {
     position: absolute;
@@ -766,8 +835,21 @@ ul {
     border-radius: 2px;
 }
 
-.line-1 { width: 1px; height: 200px; top: 10%; left: 45%; transform: rotate(30deg); }
-.line-2 { width: 1px; height: 150px; bottom: 15%; right: 30%; transform: rotate(-20deg); }
+.line-1 {
+    width: 1px;
+    height: 200px;
+    top: 10%;
+    left: 45%;
+    transform: rotate(30deg);
+}
+
+.line-2 {
+    width: 1px;
+    height: 150px;
+    bottom: 15%;
+    right: 30%;
+    transform: rotate(-20deg);
+}
 
 /* ========================================
    レスポンシブ：ヒーローマップビジュアル
@@ -784,13 +866,23 @@ ul {
         font-size: 3rem;
     }
 
-    .ring-outer { width: 160px; height: 160px; }
-    .ring-inner { width: 128px; height: 128px; }
+    .ring-outer {
+        width: 160px;
+        height: 160px;
+    }
+
+    .ring-inner {
+        width: 128px;
+        height: 128px;
+    }
 
     .float-card {
         padding: 0.55rem 0.8rem;
     }
-    .float-card-icon { font-size: 1.3rem; }
+
+    .float-card-icon {
+        font-size: 1.3rem;
+    }
 
     .hero-features {
         gap: 0.45rem;
@@ -801,7 +893,8 @@ ul {
         padding: 0.4rem 0.85rem;
     }
 
-    .btn-outline-hero, .btn-hero-main {
+    .btn-outline-hero,
+    .btn-hero-main {
         font-size: 0.95rem;
         padding: 0.8rem 1.6rem;
     }
@@ -896,8 +989,10 @@ section {
 
 .concept-visual {
     flex: 1;
-    overflow: hidden; /* はみ出しをカット */
-    border-radius: 40px; /* 角丸を適用 */
+    overflow: hidden;
+    /* はみ出しをカット */
+    border-radius: 40px;
+    /* 角丸を適用 */
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
 
@@ -906,7 +1001,7 @@ section {
     height: auto;
     display: block;
     /* 1.2倍に拡大して中央をズーム */
-    transform: scale(1.2); 
+    transform: scale(1.2);
     transform-origin: center center;
 }
 
@@ -916,9 +1011,11 @@ section {
         text-align: center;
         gap: 40px;
     }
+
     .concept-lead {
         text-align: center;
     }
+
     .concept-visual {
         width: 100%;
     }
@@ -928,6 +1025,7 @@ section {
     .concept-intro {
         padding: 80px 0;
     }
+
     .concept-lead {
         font-size: 1.75rem;
     }
@@ -941,7 +1039,8 @@ section {
 .pro-features-list {
     display: flex;
     flex-direction: column;
-    gap: 160px; /* セクション間の余白を大幅に増加 */
+    gap: 160px;
+    /* セクション間の余白を大幅に増加 */
     padding-top: 80px;
 }
 
@@ -952,18 +1051,22 @@ section {
 }
 
 .pro-section-title {
-    font-size: 4.5rem; /* 6remから縮小 */
+    font-size: 4.5rem;
+    /* 6remから縮小 */
     font-weight: 900;
-    color: #000; /* 黒色 */
+    color: #000;
+    /* 黒色 */
     padding: 0 5%;
     margin-bottom: 40px;
     line-height: 1;
     letter-spacing: -0.04em;
-    text-align: left; /* デフォルトは左寄せ */
+    text-align: left;
+    /* デフォルトは左寄せ */
 }
 
 .pro-feature-section.reverse .pro-section-title {
-    text-align: right; /* reverse クラスがついたセクションは右寄せ */
+    text-align: right;
+    /* reverse クラスがついたセクションは右寄せ */
 }
 
 .pro-feature-item {
@@ -976,7 +1079,8 @@ section {
 }
 
 .pro-feature-visual {
-    flex: 1; /* 比率 1 */
+    flex: 1;
+    /* 比率 1 */
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -984,52 +1088,84 @@ section {
 
 .square-screenshot {
     width: 100%;
-    margin: 20px,20px,20px,20px;
+    margin: 20px, 20px, 20px, 20px;
     max-width: 450px;
     height: auto;
     object-fit: contain;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     background: #fff;
-    border: 12px solid #000; /* 黒い縁を追加 */
+    border: 12px solid #000;
+    /* 黒い縁を追加 */
 }
 
 .pro-feature-content {
-    flex: 1; /* 前回の指示でテキスト2、画像1にしたはずですが、ファイル内容がflex:1になっていたため、改めて2に設定します */
+    flex: 1;
+    /* 前回の指示でテキスト2、画像1にしたはずですが、ファイル内容がflex:1になっていたため、改めて2に設定します */
     padding: 60px 8%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .pro-feature-content p {
-    font-size: 1.25rem; /* 説明文も少し大きくしてバランスを調整 */
+    font-size: 1.25rem;
+    /* 説明文も少し大きくしてバランスを調整 */
     color: var(--color-text-light);
     line-height: 1.8;
+    text-align: center;
 }
+
+.feature-icon-img {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    margin-bottom: 30px;
+}
+
+/* 左右中央揃えになったため、reverseセクションの右寄せ設定を削除 */
 
 @media (max-width: 992px) {
     .pro-section-title {
-        font-size: 3.5rem; /* モバイル表示でより小さく調整（6.5remから変更） */
+        font-size: 3.5rem;
+        /* モバイル表示でより小さく調整（6.5remから変更） */
         padding: 0 10%;
         margin-bottom: 30px;
     }
+
     .pro-feature-section.reverse .pro-section-title {
-        text-align: right; /* モバイルでも左右交互を維持 */
+        text-align: right;
+        /* モバイルでも左右交互を維持 */
     }
-    .pro-feature-item, .pro-feature-item.reverse {
+
+    .pro-feature-item,
+    .pro-feature-item.reverse {
         flex-direction: column;
         text-align: center;
     }
+
     .pro-feature-visual {
         width: 100%;
         flex: none;
         margin-bottom: 2rem;
     }
+
     .pro-feature-content {
         width: 100%;
         flex: none;
         padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .pro-feature-content p {
+        text-align: center;
     }
 }
 
@@ -1084,7 +1220,8 @@ section {
 
 @media (max-width: 768px) {
     .device-frame {
-        width: 320px; /* モバイルでは画面幅に合わせて少し小さめに調整 */
+        width: 320px;
+        /* モバイルでは画面幅に合わせて少し小さめに調整 */
         border-radius: 40px;
         padding: 12px;
     }
@@ -1743,7 +1880,8 @@ section {
     display: flex;
     gap: 3rem;
     overflow-x: auto;
-    padding: 5rem 2rem; /* 傾きや拡大のために上下の余白を増やす */
+    padding: 5rem 2rem;
+    /* 傾きや拡大のために上下の余白を増やす */
     scroll-snap-type: x mandatory;
     align-items: center;
 }
@@ -1794,13 +1932,15 @@ section {
 }
 
 .device-frame {
-    width: 250px; /* 330pxから250pxへ縮小 */
+    width: 250px;
+    /* 330pxから250pxへ縮小 */
     background: #111;
-    border-radius: 40px; /* サイズダウンに合わせて調整 */
+    border-radius: 40px;
+    /* サイズダウンに合わせて調整 */
     padding: 12px;
     position: relative;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
-                inset 0 0 2px 2px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+        inset 0 0 2px 2px rgba(255, 255, 255, 0.1);
     border: 1px solid #333;
 }
 
@@ -1862,10 +2002,11 @@ section {
 
 .support-image-actual {
     width: 100%;
-    max-width: 250px; /* サポート画像もmax 250px */
+    max-width: 250px;
+    /* サポート画像もmax 250px */
     margin: 0 auto;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     display: block;
 }
 
@@ -1883,7 +2024,7 @@ section {
     padding: 25px;
     background: white;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
 }
 
@@ -1914,7 +2055,9 @@ section {
         flex-direction: column;
         gap: 40px;
     }
-    .support-visual, .support-content {
+
+    .support-visual,
+    .support-content {
         width: 100%;
     }
 }
