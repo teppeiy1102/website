@@ -11,7 +11,7 @@ const translations = {
         "nav.guides": "ガイド紹介",
         "nav.screenshots": "スクリーンショット",
         "nav.download": "ダウンロード",
-        "hero.title.impact": "地図が究極の<br>エンタメに！",
+        "hero.title.impact": "地図で遊ぶ<br>学ぶ、創る、調べる！",
         "hero.description": "世界遺産を巡り、クイズで学び、AIと語らう。<br>あなたの移動が、もっとも贅沢な知的好奇心の時間に変わります。",
         "hero.button.download": "無料でダウンロード",
         "hero.button.worldguide": "ガイドを体験する",
